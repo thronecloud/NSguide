@@ -1,0 +1,749 @@
+import { REFERRAL_URL } from '../config.js';
+
+/**
+ * FAQ content for Network School landing page.
+ * Each item has its own page at /faq/{slug} for programmatic SEO.
+ * Tone: conversational and personal. Includes honest downsides.
+ *
+ * To add a new question, add an object with:
+ *   id, slug (URL-friendly), question, answer, category,
+ *   seo: { title, description, keywords }
+ * Optional: ctaText, ctaUrl for apply-related FAQs
+ */
+
+export const FAQ_CATEGORIES = [
+  { id: 'basics', label: 'Basics & Costs' },
+  { id: 'travel', label: 'Travel & Location' },
+  { id: 'working', label: 'Working & Learning' },
+  { id: 'health', label: 'Health & Fitness' },
+  { id: 'living', label: 'Living & Accommodation' },
+  { id: 'application', label: 'Application & Admissions' },
+  { id: 'community', label: 'Community & Culture' },
+  { id: 'visas', label: 'Visas & Legal' },
+];
+
+export const faqItems = [
+  // === BASICS ===
+  {
+    id: 'what-is-network-school',
+    category: 'basics',
+    slug: 'what-is-network-school',
+    question: 'What is Network School?',
+    answer: "Network School (NS) is a startup society—sometimes called 'Society-as-a-Service'—where builders, founders, and remote workers live together on a campus near Singapore. Think of it as a first-mover community: you're surrounded by people building in tech, Web3, and AI. It's not a formal school with grades or credentials—it's more like a luxury hacker house meets co-living meets startup boot camp. The idea is to turn online communities into physical ones, and it's the live pilot for the broader 'Network State' thesis.",
+    seo: {
+      title: 'What is Network School? | NS FAQ 2026',
+      description: 'Network School is a startup society and Society-as-a-Service for builders near Singapore. Learn what NS is—co-living, coworking, and community.',
+      keywords: 'what is Network School, ns.com, startup society, Society-as-a-Service, Singapore',
+    },
+  },
+  {
+    id: 'where-located',
+    category: 'travel',
+    slug: 'where-located',
+    question: 'Where is Network School located?',
+    answer: "NS is in Forest City, Malaysia—a $100 billion megaproject by China's Country Garden, built on artificial islands in the Johor Strait, about an hour from Singapore. The development was originally a luxury enclave for foreign investors, but market shifts left it largely empty. NS leases the undervalued luxury infrastructure—towering high-rises, marble lobbies, ocean views—at a fraction of what comparable facilities would cost in any major city. It's peaceful, green, and isolated, which is the point: fewer distractions, more focus. Singapore is close enough for conferences and city trips, and NS runs regular shuttle services.",
+    seo: {
+      title: 'Where is Network School Located? | Forest City, Malaysia',
+      description: 'Network School is in Forest City, Malaysia—a $100B megaproject near Singapore. Luxury infrastructure, ocean views, quiet campus. Location details.',
+      keywords: 'Network School location, Forest City Malaysia, NS campus, Singapore-Johor',
+    },
+  },
+  {
+    id: 'how-much-cost',
+    category: 'basics',
+    slug: 'how-much-cost',
+    question: 'How much does Network School cost?',
+    answer: "It's $1,500/month for a double room (shared) or $3,000/month for a single room. That covers housing, three meals a day, gym access, coworking, Starlink internet, room cleaning, laundry, and all courses and events. The café and vending machines are optional extras. For context, that's less than rent alone in SF or Singapore—and you're getting food, gym, and coworking bundled in. Day passes are also available if you're just visiting.",
+    seo: {
+      title: 'Network School Cost: $1,500–$3,000/month (2026)',
+      description: 'Network School costs $1,500/month double or $3,000/month single. All-inclusive: housing, meals, gym, coworking, Starlink. Full pricing.',
+      keywords: 'Network School cost, NS price, how much does Network School cost, ns.com pricing',
+    },
+  },
+  {
+    id: 'whats-included',
+    category: 'living',
+    slug: 'whats-included',
+    question: "What's included in the fee?",
+    answer: "Pretty much everything: accommodation (rooms upwards of 50 sqm with ocean-view balconies), three Blueprint meals a day, 24/7 gym, coworking spaces, Starlink high-speed internet, room cleaning, laundry, workshops, and community events. The café and vending machines are separate if you want extra coffee or snacks. You get access to meeting rooms, a library, yoga space, and the whole campus. Zero domestic friction—you don't cook, clean, or deal with logistics.",
+    seo: {
+      title: "What's Included at Network School? Housing, Meals, Gym & More",
+      description: 'Network School includes 50sqm rooms, Blueprint meals, gym, coworking, Starlink, cleaning, laundry. Full list of NS amenities.',
+      keywords: 'Network School included, NS amenities, what does Network School include, Starlink',
+    },
+  },
+  {
+    id: 'how-long',
+    category: 'basics',
+    slug: 'how-long',
+    question: 'How long can I stay?',
+    answer: "It's flexible. Some people come for a few weeks, others stay months or a full year. The program runs year-round. v1 was a 128-person 90-day popup. v2 expanded to 256 people for a full year. Cohort sizes now regularly hit 270+. There's no fixed commitment; you can extend or leave when it works for you.",
+    seo: {
+      title: 'How Long Can You Stay at Network School? Duration Explained',
+      description: 'Network School stays are flexible—weeks to a full year. v1: 128 people, v2: 256 people. No fixed commitment.',
+      keywords: 'Network School duration, NS program length, how long to stay, v1 v2',
+    },
+  },
+  // === APPLICATION & ADMISSIONS ===
+  {
+    id: 'who-can-join',
+    category: 'application',
+    slug: 'who-can-join',
+    question: 'Who can join?',
+    answer: "Founders, builders, digital nomads, Web3 folks, AI creators—anyone value-aligned and interested in building. NS specifically seeks three archetypes: (1) founders, engineers, designers, investors—the tech engine; (2) trainers, athletes, coaches—the fitness engine; (3) writers, artists, influencers using generative AI—the cultural engine. Age doesn't matter—there are teenage coders and fifty-something professionals. They look for fit, not credentials.",
+    seo: {
+      title: 'Who Can Join Network School? Eligibility & Requirements',
+      description: 'Network School welcomes founders, builders, digital nomads, AI creators. Three archetypes sought. No age limit. How selective NS is.',
+      keywords: 'who can join Network School, NS eligibility, Network School requirements',
+    },
+  },
+  {
+    id: 'how-selective',
+    category: 'application',
+    slug: 'how-selective',
+    question: 'How selective is Network School?',
+    answer: "Very. During v1, NS received over 4,000 applications from 80+ countries for 128 spots—a 3.2% acceptance rate, comparable to Harvard or Stanford. They filter for value alignment and raw intellectual potential, not credentials. A referral can help but isn't required. If you're genuinely building something, that matters more than a polished resume.",
+    seo: {
+      title: 'How Selective is Network School? 3.2% Acceptance Rate',
+      description: 'Network School v1 had a 3.2% acceptance rate—4,000+ apps from 80 countries for 128 spots. Value alignment over credentials.',
+      keywords: 'Network School acceptance rate, NS selective, how hard to get in',
+    },
+  },
+  {
+    id: 'how-to-apply',
+    category: 'application',
+    slug: 'how-to-apply',
+    question: 'How do I apply?',
+    answer: "Apply online at ns.com. Standard admission evaluates value alignment and potential. For the Fellowship track, there's a rigorous 'Form, Zoom, Room, Boom' pipeline: online application, video interview, in-person pencil-and-paper exam at the campus (to AI-proof the process), then acceptance. Be genuine about what you're building—that matters more than a polished resume.",
+    ctaText: 'Apply now to join the next cohort',
+    ctaUrl: REFERRAL_URL,
+    seo: {
+      title: 'How to Apply to Network School | Step-by-Step',
+      description: 'Apply to Network School at ns.com. Standard admission + Fellowship pipeline (Form, Zoom, Room, Boom). Apply now.',
+      keywords: 'how to apply Network School, NS application, apply ns.com, Form Zoom Room Boom',
+    },
+  },
+  {
+    id: 'application-pipeline',
+    category: 'application',
+    slug: 'application-pipeline',
+    question: 'What is the "Form, Zoom, Room, Boom" process?',
+    answer: "It's the four-stage pipeline for the Fellowship and long-term residencies. Form: online application with screening test and references. Zoom: video interview assessing integrity and agency. Room: in-person, pencil-and-paper exam at the campus—no digital aids, to confirm your raw cognitive abilities. Boom: acceptance and relocation. Standard admission is simpler (mainly Form + review), but the Fellowship pipeline is deliberately rigorous.",
+    seo: {
+      title: 'Form, Zoom, Room, Boom: NS Application Pipeline',
+      description: 'Network School Fellowship uses a 4-stage pipeline: Form, Zoom, Room, Boom. Online app, video interview, in-person exam, acceptance.',
+      keywords: 'Form Zoom Room Boom, NS application process, Network School Fellowship application',
+    },
+  },
+  {
+    id: 'referral-needed',
+    category: 'application',
+    slug: 'referral-needed',
+    question: 'Do I need a referral to get in?',
+    answer: "No, but it can help. Applications are reviewed on their own; a referral might give you a nudge. If you know someone who's been, ask them. If not, apply anyway—your story and what you're building matter more.",
+    seo: {
+      title: 'Do You Need a Referral for Network School?',
+      description: 'Referral not required for Network School but can help. Apply on merit. Value alignment matters most.',
+      keywords: 'Network School referral, NS referral needed, apply NS',
+    },
+  },
+  // === THE FOUR PILLARS ===
+  {
+    id: 'learn-earn-burn',
+    category: 'working',
+    slug: 'learn-earn-burn',
+    question: 'What is Learn, Earn, Burn, and Fun?',
+    answer: "The four pillars of NS—and they call the whole thing 'Willpower-as-a-Service.' Learn: pick up frontier skills—AI, crypto, DeFi, or whatever you're into, via two tracks (Power Users and Programmers). Earn: work remotely, build your thing, earn crypto bounties. Burn: gym, HIIT classes, fitness combine—NS partnered with Bryan Johnson's Blueprint protocol. Fun: community dinners, events, spontaneous hangouts. The environment is engineered so peak performance is the path of least resistance.",
+    seo: {
+      title: 'Learn, Earn, Burn, Fun: Network School Pillars Explained',
+      description: 'Learn, Earn, Burn, Fun are the four pillars. Willpower-as-a-Service. AI/crypto learning, bounties, Blueprint fitness, community.',
+      keywords: 'Learn Earn Burn Fun, Network School pillars, Willpower-as-a-Service',
+    },
+  },
+  {
+    id: 'typical-day',
+    category: 'working',
+    slug: 'typical-day',
+    question: "What's a typical day at Network School?",
+    answer: "Morning: wake up, hit the gym or a HIIT class (7 AM, 11 AM, or 5 PM slots), Blueprint breakfast. Then head to the coworking space—everyone's doing their own thing. Afternoon: optional sessions (vibe coding, book club, DeFi 101, bug bounty hunting, whatever members teach), side projects, or deep work. Evening: community dinner, maybe a small event or just hanging out. Alcohol is minimal; caffeine is the drug of choice. It's structured but flexible—you design your day.",
+    seo: {
+      title: "A Typical Day at Network School | NS Daily Schedule",
+      description: 'Morning gym, coworking, optional classes, community dinner. What a typical day at Network School looks like. Flexible schedule.',
+      keywords: 'Network School typical day, NS daily schedule, what to expect',
+    },
+  },
+  // === LEARNING & EARNING ===
+  {
+    id: 'is-it-a-school',
+    category: 'working',
+    slug: 'is-it-a-school',
+    question: 'Is Network School actually a school?',
+    answer: "Not in the traditional sense. No fixed curriculum, no grades, no paper degrees. Members teach each other—one-hour seminars on whatever they're into. The staff runs a few core sessions, but most learning is peer-to-peer. Instead of diplomas, you earn 'cryptocredentials'—NFTs that prove you completed tasks and populate your profile on GitHub or Replit. 'School' is more of a brand than a description.",
+    seo: {
+      title: 'Is Network School a Real School? Curriculum & Learning',
+      description: "NS isn't a formal school—no grades, no degrees. Peer-to-peer learning, cryptocredentials (NFTs). How NS education works.",
+      keywords: 'Network School school, NS curriculum, cryptocredentials, is NS a school',
+    },
+  },
+  {
+    id: 'learning-tracks',
+    category: 'working',
+    slug: 'learning-tracks',
+    question: 'What learning tracks are available?',
+    answer: "Two main tracks in the v2 program: Power Users learn to orchestrate AI and crypto tools to automate complex workflows—think combining ChatGPT, Midjourney, and Solana into a product. Programmers go deep: intensive hackathons using specific APIs like Solana, Ollama, and Midjourney to build deployable apps. Plus member-led sessions on anything from filmmaking to fundraising.",
+    seo: {
+      title: 'Network School Learning Tracks: Power Users & Programmers',
+      description: 'NS v2 has two tracks: Power Users (AI/crypto orchestration) and Programmers (deep hackathons with Solana, Ollama). Plus member-led classes.',
+      keywords: 'Network School learning, NS tracks, Power Users Programmers, AI crypto',
+    },
+  },
+  {
+    id: 'cryptocredentials',
+    category: 'working',
+    slug: 'cryptocredentials',
+    question: 'What are cryptocredentials?',
+    answer: "Non-transferable NFTs that prove you completed learning modules or tasks at NS. Think of them as blockchain-verified certificates—they automatically populate your 'cryptoresume' on developer platforms like GitHub or Replit. Instead of a paper diploma, you build a verifiable portfolio of work that investors and employers can check. Also: you earn 'proof-of-workout' NFTs from gym sessions.",
+    seo: {
+      title: 'What are Cryptocredentials? NS NFT Certificates',
+      description: 'Cryptocredentials are non-transferable NFTs proving NS task completion. Populate your cryptoresume on GitHub/Replit. Blockchain-verified.',
+      keywords: 'cryptocredentials, Network School NFT, cryptoresume, proof-of-workout',
+    },
+  },
+  {
+    id: 'earning-bounties',
+    category: 'working',
+    slug: 'earning-bounties',
+    question: 'Can I earn money while at Network School?',
+    answer: "Yes. NS offers daily $1,000 crypto bounties for completing tasks—code contributions, bug bounties, AI content, solving technical challenges. Some people offset their entire tuition this way. The campus also attracts visiting VCs and investors who come specifically to scout talent, and programs like Monad Founder Residency distribute incentives directly. Between bounties, remote work, and networking with capital, there are real earning opportunities.",
+    seo: {
+      title: 'Earn Money at Network School: $1,000 Daily Bounties',
+      description: 'Network School offers daily $1,000 crypto bounties. Bug bounties, code contributions, visiting VCs. Earn while you learn at NS.',
+      keywords: 'Network School earn money, NS bounties, crypto bounties, earn at NS',
+    },
+  },
+  {
+    id: 'fellowship',
+    category: 'working',
+    slug: 'fellowship',
+    question: 'What is the NS Fellowship?',
+    answer: "A $100,000 funding package for top-tier applicants to bootstrap or accelerate a startup. The condition: relocate to the NS campus for one year. Startups are typically incorporated in Singapore, leveraging its legal framework and VC proximity. It's closer to a seed round than a scholarship—you get capital, a zero-friction building environment, potential co-founders, and early-adopter beta-testers all under one roof.",
+    seo: {
+      title: 'Network School Fellowship: $100K Startup Funding',
+      description: 'NS Fellowship gives $100K to build a startup on campus for one year. Singapore incorporation. Seed round, not scholarship.',
+      keywords: 'Network School Fellowship, $100K funding, NS startup, Fellowship application',
+    },
+  },
+  // === FITNESS & FOOD ===
+  {
+    id: 'food',
+    category: 'health',
+    slug: 'food',
+    question: "What's the food like?",
+    answer: "Three Blueprint-inspired meals are included daily. Breakfast runs 7–10 AM on Level 1—buffet style. Lunch at 11:30 AM is a boxed meal with nutty puddings. Dinner is a hot buffet from 5:30–7:30 PM. Everything is optimized for longevity and cognitive performance—lean proteins, vegetables, nuts, berries. You can check full nutrition facts at ns.com/nutrition. Some people love it; others find it bland compared to their usual diet. Beyond the included meals, the NS Café lets you order extras online at ns.com/food and pick up at the counter. Water stations are throughout the campus, and you can buy NS bottles and mugs at the café. If you want groceries, there are nearby stores that accept GrabPay and foreign credit cards (excluding Amex), plus the hotel provides bottled water.",
+    seo: {
+      title: 'Network School Food: Blueprint Meals, Café & Groceries',
+      description: 'NS includes 3 Blueprint meals daily: buffet breakfast, boxed lunch, hot dinner. NS Café for extras. Groceries nearby. Full food guide.',
+      keywords: 'Network School food, NS meals, Blueprint diet NS, NS Café, NS nutrition',
+    },
+  },
+  {
+    id: 'gym',
+    category: 'health',
+    slug: 'gym',
+    question: "What's the gym like?",
+    answer: "Built from scratch for NS, partnered with Bryan Johnson's Blueprint program. Well-equipped with weights, cardio, and space for group classes. HIIT sessions run a few times daily (7 AM, 11 AM, 5 PM). They run a 'fitness combine'—AI-powered measurement of push-ups, balance, grip strength, body composition, and VO2 max at the start and end of your stay. You earn proof-of-workout NFTs for completing sessions. A lot of people say the gym was a big reason they came.",
+    seo: {
+      title: 'Network School Gym: Blueprint, HIIT, Fitness Combine',
+      description: 'NS gym: built from scratch, Blueprint partnership, HIIT classes, AI body composition tracking, proof-of-workout NFTs. Full review.',
+      keywords: 'Network School gym, NS fitness, HIIT, fitness combine, Blueprint gym',
+    },
+  },
+  {
+    id: 'haven',
+    category: 'health',
+    slug: 'haven',
+    question: 'What is NS Haven?',
+    answer: "Haven is NS's dedicated wellness space—think of it as 'heart infrastructure.' The gym is for the body, the library and coworking are for the head, and Haven is for the heart. It's a soft space for mindfulness, meditation, yoga, and just unwinding. It comes equipped with lush carpets, a massage chair (bookable), a large couch, meditation cushions, aromatherapy, and custom lighting and audio setups. After days of intense building and locking in, Haven is where people go to decompress and rebalance. Members also run sessions there—sound baths, somatic experiences, guided meditation.",
+    seo: {
+      title: 'NS Haven: Network School Wellness & Meditation Space',
+      description: 'NS Haven is a wellness space for meditation, yoga, massage chair, aromatherapy. Heart infrastructure for balance at Network School.',
+      keywords: 'NS Haven, Network School wellness, meditation NS, massage chair, yoga NS',
+    },
+  },
+  {
+    id: 'alcohol',
+    category: 'health',
+    slug: 'alcohol',
+    question: 'Is alcohol common at Network School?',
+    answer: "Minimal. The longevity and fitness culture means alcohol is generally frowned upon as counterproductive. Caffeine is the dominant substance—long hours, deep technical debates, and lots of coffee. If you're looking for a party scene, this isn't it. The geographic isolation reinforces the heads-down vibe during the week. Weekends in Singapore offer more variety if you want it.",
+    seo: {
+      title: 'Alcohol at Network School: Culture & Social Life',
+      description: 'Alcohol is minimal at NS—longevity culture, caffeine preferred. No party scene. Honest take on NS social life.',
+      keywords: 'Network School alcohol, NS social life, drinking at NS',
+    },
+  },
+  // === ROOMS & INFRASTRUCTURE ===
+  {
+    id: 'rooms',
+    category: 'living',
+    slug: 'rooms',
+    question: 'What are the rooms like?',
+    answer: "All rooms are at the Forest City Marina Hotel and come with a private bathroom with toiletries, free WiFi, air conditioning, flat-screen TV, in-room safe, hair dryer, electric kettle, mini-fridge, and a balcony or opening windows. There are two types: Twin Bedrooms for NS Basic (shared with a roommate—two separate beds) and King Bedrooms reserved for couples or those upgrading to a private room. Bathrooms are the same quality in both. If you're bringing a child, an extra small bed is available for a small monthly fee—just ask NS staff. Long-term residents may get two-bedroom apartments with more space. The whole setup is designed to eliminate domestic friction so you can focus entirely on building.",
+    seo: {
+      title: 'Network School Rooms: Twin, King, Balcony, Mini-Fridge & More',
+      description: 'NS rooms at Marina Hotel: Twin or King, private bathroom, WiFi, AC, TV, safe, kettle, mini-fridge, balcony. Kids bed available. Full details.',
+      keywords: 'Network School rooms, NS accommodation, Marina Forest Hotel, NS room types, twin king',
+    },
+  },
+  {
+    id: 'cleaning-laundry',
+    category: 'living',
+    slug: 'cleaning-laundry',
+    question: 'Is room cleaning and laundry included?',
+    answer: "Room cleaning is included in the monthly fee. For laundry, there's a wash-and-dry service that collects from the hotel lobby at 8:45 AM daily (except Sunday) and returns the next day at the same time. Pricing is affordable—around RM 28–58 per load depending on size (14kg or 28kg) and whether you mix or separate darks and lights. Detergent is included. You can also choose water temperature and dryer heat level. It's not free, but it's cheap and convenient—you drop it off, pick it up, done. Zero domestic friction is the whole idea.",
+    seo: {
+      title: 'Room Cleaning & Laundry at Network School: Pricing & Schedule',
+      description: 'NS room cleaning included. Laundry service daily at 8:45 AM (except Sunday), RM 28–58/load. Wash, dry, detergent included. Full details.',
+      keywords: 'Network School cleaning, NS laundry, laundry service NS, room service NS',
+    },
+  },
+  {
+    id: 'pods-offices',
+    category: 'living',
+    slug: 'pods-offices',
+    question: 'Are there private pods or offices at Network School?',
+    answer: "Yes. If the open coworking space isn't enough, NS offers private workspaces. There's an hourly pod in the NS Café—first come, first served, book one-hour slots via a QR code on the pod itself. Good for private calls or quick meetings. For something more permanent, you can rent a Private NS Pod ($200/month—table and monitor) or a Private NS Office ($400/month—standing desk, office chair, and monitor). Pods are in the café area; offices are in the library and coworking spaces. These are on top of the base membership fee, but worth it if you need a locked-in, dedicated workspace.",
+    seo: {
+      title: 'Network School Pods & Offices: $200–$400/month Private Workspaces',
+      description: 'NS offers private pods ($200/mo) and offices ($400/mo) with desks and monitors. Hourly pods free in the café. Full workspace options.',
+      keywords: 'Network School office, NS pods, private workspace NS, coworking NS, NS office rental',
+    },
+  },
+  {
+    id: 'internet',
+    category: 'living',
+    slug: 'internet',
+    question: 'How fast is the internet at Network School?',
+    answer: "Starlink-powered—100 to 400 Mbps download, with latency as low as 25 to 60 milliseconds. That's fast enough for 4K video conferencing, continuous code deployment, cloning large GitHub repos, and even high-frequency trading. Starlink bypasses the local terrestrial infrastructure limitations of Forest City. It's reliable (99.9% uptime) and weather-resilient. You won't miss your home internet.",
+    seo: {
+      title: 'Network School Internet: Starlink, 100–400 Mbps',
+      description: 'NS uses Starlink: 100–400 Mbps, 25–60ms latency, 99.9% uptime. Fast enough for video calls, code deployment, trading.',
+      keywords: 'Network School internet, NS Starlink, WiFi Network School, internet speed',
+    },
+  },
+  // === COMMUNITY & CULTURE ===
+  {
+    id: 'who-attends',
+    category: 'community',
+    slug: 'who-attends',
+    question: 'What kind of people attend?',
+    answer: "A mix: founders, digital nomads, Web3 builders, AI creators, remote workers, former military, academic professors, teenage coders. Very international—70+ nationalities, with strong representation from India, the US, Europe, Southeast Asia, and the Middle East. Demographics skew male (around 80%). Some have moved their offices here; others are figuring out their next move. It's a cultural smorgasbord.",
+    seo: {
+      title: 'Who Attends Network School? Demographics & Community',
+      description: 'NS attracts founders, nomads, Web3 builders from 70+ countries. Skews male. Former military to teenage coders. Who you will meet.',
+      keywords: 'Network School demographics, who attends NS, NS community',
+    },
+  },
+  {
+    id: 'dark-talent',
+    category: 'community',
+    slug: 'dark-talent',
+    question: 'What is "Dark Talent"?',
+    answer: "Like dark matter in physics—it's everywhere but invisible to traditional systems. Dark talent is the massive global pool of high-potential individuals disconnected from elite institutions. Indian engineers, African founders, American Midwest makers, Latin American libertarians—people with raw ability who never had a shot at Stanford or YC. NS exists specifically to surface them. Traditional universities sort by credentials; NS sorts by capability and drive.",
+    seo: {
+      title: 'What is Dark Talent? Network School\'s Core Mission',
+      description: 'Dark talent: high-potential people disconnected from elite institutions. NS exists to surface them. Indian engineers, African founders, global builders.',
+      keywords: 'dark talent, Network School mission, NS dark talent, Balaji dark talent',
+    },
+  },
+  {
+    id: 'gender-ratio',
+    category: 'community',
+    slug: 'gender-ratio',
+    question: "What's the gender ratio?",
+    answer: "Honestly, it's mostly guys—around 80% male. That comes with a merit-based admission system that doesn't factor in demographics. Some single guys have mentioned the ratio and head to Singapore on weekends. It's something to be aware of if it matters to you. The community is working on it, but it's a known dynamic.",
+    seo: {
+      title: 'Network School Gender Ratio: What to Expect',
+      description: 'Network School is around 80% male. Merit-based admission. Honest take on the gender ratio at NS.',
+      keywords: 'Network School gender ratio, NS demographics, male female NS',
+    },
+  },
+  {
+    id: 'culture',
+    category: 'community',
+    slug: 'culture',
+    question: "What's the culture like?",
+    answer: "'Win and help win'—people share knowledge, teach classes, support each other. About 60% of members run sessions for others. There's a 'leave NS better than you found it' ethos. The ideological baseline is technocapitalism: belief in technological acceleration, free-market principles, and internationalism. That said, like any community, there are a few less social types. Overall the vibe is generous, collaborative, and intensely focused.",
+    seo: {
+      title: 'Network School Culture: Win and Help Win',
+      description: 'NS culture: win and help win, technocapitalist, collaborative. 60% of members teach. What to expect at NS.',
+      keywords: 'Network School culture, NS community vibe, win and help win, technocapitalism',
+    },
+  },
+  {
+    id: 'ethnic-cliques',
+    category: 'community',
+    slug: 'ethnic-cliques',
+    question: 'Are there cliques or is it hard to break in?',
+    answer: "Some ethnic and language-based groups do form—especially among Hindi and Mandarin speakers. Even extroverts can find it tricky to break into those circles. The flip side: 70+ nationalities, so it's still a UN of sorts. Cliques tend to form more among short-termers; people who stay longer usually mix more. It's something to be aware of, not a dealbreaker.",
+    seo: {
+      title: 'Network School Cliques: Community Dynamics',
+      description: 'NS has some ethnic and language cliques. Honest take on breaking in and mixing. 70+ nationalities represented.',
+      keywords: 'Network School cliques, NS community dynamics, breaking in',
+    },
+  },
+  {
+    id: 'political',
+    category: 'community',
+    slug: 'political',
+    question: 'Is Network School political?',
+    answer: "No. It's oriented toward the private sector—building companies, not governments. You might hear about network states as a concept, but there's no political organizing or activism. It's teaching by example: the living community is the lesson. The ideological filter is technocapitalist and internationalist, but the output is startups, not policy.",
+    seo: {
+      title: 'Is Network School Political? Private Sector Focus',
+      description: 'NS is not political—focused on building, not activism. Technocapitalist, internationalist ethos. What NS is and is not.',
+      keywords: 'Network School political, NS politics, is NS political',
+    },
+  },
+  // === LOGISTICS & LOCATION ===
+  {
+    id: 'singapore-transport',
+    category: 'travel',
+    slug: 'singapore-transport',
+    question: 'How do I get to Singapore from Network School?',
+    answer: "NS runs regular shuttle services. But be realistic: plan 1.5 to 2 hours each way. You disembark at Malaysian checkpoint, clear exit immigration, cross the bridge, clear Singapore entry immigration, then transit onward. There are also cross-border buses (CW6, FC1) connecting to Singapore's MRT. It works for Token2049, conferences, or weekend trips—but daily commuting is impractical due to double border crossing.",
+    seo: {
+      title: 'Network School to Singapore: Shuttle, Border Crossing & Time',
+      description: 'NS shuttles to Singapore: 1.5–2 hours with double immigration. Buses CW6/FC1 to MRT. Weekend trips, not daily commute.',
+      keywords: 'Network School Singapore, NS shuttle, Forest City to Singapore, border crossing',
+    },
+  },
+  {
+    id: 'getting-around',
+    category: 'travel',
+    slug: 'getting-around',
+    question: 'How do I get around Forest City?',
+    answer: "Mostly Grab—ride-hailing is the main option. Public transport is limited. The area is developing, so daily convenience isn't like Singapore. That said, the core NS facilities—Coworking, Lobby, Café, and Gym—are all walkable within the Forest City complex (see map below). You're not constantly moving around; the campus is self-contained. Bring some Malaysian ringgit for Grab rides and local errands.",
+    image: '/campus-map.png',
+    imageAlt: 'Forest City campus map showing NS Coworking, NS Lobby, NS Café, and NS Gym locations',
+    seo: {
+      title: 'Getting Around Forest City at Network School',
+      description: 'Forest City: Grab for rides, limited public transit. NS campus is walkable. How to get around. Bring ringgit.',
+      keywords: 'Forest City transport, Network School getting around, Grab Malaysia',
+    },
+  },
+  {
+    id: 'forest-city',
+    category: 'travel',
+    slug: 'forest-city',
+    question: 'Is Forest City a ghost town?',
+    answer: "It's a developing area—modern buildings, lots of green space, but not densely populated. Many buildings are empty. Media has called it a 'ghost town,' but it's not dirty or chaotic; staff maintain everything. Chinese signage is everywhere (the original target market). NS has created a lively pocket within it. New shops are opening. If you want a bustling city, this isn't it. If you want focus and fewer distractions, it works.",
+    seo: {
+      title: 'Is Forest City a Ghost Town? Network School Location Honest Take',
+      description: 'Forest City is developing and quiet—media says ghost town. Modern, maintained. NS creates a lively community within it. Honest take.',
+      keywords: 'Forest City ghost town, Network School location, Forest City Malaysia, Country Garden',
+    },
+  },
+  {
+    id: 'crypto-adoption',
+    category: 'working',
+    slug: 'crypto-adoption',
+    question: 'How much crypto is used at Network School?',
+    answer: "Less than you might expect for day-to-day life. You get an NFT in your Solana wallet when accepted, you can pay for café items with crypto, bounties are paid in crypto, and you earn proof-of-workout NFTs. But rent and meals aren't paid in crypto. The Web3 vibe is in the people, ideas, and programs (Solana Superteam, Monad Residency)—the daily infrastructure is still mostly traditional.",
+    seo: {
+      title: 'Crypto at Network School: NFTs, Bounties & Reality',
+      description: 'NS uses crypto for NFTs, bounties, café payments. But rent and meals are traditional. Honest take on crypto adoption at NS.',
+      keywords: 'Network School crypto, NS Web3, crypto adoption NS, Solana NS',
+    },
+  },
+  // === VISAS & LEGAL ===
+  {
+    id: 'visa-requirements',
+    category: 'visas',
+    slug: 'visa-requirements',
+    question: 'Do I need a visa?',
+    answer: "Most nationalities use a standard tourist visa for Malaysia. Indian nationals get visa-free entry for up to 30 days (through Dec 2026). Others use eVisa or eNTRI programs (15–30 days). For longer stays, the DE Rantau Digital Nomad Pass is the best option—3 to 12 months, renewable to 24. Check your country's requirements for both Malaysia and Singapore.",
+    seo: {
+      title: 'Network School Visa: Malaysia Tourist, eVisa & DE Rantau',
+      description: 'NS visa options: tourist visa (30 days), eVisa, DE Rantau nomad pass (3–12 months). India visa-free. Full guide.',
+      keywords: 'Network School visa, NS visa requirements, Malaysia visa, DE Rantau',
+    },
+  },
+  {
+    id: 'de-rantau',
+    category: 'visas',
+    slug: 'de-rantau',
+    question: 'What is the DE Rantau Digital Nomad Pass?',
+    answer: "Malaysia's official digital nomad visa. Gives you 3 to 12 months of legal residency, renewable up to 24 months total. Requires $24,000/year income and costs ~MYR 1,000 (plus MYR 500 per dependent). Your spouse and kids can come too. It lets you work remotely legally—no visa runs, no anxiety. Way better than juggling 30-day tourist stamps. The income threshold is low compared to European or Japanese nomad visas.",
+    seo: {
+      title: 'DE Rantau Digital Nomad Pass for Network School',
+      description: 'DE Rantau: Malaysia digital nomad visa, 3–12 months, $24K income req, MYR 1,000 cost. Dependents allowed. Best option for long NS stays.',
+      keywords: 'DE Rantau, Malaysia digital nomad visa, Network School visa, long-term stay',
+    },
+  },
+  {
+    id: 'visa-runs',
+    category: 'visas',
+    slug: 'visa-runs',
+    question: 'Are visa runs viable?',
+    answer: "Technically possible—exit to Singapore, re-enter Malaysia for a fresh stamp. But risky. Immigration uses advanced tracking, and a pattern of repeated border crossings to extend tourist status is illegal. You can get flagged, interrogated, denied entry, or banned. The DE Rantau pass is the safer, legal option for anything beyond a single 30-day stay. Don't rely on visa runs.",
+    seo: {
+      title: 'Visa Runs at Network School: Risks & Better Options',
+      description: 'Visa runs from NS to Singapore are risky—immigration tracks patterns. DE Rantau is the safer legal option. Honest advice.',
+      keywords: 'visa runs Malaysia, Network School visa run, Malaysia Singapore border',
+    },
+  },
+  {
+    id: 'health-insurance',
+    category: 'visas',
+    slug: 'health-insurance',
+    question: 'Do I need health insurance?',
+    answer: "Yes, for longer stays. EMGS-approved plans cost $100–$210/year with low deductibles ($5–$11 per visit). Providers like Great Eastern Takaful and Etiqa offer inpatient, outpatient, and emergency evacuation coverage. Malaysia has excellent healthcare infrastructure—it's a top medical tourism destination. Short-term visitors can use international travel insurance. Either way, don't come uninsured.",
+    seo: {
+      title: 'Health Insurance for Network School: $100–$210/year',
+      description: 'NS health insurance: EMGS-approved plans $100–$210/year. Low deductibles. Malaysia has excellent healthcare. Options for NS.',
+      keywords: 'Network School health insurance, Malaysia insurance, EMGS insurance',
+    },
+  },
+  {
+    id: 'medical-facilities',
+    category: 'visas',
+    slug: 'medical-facilities',
+    question: 'What medical and healthcare facilities are near Network School?',
+    answer: "You're well covered. There are local clinics right in Forest City for everyday stuff—minor illnesses, quick checkups. For anything more serious, there are multiple full-service hospitals within driving distance in Johor Bahru, including international-standard ones with specialist departments and emergency care. There's also a women's clinic nearby. Pharmacies are accessible in the area, some with WhatsApp ordering for convenience. Malaysia's emergency number is 999. Before you come, make sure your health insurance covers you in Malaysia—if it doesn't, nomad insurance providers like World Nomads, Insured Nomads, or SafetyWing are popular options among NS members. Malaysia is a top medical tourism destination, so the quality of care is excellent and affordable.",
+    seo: {
+      title: 'Medical Facilities Near Network School | Clinics & Hospitals',
+      description: 'Network School has clinics in Forest City and hospitals in Johor Bahru nearby. Pharmacies with WhatsApp delivery. Nomad insurance options.',
+      keywords: 'Network School medical, NS healthcare, Forest City clinic, Johor hospital, nomad insurance',
+    },
+  },
+  {
+    id: 'visa-singapore',
+    category: 'visas',
+    slug: 'visa-singapore',
+    question: 'Good for digital nomads with Singapore visa issues?',
+    answer: "Yes. Malaysia is much more welcoming to immigration. If you or your team have had Singapore employment pass issues, Forest City is close and the DE Rantau pass makes it legal. NS works well as a base for global teams who can't all get Singapore visas. Several members are there specifically for this reason.",
+    seo: {
+      title: 'Network School for Singapore Visa Issues | Digital Nomads',
+      description: 'Malaysia is more visa-friendly than Singapore. NS + DE Rantau works for nomads with Singapore visa problems.',
+      keywords: 'Network School visa, Singapore visa alternative, digital nomad Malaysia',
+    },
+  },
+  // === PROGRAMS & EVENTS ===
+  {
+    id: 'programs-events',
+    category: 'working',
+    slug: 'programs-events',
+    question: 'What programs and events run at Network School?',
+    answer: "Solana Superteam ran a six-week Ignition incubation residency. Monad had a three-week Founder Residency. There are hackathons, book clubs, vibe coding sessions, DeFi 101, AI discussions—lots of member-led stuff. Guest speakers include the caliber of ByteDance's first investor. The school also hosts VC office hours for fundraising and career counseling. Zcash and Polystate run recurring office hours on campus. All events are organized through Luma (luma.com/ns) where anyone can submit sessions pending admin approval.",
+    seo: {
+      title: 'Network School Programs: Solana, Monad, Hackathons, VCs',
+      description: 'NS hosts Solana Superteam, Monad Residency, hackathons, VC office hours, Zcash sessions. Events on Luma. What runs at NS.',
+      keywords: 'Network School programs, Solana NS, Monad Network School, NS hackathons, Luma NS',
+    },
+  },
+  {
+    id: 'daily-events-sessions',
+    category: 'working',
+    slug: 'daily-events-sessions',
+    question: 'What kind of daily events and sessions happen at NS?',
+    answer: "There's something happening almost every hour—all organized through the NS Luma calendar (luma.com/ns) and anyone can propose a session. On any given day you might find: fitness sessions (beach sprints, swim club, tennis classes for all levels, kids gym for 8–12 year olds), wellness (45-minute meditation, sound baths, somatic experiences, a ladies-only wellness circle), learning (MBA in a Box, nutrition deep dives, longevity surgeon talks, how to grow to 150K followers, consciousness research), crypto/Web3 office hours (Zcash, Polystate, startup office hours), social (coffee raves, sun club by the pool, Chinese conversation hour), and practical sessions (how to lead a session at NS, trips office hours for organizing group outings). Events happen across the NS Library, NS Café, NS Gym, the pool, hotel VIP rooms, and even nearby courts for tennis. Popular sessions sell out or hit near capacity, so booking early on Luma helps. The vibe is bottom-up: members create most of the programming, and the community decides what sticks.",
+    seo: {
+      title: 'Daily Events at Network School: Fitness, Talks, Crypto, Wellness',
+      description: 'NS runs daily events: beach sprints, tennis, meditation, MBA in a Box, crypto office hours, coffee raves, swim club. All on Luma. Full guide.',
+      keywords: 'Network School events, NS daily sessions, NS Luma calendar, NS activities, what happens at NS',
+    },
+  },
+  // === FAMILY & SPECIAL NEEDS ===
+  {
+    id: 'bring-family',
+    category: 'basics',
+    slug: 'bring-family',
+    question: 'Can I bring my family?',
+    answer: "Yes. Families and kids are welcome—people of all ages are at NS. Some members have brought children for hackathons and events. The DE Rantau pass allows dependents (MYR 500 each). Family integration is a work in progress—the more families participate, the easier it gets. If you're considering it, check on current family participation levels before you come.",
+    seo: {
+      title: 'Can I Bring My Family to Network School? Dependents & Kids',
+      description: 'Families and children welcome at NS. DE Rantau allows dependents. Family integration improving. Bring your family.',
+      keywords: 'Network School family, NS children, bring family, DE Rantau dependents',
+    },
+  },
+  {
+    id: 'ramadan',
+    category: 'basics',
+    slug: 'ramadan',
+    question: 'Is Network School good for Ramadan?',
+    answer: "It can be tricky. Meal timings, food availability, and gym schedules aren't designed around fasting hours. Some members observing Ramadan have found it challenging. The team could tailor for specific groups, but it hasn't been a default priority. If you're observing Ramadan, ask about accommodations before you come.",
+    seo: {
+      title: 'Network School and Ramadan: Fasting & Accommodations',
+      description: 'NS meal and gym schedules can be challenging during Ramadan. Ask about accommodations. Honest take.',
+      keywords: 'Network School Ramadan, NS fasting, Muslim at Network School',
+    },
+  },
+  // === PAYMENTS ===
+  {
+    id: 'payment-cards',
+    category: 'basics',
+    slug: 'payment-cards',
+    question: 'Can I use credit cards?',
+    answer: "At NS facilities, yes. In Forest City more broadly, many small shops prefer cash (Malaysian ringgit). There are ATMs with no withdrawal fees in the NS area. Cross-border buses to Singapore accept the ManjaLink cashless card. For your main expenses—accommodation, meals—you're covered by the monthly fee. Bring some cash for local errands.",
+    seo: {
+      title: 'Credit Cards & Payment at Network School',
+      description: 'NS facilities take cards. Forest City shops prefer cash (ringgit). ATMs available. ManjaLink for buses. Payment at NS.',
+      keywords: 'Network School payment, credit card NS, Forest City cash, ManjaLink',
+    },
+  },
+  // === ROI & COMPARISON ===
+  {
+    id: 'roi-comparison',
+    category: 'basics',
+    slug: 'roi-comparison',
+    question: "What's the ROI vs a university or coding bootcamp?",
+    answer: "A four-year CS degree costs $100K–$150K+ in tuition alone, plus living expenses, and delays earnings by four years. A coding bootcamp costs $10K–$20K for 3–6 months but doesn't cover living. NS costs $3K–$12K for 3–12 months and includes housing, food, gym, and internet—plus immediate earning opportunities via daily bounties and VC access. The actual cost of NS is arguably negative relative to maintaining an existence in SF or NYC when you factor in eliminated expenses.",
+    seo: {
+      title: 'Network School ROI: NS vs University vs Coding Bootcamp',
+      description: 'NS costs $3K–$12K total vs $100K+ for a CS degree. Includes housing, food, gym. Daily bounties. ROI comparison.',
+      keywords: 'Network School ROI, NS vs university, NS vs bootcamp, cost comparison',
+    },
+  },
+  {
+    id: 'what-makes-different',
+    category: 'basics',
+    slug: 'what-makes-different',
+    question: 'What makes NS different from YC or accelerators?',
+    answer: "NS isn't an accelerator—no demo day, no batch structure, no equity taken. It's a semi-permanent community. YC competes for credentialed talent; NS welcomes dark talent. YC gives you 3 months of advice and funding; NS gives you a living environment where peak performance is the default. It's more like a venture fund (discrete cohorts) than a school. You're living and building alongside peers, not being 'accelerated' through a pipeline.",
+    seo: {
+      title: 'Network School vs YC: How NS Differs from Accelerators',
+      description: "NS isn't an accelerator—no demo day, no equity. Dark talent, community living. How NS differs from YC.",
+      keywords: 'Network School vs YC, NS different, startup society, NS vs accelerator',
+    },
+  },
+  // === SAFETY & DOWNSIDES ===
+  {
+    id: 'is-it-safe',
+    category: 'basics',
+    slug: 'is-it-safe',
+    question: 'Is Network School safe?',
+    answer: "Yes. You're near Singapore, one of the safest places in the world. The campus is in a planned development with security and maintenance. The community has written principles and expectations. Healthcare is excellent and cheap ($100–$210/year for full insurance). It's a high-trust environment—people feel comfortable walking around at night, working late, and leaving stuff in common areas.",
+    seo: {
+      title: 'Is Network School Safe? Safety, Healthcare & Security',
+      description: 'Yes. NS is near Singapore—one of the safest countries. Security, cheap healthcare ($100/yr), high-trust community.',
+      keywords: 'is Network School safe, NS safety, Singapore safety, Malaysia healthcare',
+    },
+  },
+  {
+    id: 'who-should-not-go',
+    category: 'basics',
+    slug: 'who-should-not-go',
+    question: 'Who should NOT go to Network School?',
+    answer: "If you want vibrant nightlife, spontaneous urban energy, or a relaxing vacation—skip it. The isolation of Forest City means maintaining external social relationships takes effort. If you're not comfortable with an intense, fitness-first, ideology-aligned community where your schedule and environment are optimized by design, it'll feel constraining. You need to embrace the 'Proof of Work' culture. If you're not building or seriously exploring, you'll feel out of place.",
+    seo: {
+      title: 'Who Should NOT Go to Network School?',
+      description: 'NS is not for: nightlife seekers, casual tourists, anyone uncomfortable with intense fitness-first culture. Honest guide.',
+      keywords: 'Network School not for, who should avoid NS, NS downsides, honest review',
+    },
+  },
+  {
+    id: 'downsides',
+    category: 'basics',
+    slug: 'downsides',
+    question: 'What are the downsides of Network School?',
+    answer: "Quiet, developing area—not a bustling city. Gender ratio skews 80% male. Some ethnic and language cliques form. Crypto infrastructure is lighter than the marketing suggests. Meal and gym schedules don't accommodate Ramadan. Singapore trips take 1.5–2 hours each way with double immigration. A few members are less social. The heat is relentless. But most people find the tradeoffs worth it for the community, focus, and network.",
+    seo: {
+      title: 'Network School Downsides: Complete Honest Review',
+      description: 'NS downsides: quiet area, 80% male, cliques, limited crypto, heat, border friction. Complete honest review of what to consider.',
+      keywords: 'Network School downsides, NS cons, Network School review, honest',
+    },
+  },
+  // === META CONCEPTS ===
+  {
+    id: 'society-as-service',
+    category: 'basics',
+    slug: 'society-as-service',
+    question: 'What is Society-as-a-Service?',
+    answer: "It's what NS calls itself—an all-in-one package: community, learning, lodging, meals, coworking, fitness, startup opportunities, guest speakers. Instead of piecing together a co-living, a gym, and a coworking space in different cities, it's bundled into one subscription. The idea is that this model can be replicated globally—open-sourced architectural blueprints, clone-stamped like a franchise for startup societies.",
+    seo: {
+      title: 'Society-as-a-Service: What Network School Calls Itself',
+      description: "Society-as-a-Service: NS's all-in-one model—community, lodging, meals, coworking. Replicable globally. What it means.",
+      keywords: 'Society-as-a-Service, Network School, NS model, startup society franchise',
+    },
+  },
+  {
+    id: 'willpower-as-service',
+    category: 'basics',
+    slug: 'willpower-as-service',
+    question: 'What is "Willpower-as-a-Service"?',
+    answer: "NS's term for engineering your environment so peak performance is the default. Modern society optimizes for sedentary behavior and junk food. NS flips it: healthy meals served to you, gym right there with accountability from peers, no distractions from an isolated campus. You don't need individual willpower when the system does it for you. It's the same logic as why it's easier to diet when there's no junk food in the house—scaled to an entire community.",
+    seo: {
+      title: 'Willpower-as-a-Service: How NS Engineers Peak Performance',
+      description: "Willpower-as-a-Service: NS engineers your environment for peak performance. Healthy meals, gym, no distractions. You don't need willpower.",
+      keywords: 'Willpower-as-a-Service, Network School, NS peak performance, environment design',
+    },
+  },
+  {
+    id: 'cohort-timeline',
+    category: 'basics',
+    slug: 'cohort-timeline',
+    question: "What's the long-term vision for Network School?",
+    answer: "Phase by phase: v1 was a 128-person 90-day popup (Sept–Dec 2024), capped at Dunbar's Number for high trust. v2 expanded to 256 for a full year starting March 2025. v3 is a permanent campus nearby for 1,024+ people. v4 is global: open-source the architectural blueprints so anyone can clone-stamp a Network School anywhere—like franchising startup societies. The goal is thousands of Network Schools worldwide.",
+    seo: {
+      title: 'Network School Roadmap: v1 to v4 and Global Expansion',
+      description: "NS roadmap: v1 (128 people), v2 (256), v3 (1,024+ permanent campus), v4 (global franchise). Dunbar's Number to thousands.",
+      keywords: 'Network School roadmap, NS v1 v2 v3 v4, NS expansion, future plans',
+    },
+  },
+  {
+    id: 'expansion',
+    category: 'basics',
+    slug: 'expansion',
+    question: 'Will Network School expand to other locations?',
+    answer: "That's the v4 vision—open-source the model globally. Malaysia's heat and distance from the West limits appeal. Japan, South America, Europe, UAE, and Australia have all been mentioned. The Society-as-a-Service model has found product-market fit; the question is execution. No official announcements yet, but the demand is clearly there based on the 4,000+ applications from 80+ countries.",
+    seo: {
+      title: 'Network School Expansion: Japan, Europe, UAE?',
+      description: 'NS may expand globally—Japan, Europe, South America, UAE mentioned. v4 is open-source franchise model. Future NS locations.',
+      keywords: 'Network School expansion, NS new locations, Network School Japan, NS global',
+    },
+  },
+];
+
+export function getFaqBySlug(slug) {
+  return faqItems.find((item) => item.slug === slug) ?? null;
+}
+
+export function getFaqByCategory(categoryId) {
+  return faqItems.filter((item) => item.category === categoryId);
+}
+
+export function getAllFaqSlugs() {
+  return faqItems.map((item) => item.slug);
+}
+
+export function getQuestionSchema(item, siteUrl) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer,
+        },
+      },
+    ],
+  };
+}
+
+export function getFaqSchema(siteUrl) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+}
