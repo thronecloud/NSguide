@@ -7,11 +7,9 @@ import NotFoundPage from './pages/NotFoundPage';
 
 const AdminPage = lazy(() => import('./pages/AdminPage'));
 
-const basename = import.meta.env.BASE_URL === '/' ? '/' : import.meta.env.BASE_URL.replace(/\/$/, '');
-
 export default function App() {
   return (
-    <BrowserRouter basename={basename}>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/faq/:slug" element={<QuestionPage />} />
