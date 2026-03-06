@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import QuestionPage from './pages/QuestionPage';
+import TermsPage from './pages/TermsPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const AdminPage = lazy(() => import('./pages/AdminPage'));
@@ -12,6 +13,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/faq/:slug" element={<QuestionPage />} />
+        <Route path="/terms" element={<TermsPage />} />
         <Route
           path="/admin"
           element={

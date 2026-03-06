@@ -377,6 +377,25 @@ body {
   margin-bottom: 0;
 }
 
+.question-page h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.question-page h2:first-of-type {
+  margin-top: 1rem;
+}
+
+.question-page a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.question-page a:hover {
+  color: var(--color-accent-hover);
+}
+
 .question-page-back {
   display: inline-block;
   margin-top: 1.5rem;
@@ -468,6 +487,15 @@ body {
   font-size: 0.875rem;
   color: var(--color-text-muted);
   margin: 0;
+}
+
+.footer-copyright a {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+}
+
+.footer-copyright a:hover {
+  color: var(--color-text);
 }
 
 .footer-nav {
