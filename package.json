@@ -1,0 +1,25 @@
+{
+  "name": "nsguide",
+  "private": true,
+  "description": "Network School FAQ — NSguide",
+  "scripts": {
+    "dev": "cd ns-faq && npm run dev",
+    "build": "cd ns-faq && npm run build",
+    "preview": "cd ns-faq && npm run preview",
+
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel",
+    "deploy:logs": "vercel logs",
+
+    "git:status": "git status",
+    "git:add": "git add -A",
+    "git:push": "git add -A && (git diff --cached --quiet || git commit -m \"${npm_config_msg:-Update}\") && git push",
+    "git:pull": "git pull",
+    "git:log": "git log --oneline -10",
+
+    "ship": "npm run build && npm run deploy"
+  },
+  "devDependencies": {
+    "vercel": "^39.0.0"
+  }
+}

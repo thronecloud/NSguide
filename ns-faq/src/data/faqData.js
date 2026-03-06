@@ -90,7 +90,7 @@ export const faqItems = [
     category: 'application',
     slug: 'who-can-join',
     question: 'Who can join?',
-    answer: "Founders, builders, digital nomads, Web3 folks, AI creators—anyone value-aligned and interested in building. NS specifically seeks three archetypes: (1) founders, engineers, designers, investors—the tech engine; (2) trainers, athletes, coaches—the fitness engine; (3) writers, artists, influencers using generative AI—the cultural engine. Age doesn't matter—there are teenage coders and fifty-something professionals. They look for fit, not credentials.",
+    answer: "Founders, builders, digital nomads, Web3 folks, AI creators—anyone value-aligned and interested in building. NS specifically seeks three archetypes: (1) founders, engineers, designers, investors—the tech engine; (2) trainers, athletes, coaches—the fitness engine; (3) writers, artists, influencers using generative AI—the cultural engine. Age doesn't matter—there are teenage coders and fifty-something professionals. Members have seen an 80-year-old and a 7-year-old both have great experiences with daily walks and the community. Anyone fascinated by or curious about tech will fit in regardless of age. They look for fit, not credentials.",
     seo: {
       title: 'Who Can Join Network School? Eligibility & Requirements',
       description: 'Network School welcomes founders, builders, digital nomads, AI creators. Three archetypes sought. No age limit. How selective NS is.',
@@ -239,7 +239,7 @@ export const faqItems = [
     category: 'health',
     slug: 'food',
     question: "What's the food like?",
-    answer: "Three Blueprint-inspired meals are included daily. Breakfast runs 7–10 AM on Level 1—buffet style. Lunch at 11:30 AM is a boxed meal with nutty puddings. Dinner is a hot buffet from 5:30–7:30 PM. Everything is optimized for longevity and cognitive performance—lean proteins, vegetables, nuts, berries. You can check full nutrition facts at ns.com/nutrition. Some people love it; others find it bland compared to their usual diet. Beyond the included meals, the NS Café lets you order extras online at ns.com/food and pick up at the counter. Water stations are throughout the campus, and you can buy NS bottles and mugs at the café. If you want groceries, there are nearby stores that accept GrabPay and foreign credit cards (excluding Amex), plus the hotel provides bottled water.",
+    answer: "Three Blueprint-inspired meals are included daily. Breakfast runs 7–10 AM at the hotel lobby—buffet style. Lunch is a packed boxed meal (dry-style) that you can pick up around 12–2 PM whenever you want to eat; it includes nutty potato and banana pudding, which are delicious and high in protein. Dinner is a hot buffet from 5:30–7:30 PM. There are solid options for both vegetarians and non-vegetarians. Everything is optimized for longevity and cognitive performance—lean proteins, vegetables, nuts, berries. You can check full nutrition facts at ns.com/nutrition. Some people love it; others find it bland compared to their usual diet. Beyond the included meals, the NS Café lets you order extras online at ns.com/food and pick up at the counter. Water stations are throughout the campus, and you can buy NS bottles and mugs at the café. If you want groceries, there are nearby stores that accept GrabPay and foreign credit cards (excluding Amex), plus the hotel provides bottled water.",
     seo: {
       title: 'Network School Food: Blueprint Meals, Café & Groceries',
       description: 'NS includes 3 Blueprint meals daily: buffet breakfast, boxed lunch, hot dinner. NS Café for extras. Groceries nearby. Full food guide.',
@@ -406,11 +406,23 @@ export const faqItems = [
   },
   // === LOGISTICS & LOCATION ===
   {
+    id: 'which-airport',
+    category: 'travel',
+    slug: 'which-airport',
+    question: 'Which airport should I fly into for Network School?',
+    answer: "You have three main options. Singapore Changi is the most connected and best if you have (or can get) a Singapore visa. NS runs a bus from Changi to Forest City on the 1st of every month—ideal for first-time visitors. Johor Bahru (Senai) is about 45 minutes by bus but has fewer flight options; good if you want to avoid a Singapore visa. Kuala Lumpur is a longer journey but works if you can't get a Singapore visa or Johor Bahru flights don't suit you. Grab and cab providers can pick you up from Singapore (some only from the city, not the airport). Cross-border buses run frequently and are the most structured way to reach NS. If you're coming via Singapore for the first time, the NS-organized bus from Changi on the 1st is usually the smoothest option.",
+    seo: {
+      title: 'Which Airport for Network School? Singapore, Johor Bahru, Kuala Lumpur',
+      description: 'Best airports for NS: Singapore Changi, Johor Bahru, Kuala Lumpur. NS bus from Changi on 1st of month. Visa and transport options.',
+      keywords: 'Network School airport, fly to NS, Singapore airport NS, Johor Bahru Forest City',
+    },
+  },
+  {
     id: 'singapore-transport',
     category: 'travel',
     slug: 'singapore-transport',
     question: 'How do I get to Singapore from Network School?',
-    answer: "NS runs regular shuttle services. But be realistic: plan 1.5 to 2 hours each way. You disembark at Malaysian checkpoint, clear exit immigration, cross the bridge, clear Singapore entry immigration, then transit onward. There are also cross-border buses (CW6, FC1) connecting to Singapore's MRT. It works for Token2049, conferences, or weekend trips—but daily commuting is impractical due to double border crossing.",
+    answer: "NS runs regular shuttle services. The bus stand is about a 5-minute walk from NS; buses run roughly every hour to and from Singapore. One-way cost is around 5 MYR to Singapore and around 5 SGD from Singapore to Forest City. The bus drops you at Singapore's MRT, so onward connectivity is excellent. But be realistic: plan 1.5 to 2 hours each way. You disembark at Malaysian checkpoint, clear exit immigration, cross the bridge, clear Singapore entry immigration, then transit onward. There are also cross-border buses (CW6, FC1) connecting to Singapore's MRT. It works for Token2049, conferences, or weekend trips—but daily commuting is impractical due to double border crossing.",
     seo: {
       title: 'Network School to Singapore: Shuttle, Border Crossing & Time',
       description: 'NS shuttles to Singapore: 1.5–2 hours with double immigration. Buses CW6/FC1 to MRT. Weekend trips, not daily commute.',
@@ -432,11 +444,35 @@ export const faqItems = [
     },
   },
   {
+    id: 'restaurants-shops-nearby',
+    category: 'living',
+    slug: 'restaurants-shops-nearby',
+    question: 'What restaurants and shops are near Network School?',
+    answer: "Within walking distance you'll find Thai restaurants, a bar and pub with pool, Singha, and places for Indian, Korean, and Japanese food. There's a good coffee shop nearby. Multiple 24/7 convenience stores within ~200m stock snacks, toiletries, and everyday items. Grab is available 24/7. Online delivery and e-commerce work normally. You won't run short of options.",
+    seo: {
+      title: 'Restaurants & Shops Near Network School | Forest City',
+      description: 'Thai, Indian, Korean, Japanese food, bar, coffee shop, 24/7 stores near NS. Grab and delivery available. What\'s nearby.',
+      keywords: 'Network School restaurants, Forest City food, NS nearby shops, convenience stores NS',
+    },
+  },
+  {
+    id: 'forest-city-isolated',
+    category: 'living',
+    slug: 'forest-city-isolated',
+    question: 'Is Forest City isolated? Can I get food delivery and groceries?',
+    answer: "No. Forest City isn't isolated. Grab runs 24/7. You can order food via apps and use e-commerce for groceries and other items. Multiple 24/7 convenience stores are within ~200m of NS for snacks, toiletries, and everyday essentials. You won't feel cut off.",
+    seo: {
+      title: 'Is Forest City Isolated? Delivery, Grab & Convenience at NS',
+      description: "Forest City isn't isolated. Grab 24/7, food delivery, e-commerce, 24/7 stores within 200m of NS. Full logistics guide.",
+      keywords: 'Forest City isolated, NS delivery, Grab Forest City, convenience stores NS',
+    },
+  },
+  {
     id: 'forest-city',
     category: 'travel',
     slug: 'forest-city',
     question: 'Is Forest City a ghost town?',
-    answer: "It's a developing area—modern buildings, lots of green space, but not densely populated. Many buildings are empty. Media has called it a 'ghost town,' but it's not dirty or chaotic; staff maintain everything. Chinese signage is everywhere (the original target market). NS has created a lively pocket within it. New shops are opening. If you want a bustling city, this isn't it. If you want focus and fewer distractions, it works.",
+    answer: "It's a developing area—modern buildings, lots of green space, but not densely populated. Many buildings are empty. Media has called it a 'ghost town,' but it's not dirty or chaotic—and it's not spooky or abandoned. Thousands of people live in Forest City. Staff maintain everything. Chinese signage is everywhere (the original target market). NS has created a lively pocket within it: Thai restaurants, a bar and pub with pool, Singha, Indian/Korean/Japanese food, a good coffee shop within walking distance, and multiple 24/7 convenience stores within ~200m for snacks, toiletries, and FMCG. Grab runs 24/7; online delivery and e-commerce work normally. New shops are opening. If you want a bustling city, this isn't it. If you want focus and fewer distractions, it works.",
     seo: {
       title: 'Is Forest City a Ghost Town? Network School Location Honest Take',
       description: 'Forest City is developing and quiet—media says ghost town. Modern, maintained. NS creates a lively community within it. Honest take.',
