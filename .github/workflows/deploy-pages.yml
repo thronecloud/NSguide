@@ -1,0 +1,54 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: https://thronecloud.github.io/NSguide/
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: ns-faq/package-lock.json
+
+      - name: Install and build
+        working-directory: ns-faq
+        env:
+          SITE_URL: https://thronecloud.github.io/NSguide
+          VITE_BASE: /NSguide/
+        run: |
+          npm ci
+          npm run build
+
+      - name: Setup Pages (SPA routing)
+        working-directory: ns-faq/dist
+        run: cp index.html 404.html
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ns-faq/dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
