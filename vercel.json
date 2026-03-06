@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd ns-faq && npm run build",
+  "outputDirectory": "ns-faq/dist",
+  "installCommand": "cd ns-faq && npm install",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
