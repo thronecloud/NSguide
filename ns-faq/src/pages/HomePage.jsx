@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 export default function HomePage() {
   const { hash } = useLocation();
   const [activeCategory, setActiveCategory] = useState('all');
-  const [openItemId, setOpenItemId] = useState(null);
+  const [openSlug, setOpenSlug] = useState(null);
 
   useEffect(() => {
     if (hash && hash.startsWith('#faq-')) {
@@ -19,7 +19,7 @@ export default function HomePage() {
       const item = faqItems.find((i) => i.slug === slug);
       if (item) {
         setActiveCategory(item.category);
-        setOpenItemId(item.id);
+        setOpenSlug(item.slug);
         document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
       }
     }
@@ -43,10 +43,10 @@ export default function HomePage() {
           <section className="campus-map" aria-label="Campus map">
             <h2 className="campus-map-title">The Campus</h2>
             <img
-              src="/campus-map.png"
+              src="/campus-map.jpg"
               alt="Forest City campus map showing NS Coworking, NS Lobby, NS Café, and NS Gym locations"
               className="campus-map-img"
-              loading="lazy"
+              fetchPriority="high"
               width="800"
               height="566"
             />
@@ -71,7 +71,7 @@ export default function HomePage() {
                   className={`faq-category-btn ${activeCategory === cat.id ? 'faq-category-btn--active' : ''}`}
                   onClick={() => {
                     setActiveCategory(cat.id);
-                    setOpenItemId(null);
+                    setOpenSlug(null);
                   }}
                 >
                   {cat.label}
@@ -80,32 +80,31 @@ export default function HomePage() {
             </nav>
             <div className="faq-list faq-list--accordion">
               {itemsToShow.map((item) => {
-                const isOpen = openItemId === item.id;
                 return (
                   <div
-                    key={item.id}
+                    key={item.slug}
                     id={`faq-${item.slug}`}
-                    className={`faq-item ${isOpen ? 'faq-item--open' : ''}`}
+                    className={`faq-item ${openSlug === item.slug ? 'faq-item--open' : ''}`}
                   >
                     <button
                       type="button"
                       className="faq-question"
-                      onClick={() => setOpenItemId(isOpen ? null : item.id)}
-                      aria-expanded={isOpen}
-                      aria-controls={`faq-answer-${item.id}`}
-                      id={`faq-question-${item.id}`}
+                      onClick={() => setOpenSlug(openSlug === item.slug ? null : item.slug)}
+                      aria-expanded={openSlug === item.slug}
+                      aria-controls={`faq-answer-${item.slug}`}
+                      id={`faq-question-${item.slug}`}
                     >
                       <span className="faq-link-question">{item.question}</span>
                       <span className="faq-chevron" aria-hidden="true">
-                        {isOpen ? '−' : '+'}
+                        {openSlug === item.slug ? '−' : '+'}
                       </span>
                     </button>
                     <div
-                      id={`faq-answer-${item.id}`}
+                      id={`faq-answer-${item.slug}`}
                       className="faq-answer"
                       role="region"
-                      aria-labelledby={`faq-question-${item.id}`}
-                      hidden={!isOpen}
+                      aria-labelledby={`faq-question-${item.slug}`}
+                      hidden={openSlug !== item.slug}
                     >
                       <p>{item.answer}</p>
                       {((item.ctaText && item.ctaUrl) || (SHOW_REFERRAL_CTA_ON_ALL_FAQS && REFERRAL_URL)) && (

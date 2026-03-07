@@ -1,29 +1,24 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import QuestionPage from './pages/QuestionPage';
-import TermsPage from './pages/TermsPage';
-import NotFoundPage from './pages/NotFoundPage';
 
+const QuestionPage = lazy(() => import('./pages/QuestionPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const AdminPage = lazy(() => import('./pages/AdminPage'));
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/faq/:slug" element={<QuestionPage />} />
-        <Route path="/terms" element={<TermsPage />} />
-        <Route
-          path="/admin"
-          element={
-            <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading admin...</div>}>
-              <AdminPage />
-            </Suspense>
-          }
-        />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/faq/:slug" element={<QuestionPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

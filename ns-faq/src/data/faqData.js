@@ -482,8 +482,6 @@ export const faqItems = [
     imageAlt: 'Typographic illustration: How do I get around Forest City?',
     question: 'How do I get around Forest City?',
     answer: "Mostly Grab—ride-hailing is the main option. Public transport is limited. The area is developing, so daily convenience isn't like Singapore. That said, the core NS facilities—Coworking, Lobby, Café, and Gym—are all walkable within the Forest City complex (see map below). You're not constantly moving around; the campus is self-contained. Bring some Malaysian ringgit for Grab rides and local errands.",
-    image: '/campus-map.png',
-    imageAlt: 'Forest City campus map showing NS Coworking, NS Lobby, NS Café, and NS Gym locations',
     seo: {
       title: 'Getting Around Forest City at Network School',
       description: 'Forest City: Grab for rides, limited public transit. NS campus is walkable. How to get around. Bring ringgit.',

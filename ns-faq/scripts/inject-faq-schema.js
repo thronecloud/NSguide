@@ -11,9 +11,8 @@ config({ path: path.join(root, '.env.production') });
 config({ path: path.join(root, '.env') });
 
 const { getFaqSchema } = await import('../src/data/faqData.js');
-const { SITE_URL } = await import('../src/config.js');
 
-const schema = getFaqSchema(SITE_URL);
+const schema = getFaqSchema();
 const schemaJson = JSON.stringify(schema);
 
 const indexPath = path.join(__dirname, '../index.html');
