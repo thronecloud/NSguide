@@ -219,13 +219,7 @@ body {
   gap: 0.5rem;
 }
 
-.faq-list--accordion {
-  gap: 0.5rem;
-}
 
-.faq-list--accordion .faq-item {
-  margin-bottom: 0;
-}
 
 .faq-item {
   border-radius: 8px;
@@ -298,38 +292,9 @@ body {
   color: var(--color-text-muted);
 }
 
-/* FAQ index (list of links to question pages) */
-.faq-list--links {
-  gap: 0;
-}
-
-.faq-link-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
-  text-decoration: none;
-  color: var(--color-text);
-  background-color: var(--color-faq-inactive);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  margin-bottom: 0.5rem;
-  transition: background-color 0.2s;
-}
-
-.faq-link-item:hover {
-  background-color: var(--color-faq-active);
-}
 
 .faq-link-question {
   font-weight: 600;
-  font-size: 1rem;
-}
-
-.faq-link-arrow {
-  flex-shrink: 0;
-  color: var(--color-text-muted);
   font-size: 1rem;
 }
 
@@ -498,20 +463,7 @@ body {
   color: var(--color-text);
 }
 
-.footer-nav {
-  display: flex;
-  gap: 1.5rem;
-}
 
-.footer-nav a {
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
-  text-decoration: none;
-}
-
-.footer-nav a:hover {
-  color: var(--color-text);
-}
 
 /* Campus map */
 .campus-map {
@@ -539,13 +491,33 @@ body {
 }
 
 /* Responsive */
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.75rem;
+  }
+
+  .main {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .question-page-title {
+    font-size: 1.5rem;
+  }
+}
+
 @media (max-width: 640px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   .hero-pills {
     flex-direction: column;
+    gap: 0.5rem;
   }
 
   .pill {
@@ -553,8 +525,50 @@ body {
     text-align: center;
   }
 
+  .faq-question {
+    font-size: 0.95rem;
+    padding: 0.875rem 1rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.9rem;
+  }
+
+  .faq-categories {
+    gap: 0.5rem;
+  }
+
+  .faq-category-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .cta {
+    padding: 1.5rem 1rem;
+  }
+
   .footer-inner {
     flex-direction: column;
     text-align: center;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .btn-apply {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .question-page-title {
+    font-size: 1.25rem;
   }
 }
