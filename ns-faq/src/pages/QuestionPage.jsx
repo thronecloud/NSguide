@@ -62,7 +62,6 @@ export default function QuestionPage() {
             </nav>
             <h1 className="question-page-title">{question}</h1>
             <div className="question-page-answer">
-              <p>{answer}</p>
               {image && (
                 <figure className="question-page-figure">
                   <img
@@ -73,11 +72,9 @@ export default function QuestionPage() {
                     width="800"
                     height="566"
                   />
-                  <figcaption className="question-page-figcaption">
-                    {imageAlt || question}
-                  </figcaption>
                 </figure>
               )}
+              <p>{answer}</p>
               {((ctaText && ctaUrl) || (SHOW_REFERRAL_CTA_ON_ALL_FAQS && REFERRAL_URL)) && (
                 <p>
                   <a
