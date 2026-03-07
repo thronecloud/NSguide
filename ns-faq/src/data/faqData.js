@@ -25,9 +25,10 @@ export const FAQ_CATEGORIES = [
 export const faqItems = [
   // === BASICS ===
   {
-    id: 'what-is-network-school',
     category: 'basics',
     slug: 'what-is-network-school',
+    image: '/images/faq-illustrations/what-is-network-school.png',
+    imageAlt: 'Typographic illustration: What is Network School?',
     question: 'What is Network School?',
     answer: "Network School (NS) is a startup society—sometimes called 'Society-as-a-Service'—where builders, founders, and remote workers live together on a campus near Singapore. Think of it as a first-mover community: you're surrounded by people building in tech, Web3, and AI. It's not a formal school with grades or credentials—it's more like a luxury hacker house meets co-living meets startup boot camp. The idea is to turn online communities into physical ones, and it's the live pilot for the broader 'Network State' thesis.",
     seo: {
@@ -37,9 +38,10 @@ export const faqItems = [
     },
   },
   {
-    id: 'where-located',
     category: 'travel',
     slug: 'where-located',
+    image: '/images/faq-illustrations/where-located.png',
+    imageAlt: 'Typographic illustration: Where is Network School located?',
     question: 'Where is Network School located?',
     answer: "NS is in Forest City, Malaysia—a $100 billion megaproject by China's Country Garden, built on artificial islands in the Johor Strait, about an hour from Singapore. The development was originally a luxury enclave for foreign investors, but market shifts left it largely empty. NS leases the undervalued luxury infrastructure—towering high-rises, marble lobbies, ocean views—at a fraction of what comparable facilities would cost in any major city. It's peaceful, green, and isolated, which is the point: fewer distractions, more focus. Singapore is close enough for conferences and city trips, and NS runs regular shuttle services.",
     seo: {
@@ -49,9 +51,10 @@ export const faqItems = [
     },
   },
   {
-    id: 'how-much-cost',
     category: 'basics',
     slug: 'how-much-cost',
+    image: '/images/faq-illustrations/how-much-cost.png',
+    imageAlt: 'Typographic illustration: How much does Network School cost?',
     question: 'How much does Network School cost?',
     answer: "It's $1,500/month for a double room (shared) or $3,000/month for a single room. That covers housing, three meals a day, gym access, coworking, Starlink internet, room cleaning, laundry, and all courses and events. The café and vending machines are optional extras. For context, that's less than rent alone in SF or Singapore—and you're getting food, gym, and coworking bundled in. Day passes are also available if you're just visiting.",
     seo: {
@@ -61,9 +64,10 @@ export const faqItems = [
     },
   },
   {
-    id: 'whats-included',
     category: 'living',
     slug: 'whats-included',
+    image: '/images/faq-illustrations/whats-included.png',
+    imageAlt: "Typographic illustration: What's included in the fee?",
     question: "What's included in the fee?",
     answer: "Pretty much everything: accommodation (rooms upwards of 50 sqm with ocean-view balconies), three Blueprint meals a day, 24/7 gym, coworking spaces, Starlink high-speed internet, room cleaning, laundry, workshops, and community events. The café and vending machines are separate if you want extra coffee or snacks. You get access to meeting rooms, a library, yoga space, and the whole campus. Zero domestic friction—you don't cook, clean, or deal with logistics.",
     seo: {
@@ -73,7 +77,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'how-long',
     category: 'basics',
     slug: 'how-long',
     question: 'How long can I stay?',
@@ -86,7 +89,6 @@ export const faqItems = [
   },
   // === APPLICATION & ADMISSIONS ===
   {
-    id: 'who-can-join',
     category: 'application',
     slug: 'who-can-join',
     question: 'Who can join?',
@@ -98,7 +100,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'how-selective',
     category: 'application',
     slug: 'how-selective',
     question: 'How selective is Network School?',
@@ -110,7 +111,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'how-to-apply',
     category: 'application',
     slug: 'how-to-apply',
     question: 'How do I apply?',
@@ -124,7 +124,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'application-pipeline',
     category: 'application',
     slug: 'application-pipeline',
     question: 'What is the "Form, Zoom, Room, Boom" process?',
@@ -136,7 +135,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'referral-needed',
     category: 'application',
     slug: 'referral-needed',
     question: 'Do I need a referral to get in?',
@@ -149,7 +147,6 @@ export const faqItems = [
   },
   // === THE FOUR PILLARS ===
   {
-    id: 'learn-earn-burn',
     category: 'working',
     slug: 'learn-earn-burn',
     question: 'What is Learn, Earn, Burn, and Fun?',
@@ -161,7 +158,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'typical-day',
     category: 'working',
     slug: 'typical-day',
     question: "What's a typical day at Network School?",
@@ -174,7 +170,6 @@ export const faqItems = [
   },
   // === LEARNING & EARNING ===
   {
-    id: 'is-it-a-school',
     category: 'working',
     slug: 'is-it-a-school',
     question: 'Is Network School actually a school?',
@@ -186,7 +181,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'learning-tracks',
     category: 'working',
     slug: 'learning-tracks',
     question: 'What learning tracks are available?',
@@ -198,7 +192,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'cryptocredentials',
     category: 'working',
     slug: 'cryptocredentials',
     question: 'What are cryptocredentials?',
@@ -210,7 +203,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'earning-bounties',
     category: 'working',
     slug: 'earning-bounties',
     question: 'Can I earn money while at Network School?',
@@ -222,7 +214,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'fellowship',
     category: 'working',
     slug: 'fellowship',
     question: 'What is the NS Fellowship?',
@@ -235,7 +226,6 @@ export const faqItems = [
   },
   // === FITNESS & FOOD ===
   {
-    id: 'food',
     category: 'health',
     slug: 'food',
     question: "What's the food like?",
@@ -247,7 +237,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'gym',
     category: 'health',
     slug: 'gym',
     question: "What's the gym like?",
@@ -259,7 +248,17 @@ export const faqItems = [
     },
   },
   {
-    id: 'haven',
+    category: 'health',
+    slug: 'sports-availability',
+    question: 'What sports are available at Network School?',
+    answer: "NS has solid sports options. On campus, there's a very nice table tennis table—great for quick games. Inside the gym, the space is spacious enough that people set up nets and play badminton regularly; it's a popular choice. Within about 100 meters of NS there's a basketball court with infrastructure to put up nets—some members use it for pickleball too. At least two swimming pools are very close and easily accessible. Combined with the gym (weights, cardio, HIIT), you've got table tennis, badminton, basketball, pickleball, and swimming all within reach.",
+    seo: {
+      title: 'Sports at Network School: TT, Badminton, Basketball, Pickleball, Swimming',
+      description: 'NS sports: table tennis, badminton in gym, basketball court and pickleball within 100m, swimming pools nearby. Full sports guide.',
+      keywords: 'Network School sports, NS table tennis, badminton NS, basketball pickleball swimming NS',
+    },
+  },
+  {
     category: 'health',
     slug: 'haven',
     question: 'What is NS Haven?',
@@ -271,7 +270,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'alcohol',
     category: 'health',
     slug: 'alcohol',
     question: 'Is alcohol common at Network School?',
@@ -284,7 +282,6 @@ export const faqItems = [
   },
   // === ROOMS & INFRASTRUCTURE ===
   {
-    id: 'rooms',
     category: 'living',
     slug: 'rooms',
     question: 'What are the rooms like?',
@@ -296,7 +293,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'cleaning-laundry',
     category: 'living',
     slug: 'cleaning-laundry',
     question: 'Is room cleaning and laundry included?',
@@ -308,7 +304,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'pods-offices',
     category: 'living',
     slug: 'pods-offices',
     question: 'Are there private pods or offices at Network School?',
@@ -320,7 +315,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'internet',
     category: 'living',
     slug: 'internet',
     question: 'How fast is the internet at Network School?',
@@ -333,7 +327,6 @@ export const faqItems = [
   },
   // === COMMUNITY & CULTURE ===
   {
-    id: 'who-attends',
     category: 'community',
     slug: 'who-attends',
     question: 'What kind of people attend?',
@@ -345,7 +338,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'dark-talent',
     category: 'community',
     slug: 'dark-talent',
     question: 'What is "Dark Talent"?',
@@ -357,7 +349,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'gender-ratio',
     category: 'community',
     slug: 'gender-ratio',
     question: "What's the gender ratio?",
@@ -369,7 +360,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'culture',
     category: 'community',
     slug: 'culture',
     question: "What's the culture like?",
@@ -381,7 +371,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'ethnic-cliques',
     category: 'community',
     slug: 'ethnic-cliques',
     question: 'Are there cliques or is it hard to break in?',
@@ -393,7 +382,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'political',
     category: 'community',
     slug: 'political',
     question: 'Is Network School political?',
@@ -406,7 +394,6 @@ export const faqItems = [
   },
   // === LOGISTICS & LOCATION ===
   {
-    id: 'which-airport',
     category: 'travel',
     slug: 'which-airport',
     question: 'Which airport should I fly into for Network School?',
@@ -418,7 +405,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'singapore-transport',
     category: 'travel',
     slug: 'singapore-transport',
     question: 'How do I get to Singapore from Network School?',
@@ -430,7 +416,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'getting-around',
     category: 'travel',
     slug: 'getting-around',
     question: 'How do I get around Forest City?',
@@ -444,7 +429,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'restaurants-shops-nearby',
     category: 'living',
     slug: 'restaurants-shops-nearby',
     question: 'What restaurants and shops are near Network School?',
@@ -456,7 +440,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'forest-city-isolated',
     category: 'living',
     slug: 'forest-city-isolated',
     question: 'Is Forest City isolated? Can I get food delivery and groceries?',
@@ -468,7 +451,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'forest-city',
     category: 'travel',
     slug: 'forest-city',
     question: 'Is Forest City a ghost town?',
@@ -480,7 +462,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'crypto-adoption',
     category: 'working',
     slug: 'crypto-adoption',
     question: 'How much crypto is used at Network School?',
@@ -493,7 +474,6 @@ export const faqItems = [
   },
   // === VISAS & LEGAL ===
   {
-    id: 'visa-requirements',
     category: 'visas',
     slug: 'visa-requirements',
     question: 'Do I need a visa?',
@@ -505,7 +485,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'de-rantau',
     category: 'visas',
     slug: 'de-rantau',
     question: 'What is the DE Rantau Digital Nomad Pass?',
@@ -517,7 +496,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'visa-runs',
     category: 'visas',
     slug: 'visa-runs',
     question: 'Are visa runs viable?',
@@ -529,7 +507,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'health-insurance',
     category: 'visas',
     slug: 'health-insurance',
     question: 'Do I need health insurance?',
@@ -541,7 +518,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'medical-facilities',
     category: 'visas',
     slug: 'medical-facilities',
     question: 'What medical and healthcare facilities are near Network School?',
@@ -553,7 +529,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'visa-singapore',
     category: 'visas',
     slug: 'visa-singapore',
     question: 'Good for digital nomads with Singapore visa issues?',
@@ -566,7 +541,6 @@ export const faqItems = [
   },
   // === PROGRAMS & EVENTS ===
   {
-    id: 'programs-events',
     category: 'working',
     slug: 'programs-events',
     question: 'What programs and events run at Network School?',
@@ -578,7 +552,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'daily-events-sessions',
     category: 'working',
     slug: 'daily-events-sessions',
     question: 'What kind of daily events and sessions happen at NS?',
@@ -591,7 +564,6 @@ export const faqItems = [
   },
   // === FAMILY & SPECIAL NEEDS ===
   {
-    id: 'bring-family',
     category: 'basics',
     slug: 'bring-family',
     question: 'Can I bring my family?',
@@ -603,7 +575,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'ramadan',
     category: 'basics',
     slug: 'ramadan',
     question: 'Is Network School good for Ramadan?',
@@ -616,7 +587,6 @@ export const faqItems = [
   },
   // === PAYMENTS ===
   {
-    id: 'payment-cards',
     category: 'basics',
     slug: 'payment-cards',
     question: 'Can I use credit cards?',
@@ -629,7 +599,6 @@ export const faqItems = [
   },
   // === ROI & COMPARISON ===
   {
-    id: 'roi-comparison',
     category: 'basics',
     slug: 'roi-comparison',
     question: "What's the ROI vs a university or coding bootcamp?",
@@ -641,7 +610,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'what-makes-different',
     category: 'basics',
     slug: 'what-makes-different',
     question: 'What makes NS different from YC or accelerators?',
@@ -654,7 +622,6 @@ export const faqItems = [
   },
   // === SAFETY & DOWNSIDES ===
   {
-    id: 'is-it-safe',
     category: 'basics',
     slug: 'is-it-safe',
     question: 'Is Network School safe?',
@@ -666,7 +633,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'who-should-not-go',
     category: 'basics',
     slug: 'who-should-not-go',
     question: 'Who should NOT go to Network School?',
@@ -678,7 +644,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'downsides',
     category: 'basics',
     slug: 'downsides',
     question: 'What are the downsides of Network School?',
@@ -691,7 +656,6 @@ export const faqItems = [
   },
   // === META CONCEPTS ===
   {
-    id: 'society-as-service',
     category: 'basics',
     slug: 'society-as-service',
     question: 'What is Society-as-a-Service?',
@@ -703,7 +667,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'willpower-as-service',
     category: 'basics',
     slug: 'willpower-as-service',
     question: 'What is "Willpower-as-a-Service"?',
@@ -715,7 +678,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'cohort-timeline',
     category: 'basics',
     slug: 'cohort-timeline',
     question: "What's the long-term vision for Network School?",
@@ -727,7 +689,6 @@ export const faqItems = [
     },
   },
   {
-    id: 'expansion',
     category: 'basics',
     slug: 'expansion',
     question: 'Will Network School expand to other locations?',
@@ -752,7 +713,7 @@ export function getAllFaqSlugs() {
   return faqItems.map((item) => item.slug);
 }
 
-export function getQuestionSchema(item, siteUrl) {
+export function getQuestionSchema(item) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -769,7 +730,7 @@ export function getQuestionSchema(item, siteUrl) {
   };
 }
 
-export function getFaqSchema(siteUrl) {
+export function getFaqSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',

@@ -20,9 +20,10 @@ function generateFaqDataJs(items) {
     .map((item) => {
       const j = (s) => JSON.stringify(s ?? '');
       const base = `  {
-    id: ${j(item.id)},
     category: ${j(item.category || 'basics')},
     slug: ${j(item.slug)},
+    image: ${j(item.image)},
+    imageAlt: ${j(item.imageAlt)},
     question: ${j(item.question)},
     answer: ${j(item.answer)},
     seo: {
@@ -48,7 +49,7 @@ function generateFaqDataJs(items) {
  * Tone: conversational and personal. Includes honest downsides.
  *
  * To add a new question, add an object with:
- *   id, slug (URL-friendly), question, answer, category,
+ *   slug (URL-friendly), question, answer, category,
  *   seo: { title, description, keywords }
  * Optional: ctaText, ctaUrl for apply-related FAQs
  */
@@ -82,7 +83,7 @@ export function getAllFaqSlugs() {
 /**
  * Generate FAQPage JSON-LD schema for a single question (for question pages)
  */
-export function getQuestionSchema(item, siteUrl) {
+export function getQuestionSchema(item) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -102,7 +103,7 @@ export function getQuestionSchema(item, siteUrl) {
 /**
  * Generate FAQPage JSON-LD schema for the index (lists all questions)
  */
-export function getFaqSchema(siteUrl) {
+export function getFaqSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -120,12 +121,13 @@ export function getFaqSchema(siteUrl) {
 }
 
 const emptyItem = () => ({
-  id: '',
   slug: '',
   question: '',
   answer: '',
   category: 'basics',
   seo: { title: '', description: '', keywords: '' },
+  image: '',
+  imageAlt: '',
   ctaText: '',
   ctaUrl: '',
 });
@@ -134,7 +136,6 @@ function normalizeItem(item) {
   const ctaUrl = item.ctaUrl === REFERRAL_URL || item.ctaUrl === 'REFERRAL_URL' ? REFERRAL_URL : item.ctaUrl || '';
   return {
     ...item,
-    id: item.id || slugify(item.question) || 'new-faq',
     slug: item.slug || slugify(item.question) || 'new-faq',
     category: item.category || 'basics',
     seo: {
@@ -142,6 +143,8 @@ function normalizeItem(item) {
       description: item.seo?.description || '',
       keywords: item.seo?.keywords || '',
     },
+    image: item.image || '',
+    imageAlt: item.imageAlt || '',
     ctaText: item.ctaText || '',
     ctaUrl: item.ctaText ? ctaUrl : '',
   };
@@ -209,7 +212,7 @@ export default function AdminPage() {
   };
 
   const openEdit = (item) => {
-    setEditing(item.id);
+    setEditing(item.slug);
     setFormData({
       ...item,
       ctaUrl: item.ctaUrl && item.ctaText ? REFERRAL_URL : '',
@@ -225,7 +228,6 @@ export default function AdminPage() {
     e.preventDefault();
     const normalized = normalizeItem({
       ...formData,
-      id: formData.id || slugify(formData.question),
       slug: formData.slug || slugify(formData.question),
       ctaUrl: formData.ctaText ? REFERRAL_URL : '',
     });
@@ -234,16 +236,16 @@ export default function AdminPage() {
       setItems((prev) => [...prev, normalized]);
     } else {
       setItems((prev) =>
-        prev.map((i) => (i.id === editing ? normalized : i))
+        prev.map((i) => (i.slug === editing ? normalized : i))
       );
     }
     setHasChanges(true);
     closeForm();
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = (slug) => {
     if (confirm('Delete this FAQ?')) {
-      setItems((prev) => prev.filter((i) => i.id !== id));
+      setItems((prev) => prev.filter((i) => i.slug !== slug));
       setHasChanges(true);
       closeForm();
     }
@@ -308,9 +310,6 @@ export default function AdminPage() {
       }
       if (field === 'question' && !prev.slug) {
         next.slug = slugify(value);
-      }
-      if (field === 'question' && !prev.id) {
-        next.id = slugify(value);
       }
       return next;
     });
@@ -399,23 +398,13 @@ export default function AdminPage() {
                   ))}
                 </select>
               </div>
-              <div className="form-row">
-                <div className="form-group">
-                  <label>ID (URL-friendly)</label>
-                  <input
-                    value={formData.id}
-                    onChange={(e) => updateForm('id', e.target.value)}
-                    placeholder="what-is-network-school"
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Slug</label>
-                  <input
-                    value={formData.slug}
-                    onChange={(e) => updateForm('slug', e.target.value)}
-                    placeholder="what-is-network-school"
-                  />
-                </div>
+              <div className="form-group">
+                <label>Slug (URL-friendly)</label>
+                <input
+                  value={formData.slug}
+                  onChange={(e) => updateForm('slug', e.target.value)}
+                  placeholder="what-is-network-school"
+                />
               </div>
               <div className="form-group">
                 <label>Answer</label>
@@ -452,6 +441,22 @@ export default function AdminPage() {
                 />
               </div>
               <div className="form-group">
+                <label>Image URL</label>
+                <input
+                  value={formData.image || ''}
+                  onChange={(e) => updateForm('image', e.target.value)}
+                  placeholder="/images/faq-illustrations/example.png"
+                />
+              </div>
+              <div className="form-group">
+                <label>Image Alt Text</label>
+                <input
+                  value={formData.imageAlt || ''}
+                  onChange={(e) => updateForm('imageAlt', e.target.value)}
+                  placeholder="Illustration describing the FAQ"
+                />
+              </div>
+              <div className="form-group">
                 <label>
                   <input
                     type="checkbox"
@@ -477,7 +482,7 @@ export default function AdminPage() {
                 {editing !== 'new' && (
                   <button
                     type="button"
-                    onClick={() => handleDelete(formData.id)}
+                    onClick={() => handleDelete(formData.slug)}
                     className="btn-danger"
                   >
                     Delete
@@ -501,7 +506,7 @@ export default function AdminPage() {
           <p className="admin-drag-hint">Drag items to reorder. Order is preserved when you export.</p>
           {items.map((item, index) => (
             <div
-              key={item.id}
+              key={item.slug}
               className="admin-item"
               draggable
               onDragStart={(e) => handleDragStart(e, index)}
@@ -517,7 +522,7 @@ export default function AdminPage() {
               <div className="admin-item-actions">
                 <button onClick={() => openEdit(item)}>Edit</button>
                 <button
-                  onClick={() => handleDelete(item.id)}
+                  onClick={() => handleDelete(item.slug)}
                   className="btn-danger-sm"
                 >
                   Delete

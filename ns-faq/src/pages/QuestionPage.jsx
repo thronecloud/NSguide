@@ -33,7 +33,7 @@ export default function QuestionPage() {
 
   const { question, answer, seo, ctaText, ctaUrl, image, imageAlt } = item;
   const pageUrl = `${SITE_URL}/faq/${slug}`;
-  const schema = getQuestionSchema(item, SITE_URL);
+  const schema = getQuestionSchema(item);
 
   return (
     <>
@@ -74,7 +74,7 @@ export default function QuestionPage() {
                     height="566"
                   />
                   <figcaption className="question-page-figcaption">
-                    Forest City campus: NS Coworking, Lobby, Café, and Gym — all walkable.
+                    {imageAlt || question}
                   </figcaption>
                 </figure>
               )}
