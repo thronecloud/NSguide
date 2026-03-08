@@ -5,6 +5,7 @@ import { SITE_URL, REFERRAL_URL, SHOW_REFERRAL_CTA_ON_ALL_FAQS } from '../config
 import { faqItems, FAQ_CATEGORIES, getFaqByCategory } from '../data/faqData';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
+import NSQuiz from '../components/NSQuiz';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 
@@ -40,6 +41,7 @@ export default function HomePage() {
         <Header />
         <main className="main">
           <Hero />
+          <NSQuiz />
           <section className="campus-map" aria-label="Campus map">
             <h2 className="campus-map-title">The Campus</h2>
             <img
