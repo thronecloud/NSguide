@@ -863,3 +863,58 @@ body {
     scroll-snap-align: start;
   }
 }
+
+/* Photo Carousel Controls */
+.photo-carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+  padding: 0 1.5rem;
+}
+
+.photo-carousel-title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-carousel-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-control-btn {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  border: 2px solid var(--color-text);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+  box-shadow: 2px 2px 0 var(--color-text);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.carousel-control-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--color-text);
+}
+
+.carousel-control-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--color-text);
+}
+
+@media (max-width: 768px) {
+  .photo-carousel-controls {
+    display: none; /* Hide on mobile since native swiping is better */
+  }
+  .photo-carousel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
