@@ -243,11 +243,13 @@ export const faqItems = [
     image: '/images/faq-illustrations/fellowship.png',
     imageAlt: 'Typographic illustration: What is the NS Fellowship?',
     question: 'What is the NS Fellowship?',
-    answer: "A $100,000 funding package for top-tier applicants to bootstrap or accelerate a startup. The condition: relocate to the NS campus for one year. Startups are typically incorporated in Singapore, leveraging its legal framework and VC proximity. It's closer to a seed round than a scholarship—you get capital, a zero-friction building environment, potential co-founders, and early-adopter beta-testers all under one roof.",
+    answer: "$100K. 100 fellows. 1 year. The Network School Fellowship is for founders and creators from around the world. Anyone from anywhere can apply online in ten minutes. If accepted, you will receive $100k in funding for a new or existing venture. Fellows will relocate to our Network School campus on an island near Singapore for one year to focus on their projects and lock in.",
+    ctaText: 'Apply for Fellowship',
+    ctaUrl: 'https://ns.com/fellowship',
     seo: {
       title: 'Network School Fellowship: $100K Startup Funding',
-      description: 'NS Fellowship gives $100K to build a startup on campus for one year. Singapore incorporation. Seed round, not scholarship.',
-      keywords: 'Network School Fellowship, $100K funding, NS startup, Fellowship application',
+      description: 'The Network School Fellowship is for founders and creators. Receive $100k in funding to relocate to NS campus for one year to focus on your project.',
+      keywords: 'Network School Fellowship, $100K funding, NS startup, Fellowship application, founder funding',
     },
   },
   // === FITNESS & FOOD ===
