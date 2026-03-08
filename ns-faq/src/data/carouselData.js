@@ -1,42 +1,42 @@
 export const lifeAtNSImages = [
     {
-        src: '/images/life/placeholder-1.jpg',
+        src: '/images/life/image-1.webp',
         alt: 'Network School Coworking Space'
     },
     {
-        src: '/images/life/placeholder-2.jpg',
-        alt: 'Network School Gym and Fitness Combine'
+        src: '/images/life/image-2.jpg',
+        alt: 'Network School Balaji Srinivasan'
     },
     {
-        src: '/images/life/placeholder-3.jpg',
-        alt: 'Community Dinner at Network School'
+        src: '/images/life/image-3.png',
+        alt: 'Network School Campus'
     },
     {
-        src: '/images/life/placeholder-4.jpg',
+        src: '/images/life/image-4.webp',
         alt: 'Founders building in the Network School Lobby'
     },
     {
-        src: '/images/life/placeholder-5.jpg',
+        src: '/images/life/image-5.png',
         alt: 'Network School Forest City Campus Exterior'
     },
     {
-        src: '/images/life/placeholder-6.jpg',
+        src: '/images/life/image-6.jpg',
         alt: 'Peer to Peer Learning Session'
     },
     {
-        src: '/images/life/placeholder-7.jpg',
+        src: '/images/life/image-7.jpg',
         alt: 'Network School Library'
     },
     {
-        src: '/images/life/placeholder-8.jpg',
+        src: '/images/life/image-8.png',
         alt: 'Network School Haven Wellness Area'
     },
     {
-        src: '/images/life/placeholder-9.jpg',
+        src: '/images/life/image-9.png',
         alt: 'Network School Cafe'
     },
     {
-        src: '/images/life/placeholder-10.jpg',
+        src: '/images/life/image-10.png',
         alt: 'Network School Hackathon'
     }
 ];
