@@ -104,7 +104,7 @@ export function getQuizResult(score) {
     } else if (score >= 50) {
         return {
             title: "The Explorer (Solid Fit)",
-            description: "You'll likely have a great time here, but you should temper your expectations. The community will be fantastic for you, but you might occasionally struggle with the isolation, the heavily male demographic, or the lack of traditional city infrastructure. Come for 30 days before committing to a year.",
+            description: "You'll likely have a great time here, but you should temper your expectations. The community will be fantastic for you, but you might occasionally struggle with the isolation, the unstructured schedule, or the lack of traditional city infrastructure. Come for 30 days before committing to a year.",
             callToAction: "Read What to Expect",
             link: "#faq-where-located",
             statusColor: "#4caf50" // A nice supportive green
