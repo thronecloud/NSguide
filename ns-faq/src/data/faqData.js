@@ -530,6 +530,19 @@ export const faqItems = [
     },
   },
   {
+    category: 'travel',
+    slug: 'sim-card-internet',
+    image: '/images/faq-illustrations/internet.png',
+    imageAlt: 'Typographic illustration: Internet and connectivity at Network School',
+    question: 'Do I get a SIM card or mobile data at Network School?',
+    answer: "Yes. When you arrive at Network School, you will be given a local physical SIM card that usually has enough data to last for a month. If you want connectivity immediately upon landing in Singapore or Malaysia, you can buy a digital eSIM at the airport, but rest assured that NS does provide a physical SIM card with internet access.",
+    seo: {
+      title: 'SIM Cards & Mobile Data at Network School',
+      description: 'Network School provides a local SIM card with a month of data upon arrival. You can also purchase eSIMs at the airport for immediate connectivity.',
+      keywords: 'Network School SIM card, NS mobile data, internet Forest City, eSIM Malaysia',
+    },
+  },
+  {
     category: 'working',
     slug: 'crypto-adoption',
     image: '/images/faq-illustrations/crypto-adoption.png',
