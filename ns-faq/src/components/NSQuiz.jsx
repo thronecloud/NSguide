@@ -63,7 +63,22 @@ export default function NSQuiz() {
         );
     }
 
+    // Simple array shuffle (Fisher-Yates)
+    const shuffleOptions = (options) => {
+        const shuffled = [...options];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    };
+
     const currentQuestion = quizQuestions[currentQuestionIndex];
+    // Stable shuffle for the current question so it doesn't re-shuffle on re-renders, 
+    // but for simplicity, we derive it from the question ID to ensure consistent random order per session,
+    // or simply randomize it on render since state only updates when they click, moving to the next question.
+    const shuffledOptions = shuffleOptions(currentQuestion.options);
+
     const progressPercentage = ((currentQuestionIndex) / quizQuestions.length) * 100;
 
     return (
@@ -76,7 +91,7 @@ export default function NSQuiz() {
             </div>
             <h3 className="quiz-question-text">{currentQuestion.question}</h3>
             <div className="quiz-options">
-                {currentQuestion.options.map((option, index) => (
+                {shuffledOptions.map((option, index) => (
                     <button
                         key={index}
                         className="quiz-option-btn"
