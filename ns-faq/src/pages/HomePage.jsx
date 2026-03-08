@@ -6,6 +6,7 @@ import { faqItems, FAQ_CATEGORIES, getFaqByCategory } from '../data/faqData';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import NSQuiz from '../components/NSQuiz';
+import PhotoCarousel from '../components/PhotoCarousel';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 
@@ -42,6 +43,7 @@ export default function HomePage() {
         <main className="main">
           <Hero />
           <NSQuiz />
+          <PhotoCarousel />
           <section className="campus-map" aria-label="Campus map">
             <h2 className="campus-map-title">The Campus</h2>
             <img

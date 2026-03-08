@@ -758,3 +758,108 @@ body {
     font-size: 1.25rem;
   }
 }
+
+/* NS Photo Carousel Styles */
+.photo-carousel-section {
+  max-width: var(--max-width);
+  margin: 0 auto 4rem auto;
+  padding: 0 1rem;
+}
+
+.photo-carousel-header {
+  margin-bottom: 1.5rem;
+  padding: 0 1.5rem;
+}
+
+.photo-carousel-title {
+  font-family: var(--font-decorative);
+  font-size: 3rem;
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.photo-carousel-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  margin: 0.5rem 0 0 0;
+}
+
+.photo-carousel-container {
+  /* This enables the horizontal scrolling */
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* Smooth momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+  /* Hide scrollbar natively across browsers */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  /* Enable snapping */
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px; /* Space for the drop shadows */
+}
+
+/* Hide scrollbar for Chrome/Safari */
+.photo-carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.photo-carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 1.5rem; /* Ensure the first/last items aren't flush to the hard screen edge */
+  width: max-content;
+}
+
+.photo-carousel-slide {
+  /* Snap alignment */
+  scroll-snap-align: center;
+  position: relative;
+  width: 280px;
+  height: 350px;
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-text);
+  border-radius: 8px;
+  /* Neo-brutalist shadow via CSS instead of an image box-shadow */
+  box-shadow: 4px 4px 0 var(--color-text);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+.photo-carousel-slide:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--color-text);
+}
+
+.photo-carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 2px solid var(--color-text);
+}
+
+.photo-carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-bg);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text);
+  border-top: 2px solid var(--color-text);
+}
+
+/* On very small mobile screens, adjust the snap points to the start edge for better UX */
+@media (max-width: 480px) {
+  .photo-carousel-slide {
+    width: 240px;
+    height: 300px;
+    scroll-snap-align: start;
+  }
+}
