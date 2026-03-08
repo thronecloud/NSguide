@@ -1,7 +1,7 @@
 export const lifeAtNSImages = [
-    { src: '/images/life/-1x-1 (1).webp', alt: 'Network School Room' },
-    { src: '/images/life/-1x-1 (2).webp', alt: 'Network School Food' },
-    { src: '/images/life/-1x-1.webp', alt: 'Community at Network School' },
+    { src: '/images/life/-1x-1 (1).webp', alt: 'NS co-working' },
+    { src: '/images/life/-1x-1 (2).webp', alt: 'NS office-pods' },
+    { src: '/images/life/-1x-1.webp', alt: 'NS entrance' },
     { src: '/images/life/1_27iYIVEN_2o6HCdO9vLr1A.webp', alt: 'Learning at Network School' },
     { src: '/images/life/1_6WVQlUXeRnsg8MXT4mlPMw.webp', alt: 'Network School Gym' },
     { src: '/images/life/1_jGwa6GDK4uoFJxPfN--hsw.webp', alt: 'Network School Room' },
