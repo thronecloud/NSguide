@@ -281,6 +281,19 @@ export const faqItems = [
   },
   {
     category: 'health',
+    slug: 'ns-combine',
+    image: '/images/faq-illustrations/gym.png',
+    imageAlt: 'Typographic illustration: What is the NS Combine?',
+    question: 'What is the NS Combine?',
+    answer: "It's a comprehensive fitness test usually done on the first or second day of your stay at NS. Various metrics are measured to track your health and performance. Common measurements include Weight, Body Fat Percentage, Grip Strength, Push-ups, Vertical Jump, Medicine Ball Toss, Single Leg Balance, Sit-to-Stand reps, Pull-ups, and cardiovascular endurance via The Beep Test. The combine gives you a baseline for improvement during your stay.",
+    seo: {
+      title: 'What is the NS Combine? Fitness Test at Network School',
+      description: 'The NS Combine is a comprehensive fitness test measuring metrics like grip strength, push-ups, body fat, and cardiovascular endurance on campus.',
+      keywords: 'NS Combine, Network School fitness test, Proof of Workout, Blueprint NS, gym metrics',
+    },
+  },
+  {
+    category: 'health',
     slug: 'sports-availability',
     image: '/images/faq-illustrations/sports-availability.png',
     imageAlt: 'Typographic illustration: What sports are available at Network School?',

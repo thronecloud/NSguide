@@ -89,6 +89,9 @@ Three Blueprint-inspired meals are included daily. Breakfast runs 7–10 AM at t
 #### What's the gym like?
 Built from scratch for NS, partnered with Bryan Johnson's Blueprint program. Well-equipped with weights, cardio, and space for group classes. HIIT sessions run a few times daily (7 AM, 11 AM, 5 PM). They run a 'fitness combine'—AI-powered measurement of push-ups, balance, grip strength, body composition, and VO2 max at the start and end of your stay. You earn proof-of-workout NFTs for completing sessions. A lot of people say the gym was a big reason they came.
 
+#### What is the NS Combine?
+It's a comprehensive fitness test usually done on the first or second day of your stay at NS. Various metrics are measured to track your health and performance. Common measurements include Weight, Body Fat Percentage, Grip Strength, Push-ups, Vertical Jump, Medicine Ball Toss, Single Leg Balance, Sit-to-Stand reps, Pull-ups, and cardiovascular endurance via The Beep Test. The combine gives you a baseline for improvement during your stay.
+
 #### What sports are available at Network School?
 NS has solid sports options. On campus, there's a very nice table tennis table—great for quick games. Inside the gym, the space is spacious enough that people set up nets and play badminton regularly; it's a popular choice. Within about 100 meters of NS there's a basketball court with infrastructure to put up nets—some members use it for pickleball too. At least two swimming pools are very close and easily accessible. Combined with the gym (weights, cardio, HIIT), you've got table tennis, badminton, basketball, pickleball, and swimming all within reach.
 
@@ -160,6 +163,9 @@ No. Forest City isn't isolated. Grab runs 24/7. You can order food via apps and 
 
 #### Is Forest City a ghost town?
 It's a developing area—modern buildings, lots of green space, but not densely populated. Many buildings are empty. Media has called it a 'ghost town,' but it's not dirty or chaotic—and it's not spooky or abandoned. Thousands of people live in Forest City. Staff maintain everything. Chinese signage is everywhere (the original target market). NS has created a lively pocket within it: Thai restaurants, a bar and pub with pool, Singha, Indian/Korean/Japanese food, a good coffee shop within walking distance, and multiple 24/7 convenience stores within ~200m for snacks, toiletries, and FMCG. Grab runs 24/7; online delivery and e-commerce work normally. New shops are opening. If you want a bustling city, this isn't it. If you want focus and fewer distractions, it works.
+
+#### Do I get a SIM card or mobile data at Network School?
+Yes. When you arrive at Network School, you will be given a local physical SIM card that usually has enough data to last for a month. If you want connectivity immediately upon landing in Singapore or Malaysia, you can buy a digital eSIM at the airport, but rest assured that NS does provide a physical SIM card with internet access.
 
 
 ### Category: working
