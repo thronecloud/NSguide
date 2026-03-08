@@ -42,24 +42,24 @@ export default function HomePage() {
         <Header />
         <main className="main">
           <Hero />
+          <section className="campus-map" aria-label="Campus map">
+            <h2 className="campus-map-title">The Campus</h2>
+            <img
+              src="/campus-map.jpg"
+              alt="Forest City campus map showing NS Coworking, NS Lobby, NS Café, and NS Gym locations"
+              className="campus-map-img"
+              fetchPriority="high"
+              width="800"
+              height="566"
+            />
+            <p className="campus-map-caption">
+              NS Coworking, Lobby, Café, and Gym — all walkable within the Forest City complex.
+            </p>
+          </section>
           <NSQuiz />
           <PhotoCarousel />
           <section className="faq" aria-label="Frequently asked questions">
             <h2 className="faq-section-title">FAQ</h2>
-            <section className="campus-map" aria-label="Campus map">
-              <h2 className="campus-map-title">The Campus</h2>
-              <img
-                src="/campus-map.jpg"
-                alt="Forest City campus map showing NS Coworking, NS Lobby, NS Café, and NS Gym locations"
-                className="campus-map-img"
-                fetchPriority="high"
-                width="800"
-                height="566"
-              />
-              <p className="campus-map-caption">
-                NS Coworking, Lobby, Café, and Gym — all walkable within the Forest City complex.
-              </p>
-            </section>
             <nav className="faq-categories" aria-label="FAQ categories">
               <button
                 type="button"
