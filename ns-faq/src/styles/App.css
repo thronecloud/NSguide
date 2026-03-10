@@ -918,3 +918,8 @@ body {
     align-items: flex-start;
   }
 }
+
+/* Brand Accent */
+.logo .brand-accent {
+  color: var(--color-accent);
+}

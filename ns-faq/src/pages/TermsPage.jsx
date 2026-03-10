@@ -7,8 +7,8 @@ export default function TermsPage() {
   return (
     <>
       <Helmet>
-        <title>Terms of Use | Network School FAQ</title>
-        <meta name="description" content="Terms of use for this unofficial Network School FAQ site. Not affiliated with Network School." />
+        <title>Terms of Use | attendNS</title>
+        <meta name="description" content="Terms of use for attendNS, an unofficial Network School guide. Not affiliated with Network School." />
         <meta name="robots" content="index, follow" />
       </Helmet>
       <div className="app">
@@ -17,7 +17,7 @@ export default function TermsPage() {
           <div className="question-page">
             <h1>Terms of Use</h1>
             <p>
-              This site is an <strong>unofficial third-party FAQ</strong> about Network School.
+              <strong>attendNS</strong> is an unofficial third-party guide about Network School.
               We are <strong>not affiliated with</strong> Network School, ns.com, or any related entities.
             </p>
             <h2>Disclaimer</h2>

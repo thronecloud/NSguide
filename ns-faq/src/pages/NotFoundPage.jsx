@@ -7,7 +7,7 @@ export default function NotFoundPage() {
   return (
     <>
       <Helmet>
-        <title>Page Not Found | Network School FAQ</title>
+        <title>Page Not Found | attendNS</title>
         <meta name="robots" content="noindex" />
       </Helmet>
       <div className="app">

@@ -6,7 +6,7 @@ export default function Header() {
     <header className="header">
       <div className="header-inner">
         <Link to="/" className="logo">
-          Network School FAQ
+          attend<span className="brand-accent">NS</span>
         </Link>
         <nav className="nav">
           <a href={REFERRAL_URL} className="btn-apply" rel="noopener noreferrer" target="_blank">

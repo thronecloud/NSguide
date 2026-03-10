@@ -12,7 +12,7 @@ const proc = typeof process !== 'undefined' ? process.env : {};
 const env = (key) => import.meta.env?.[key] ?? proc[key];
 
 export const SITE_URL =
-  env('VITE_SITE_URL') || env('SITE_URL') || 'https://n-s-guide.vercel.app';
+  env('VITE_SITE_URL') || env('SITE_URL') || 'https://attendNS.com';
 
 export const REFERRAL_URL =
   env('VITE_REFERRAL_URL') || env('REFERRAL_URL') || 'https://ns.com/networkschooler/invite';

@@ -14,7 +14,7 @@ export default function QuestionPage() {
     return (
       <>
         <Helmet>
-          <title>Question Not Found | Network School FAQ</title>
+          <title>Question Not Found | attendNS</title>
           <meta name="robots" content="noindex" />
         </Helmet>
         <div className="app">

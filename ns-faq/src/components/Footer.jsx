@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-inner">
         <p className="footer-copyright">
-          Unofficial third-party FAQ. Not affiliated with Network School.{' '}
+          attendNS: An unofficial third-party guide. Not affiliated with Network School.{' '}
           <Link to="/terms">Terms</Link>
         </p>
       </div>
