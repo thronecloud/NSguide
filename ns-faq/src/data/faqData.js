@@ -721,11 +721,11 @@ export const faqItems = [
     image: '/images/faq-illustrations/payment-cards.png',
     imageAlt: 'Typographic illustration: Can I use credit cards?',
     question: 'Can I use credit cards?',
-    answer: "At NS facilities, yes. In Forest City more broadly, many small shops prefer cash (Malaysian ringgit). There are ATMs with no withdrawal fees in the NS area. Cross-border buses to Singapore accept the ManjaLink cashless card. For your main expenses—accommodation, meals—you're covered by the monthly fee. Bring some cash for local errands.",
+    answer: "Cards work at the NS Café, vending machines, and almost all nearby shops—you can get by without cash most of the time. There's an ATM right inside the NS premises for quick withdrawals. The nearest forex currency exchange shop is about 30 minutes away by car, so exchange some Malaysian ringgit before you arrive or withdraw from the ATM. Cross-border buses to Singapore accept the ManjaLink cashless card. For your main expenses—accommodation, meals—you're covered by the monthly fee. Bring some cash for Grab rides and small local errands, but cards will handle most things.",
     seo: {
-      title: 'Credit Cards & Payment at Network School',
-      description: 'NS facilities take cards. Forest City shops prefer cash (ringgit). ATMs available. ManjaLink for buses. Payment at NS.',
-      keywords: 'Network School payment, credit card NS, Forest City cash, ManjaLink',
+      title: 'Currency, Credit Cards & ATMs at Network School',
+      description: 'Cards accepted at NS Café, vending machines, and nearby shops. ATM on campus. Nearest forex is 30 min away. Currency and payment guide for Network School.',
+      keywords: 'Network School payment, credit card NS, ATM Network School, Forest City currency, Malaysian ringgit NS',
     },
   },
   // === ROI & COMPARISON ===
