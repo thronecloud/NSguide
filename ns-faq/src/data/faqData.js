@@ -852,17 +852,15 @@ export function getAllFaqSlugs() {
 export function getQuestionSchema(item) {
   return {
     '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: item.question,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: item.answer,
-        },
+    '@type': 'QAPage',
+    mainEntity: {
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
       },
-    ],
+    },
   };
 }
 

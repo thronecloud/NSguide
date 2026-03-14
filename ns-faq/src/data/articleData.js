@@ -1,4 +1,4 @@
-import { SITE_URL } from '../config';
+import { SITE_URL } from '../config.js';
 
 export const ARTICLE_CATEGORIES = [
   { id: 'travel', label: 'Transport' },

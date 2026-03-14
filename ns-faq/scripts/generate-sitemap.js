@@ -12,9 +12,16 @@ config({ path: path.join(root, '.env') });
 
 const { SITE_URL } = await import('../src/config.js');
 const { faqItems } = await import('../src/data/faqData.js');
+const { articles } = await import('../src/data/articleData.js');
 
 const urls = [
   { loc: `${SITE_URL}/`, priority: '1.0', changefreq: 'weekly' },
+  { loc: `${SITE_URL}/articles`, priority: '0.9', changefreq: 'weekly' },
+  ...articles.map((article) => ({
+    loc: `${SITE_URL}/articles/${article.slug}`,
+    priority: '0.8',
+    changefreq: 'monthly',
+  })),
   ...faqItems.map((item) => ({
     loc: `${SITE_URL}/faq/${item.slug}`,
     priority: '0.8',

@@ -1,4 +1,28 @@
+# AI Crawlers — explicitly allowed
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+Disallow: /api/admin/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin
+Disallow: /api/admin/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+Disallow: /api/admin/
+
+User-agent: CCBot
+Allow: /
+Disallow: /admin
+Disallow: /api/admin/
+
+# All other crawlers
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api/admin/
 
 Sitemap: https://attendNS.com/sitemap.xml

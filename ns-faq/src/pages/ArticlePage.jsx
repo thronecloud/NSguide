@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { SITE_URL, REFERRAL_URL } from '../config';
 import { getArticleBySlug, getArticleSchema, articles, ARTICLE_CATEGORIES, getReadingTime } from '../data/articleData';
+import { getFaqBySlug } from '../data/faqData';
 import Header from '../components/Header';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
@@ -44,6 +45,20 @@ export default function ArticlePage() {
     .map((s) => articles.find((a) => a.slug === s))
     .filter(Boolean);
 
+  const relatedFaqs = (article.relatedFaqs || [])
+    .map((s) => getFaqBySlug(s))
+    .filter(Boolean);
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Articles', item: `${SITE_URL}/articles` },
+      { '@type': 'ListItem', position: 3, name: article.title },
+    ],
+  };
+
   return (
     <>
       <Helmet>
@@ -60,6 +75,7 @@ export default function ArticlePage() {
         <meta name="twitter:title" content={article.seo.title} />
         <meta name="twitter:description" content={article.seo.description} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
       <div className="app">
         <Header />
@@ -142,6 +158,19 @@ export default function ArticlePage() {
                     );
                   })}
                 </div>
+              </div>
+            )}
+
+            {relatedFaqs.length > 0 && (
+              <div className="article-related-faqs">
+                <h3>Related FAQs</h3>
+                <ul>
+                  {relatedFaqs.map((faq) => (
+                    <li key={faq.slug}>
+                      <Link to={`/faq/${faq.slug}`}>{faq.question}</Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
 

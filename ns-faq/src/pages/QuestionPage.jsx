@@ -34,6 +34,15 @@ export default function QuestionPage() {
   const { question, answer, seo, ctaText, ctaUrl, image, imageAlt } = item;
   const pageUrl = `${SITE_URL}/faq/${slug}`;
   const schema = getQuestionSchema(item);
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'FAQ', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 3, name: question },
+    ],
+  };
 
   return (
     <>
@@ -50,6 +59,7 @@ export default function QuestionPage() {
         <meta name="twitter:title" content={seo.title} />
         <meta name="twitter:description" content={seo.description} />
         <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
       <div className="app">
         <Header />
