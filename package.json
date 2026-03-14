@@ -17,7 +17,11 @@
     "git:pull": "git pull",
     "git:log": "git log --oneline -10",
 
-    "ship": "npm run build && npm run deploy"
+    "ship": "npm run build && npm run deploy",
+    "seed:quiz": "node scripts/seed-quiz.mjs"
+  },
+  "dependencies": {
+    "@vercel/postgres": "^0.10.0"
   },
   "devDependencies": {
     "vercel": "^39.0.0"

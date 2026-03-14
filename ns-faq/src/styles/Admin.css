@@ -521,3 +521,15 @@
   outline: none;
   box-shadow: 0 0 0 2px rgba(255, 221, 0, 0.3);
 }
+
+.quiz-save-success {
+  color: #2e7d32;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.quiz-save-error {
+  color: #c00;
+  font-size: 0.9rem;
+  font-weight: 500;
+}

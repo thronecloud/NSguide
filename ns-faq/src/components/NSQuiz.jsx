@@ -1,18 +1,29 @@
-import { useState } from 'react';
-import { quizQuestions, getQuizResult } from '../data/quizData';
+import { useState, useEffect } from 'react';
+import { getQuizResult } from '../data/quizData';
 
 export default function NSQuiz() {
+    const [questions, setQuestions] = useState(null);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [showResults, setShowResults] = useState(false);
     const [hasStarted, setHasStarted] = useState(false);
+
+    useEffect(() => {
+        fetch('/api/quiz')
+            .then(r => r.json())
+            .then(data => setQuestions(data.questions))
+            .catch(() => {
+                // Fallback to static data if API is unavailable
+                import('../data/quizData').then(m => setQuestions(m.quizQuestions));
+            });
+    }, []);
 
     const startQuiz = () => setHasStarted(true);
 
     const handleOptionSelect = (optionScore) => {
         const newScore = score + optionScore;
 
-        if (currentQuestionIndex + 1 < quizQuestions.length) {
+        if (currentQuestionIndex + 1 < questions.length) {
             setScore(newScore);
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
@@ -28,13 +39,22 @@ export default function NSQuiz() {
         setHasStarted(false);
     };
 
+    if (!questions) {
+        return (
+            <section className="quiz-container quiz-intro">
+                <h2 className="quiz-title">Is NS Right For You?</h2>
+                <p className="quiz-description">Loading quiz...</p>
+            </section>
+        );
+    }
+
     if (!hasStarted) {
         return (
             <section className="quiz-container quiz-intro">
                 <h2 className="quiz-title">Is NS Right For You?</h2>
                 <p className="quiz-description">
                     Network School isn't a traditional vacation—it's an intense, focused environment.
-                    Take this brutally honest 10-question compatibility test to see if you'll thrive in Forest City or if you should look elsewhere.
+                    Take this brutally honest {questions.length}-question compatibility test to see if you'll thrive in Forest City or if you should look elsewhere.
                 </p>
                 <button className="quiz-btn quiz-btn-primary" onClick={startQuiz}>
                     Take the Compatibility Test
@@ -73,13 +93,10 @@ export default function NSQuiz() {
         return shuffled;
     };
 
-    const currentQuestion = quizQuestions[currentQuestionIndex];
-    // Stable shuffle for the current question so it doesn't re-shuffle on re-renders, 
-    // but for simplicity, we derive it from the question ID to ensure consistent random order per session,
-    // or simply randomize it on render since state only updates when they click, moving to the next question.
+    const currentQuestion = questions[currentQuestionIndex];
     const shuffledOptions = shuffleOptions(currentQuestion.options);
 
-    const progressPercentage = ((currentQuestionIndex) / quizQuestions.length) * 100;
+    const progressPercentage = ((currentQuestionIndex) / questions.length) * 100;
 
     return (
         <section className="quiz-container">
@@ -87,7 +104,7 @@ export default function NSQuiz() {
                 <div className="quiz-progress-fill" style={{ width: `${progressPercentage}%` }}></div>
             </div>
             <div className="quiz-question-header">
-                <span className="quiz-question-number">Question {currentQuestionIndex + 1} of {quizQuestions.length}</span>
+                <span className="quiz-question-number">Question {currentQuestionIndex + 1} of {questions.length}</span>
             </div>
             <h3 className="quiz-question-text">{currentQuestion.question}</h3>
             <div className="quiz-options">

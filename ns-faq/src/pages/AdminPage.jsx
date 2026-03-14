@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { faqItems as initialFaqItems, FAQ_CATEGORIES } from '../data/faqData';
-import { quizQuestions as initialQuizQuestions, getQuizResult } from '../data/quizData';
+import { quizQuestions as initialQuizQuestions } from '../data/quizData';
 import { REFERRAL_URL } from '../config';
 import '../styles/Admin.css';
 
@@ -122,57 +122,6 @@ export function getFaqSchema() {
 `;
 }
 
-function generateQuizDataJs(questions) {
-  const questionsStr = questions
-    .map((q) => {
-      const optionsStr = q.options
-        .map((o) => `            { text: ${JSON.stringify(o.text)}, score: ${o.score} }`)
-        .join(',\n');
-      return `    {
-        id: ${q.id},
-        question: ${JSON.stringify(q.question)},
-        options: [
-${optionsStr}
-        ]
-    }`;
-    })
-    .join(',\n');
-
-  return `export const quizQuestions = [
-${questionsStr}
-];
-
-export function getQuizResult(score) {
-    // Max score is 100
-    if (score >= 85) {
-        return {
-            title: "The Founder (Perfect Fit)",
-            description: "Pack your bags. You are exactly who Network School was built for. You thrive on autonomy, peer-to-peer learning, and high-intensity building. You won't care about the isolation of Forest City because your focus is entirely on your startup, your fitness, and the community.",
-            callToAction: "Apply for the Fellowship",
-            link: "https://ns.com",
-            statusColor: "var(--color-accent)"
-        };
-    } else if (score >= 50) {
-        return {
-            title: "The Explorer (Solid Fit)",
-            description: "You'll likely have a great time here, but you should temper your expectations. The community will be fantastic for you, but you might occasionally struggle with the isolation, the unstructured schedule, or the lack of traditional city infrastructure. Come for 30 days before committing to a year.",
-            callToAction: "Read What to Expect",
-            link: "#faq-where-located",
-            statusColor: "#4caf50"
-        };
-    } else {
-        return {
-            title: "The Urbanite (Probably Not For You)",
-            description: "Honestly... you might hate it here. And that's okay! If you need constant city energy, massive social separation from your workspace, or traditional vacation amenities, the intensity of Network School isn't the right vibe for you right now.",
-            callToAction: "Read the Downsides",
-            link: "#faq-downsides",
-            statusColor: "#f44336"
-        };
-    }
-}
-`;
-}
-
 const emptyItem = () => ({
   slug: '',
   question: '',
@@ -214,6 +163,7 @@ export default function AdminPage() {
   const [hasChanges, setHasChanges] = useState(false);
   const [quizQuestions, setQuizQuestions] = useState([]);
   const [hasQuizChanges, setHasQuizChanges] = useState(false);
+  const [quizSaveStatus, setQuizSaveStatus] = useState(null); // 'saving' | 'saved' | 'error'
 
   const adminSecret = import.meta.env.VITE_ADMIN_SECRET || '';
 
@@ -258,6 +208,19 @@ export default function AdminPage() {
       localStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(quizQuestions));
     }
   }, [quizQuestions, hasQuizChanges]);
+
+  useEffect(() => {
+    if (authenticated) {
+      fetch('/api/quiz')
+        .then(r => r.json())
+        .then(data => {
+          if (data.questions && data.questions.length > 0) {
+            setQuizQuestions(data.questions);
+          }
+        })
+        .catch(() => { /* keep static fallback */ });
+    }
+  }, [authenticated]);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -383,22 +346,41 @@ export default function AdminPage() {
     setHasQuizChanges(true);
   };
 
-  const handleQuizExport = () => {
-    const content = generateQuizDataJs(quizQuestions);
-    const blob = new Blob([content], { type: 'text/javascript' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'quizData.js';
-    a.click();
-    URL.revokeObjectURL(url);
+  const handleQuizSave = async () => {
+    setQuizSaveStatus('saving');
+    try {
+      const token = sessionStorage.getItem(AUTH_KEY);
+      const res = await fetch('/api/admin/quiz', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify({ questions: quizQuestions }),
+      });
+      if (!res.ok) throw new Error('Save failed');
+      setHasQuizChanges(false);
+      localStorage.removeItem(QUIZ_STORAGE_KEY);
+      setQuizSaveStatus('saved');
+      setTimeout(() => setQuizSaveStatus(null), 3000);
+    } catch {
+      setQuizSaveStatus('error');
+      setTimeout(() => setQuizSaveStatus(null), 3000);
+    }
   };
 
   const handleQuizDiscard = () => {
     if (confirm('Discard all quiz changes?')) {
       localStorage.removeItem(QUIZ_STORAGE_KEY);
-      setQuizQuestions(JSON.parse(JSON.stringify(initialQuizQuestions)));
       setHasQuizChanges(false);
+      // Re-fetch from database
+      fetch('/api/quiz')
+        .then(r => r.json())
+        .then(data => {
+          if (data.questions?.length > 0) setQuizQuestions(data.questions);
+          else setQuizQuestions(JSON.parse(JSON.stringify(initialQuizQuestions)));
+        })
+        .catch(() => setQuizQuestions(JSON.parse(JSON.stringify(initialQuizQuestions))));
     }
   };
 
@@ -491,10 +473,20 @@ export default function AdminPage() {
                     <button onClick={handleQuizDiscard} className="btn-secondary">
                       Discard
                     </button>
-                    <button onClick={handleQuizExport} className="btn-primary">
-                      Export quizData.js
+                    <button
+                      onClick={handleQuizSave}
+                      className="btn-primary"
+                      disabled={quizSaveStatus === 'saving'}
+                    >
+                      {quizSaveStatus === 'saving' ? 'Saving...' : 'Save'}
                     </button>
                   </>
+                )}
+                {quizSaveStatus === 'saved' && (
+                  <span className="quiz-save-success">Saved!</span>
+                )}
+                {quizSaveStatus === 'error' && (
+                  <span className="quiz-save-error">Save failed. Try again.</span>
                 )}
               </div>
             </div>
@@ -528,9 +520,7 @@ export default function AdminPage() {
             ))}
             {hasQuizChanges && (
               <div className="admin-export-hint">
-                <strong>You have unsaved quiz changes.</strong> Click &quot;Export quizData.js&quot; to
-                download the updated file, then replace <code>src/data/quizData.js</code> and
-                run <code>npm run build</code>.
+                <strong>You have unsaved quiz changes.</strong> Click &quot;Save&quot; to update the database.
               </div>
             )}
           </div>
