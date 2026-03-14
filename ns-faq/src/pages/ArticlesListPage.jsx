@@ -1,11 +1,18 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { SITE_URL } from '../config';
-import { articles } from '../data/articleData';
+import { articles, ARTICLE_CATEGORIES, getReadingTime } from '../data/articleData';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function ArticlesListPage() {
+  const [activeCategory, setActiveCategory] = useState('all');
+
+  const filtered = activeCategory === 'all'
+    ? articles
+    : articles.filter((a) => a.category === activeCategory);
+
   return (
     <>
       <Helmet>
@@ -24,20 +31,49 @@ export default function ArticlesListPage() {
           <section className="articles-list-page">
             <h1 className="articles-list-title">Articles & Guides</h1>
             <p className="articles-list-subtitle">
-              In-depth guides about Network School, written from firsthand experience.
+              In-depth guides about Network School, written from firsthand experience by a resident.
             </p>
-            <div className="articles-grid">
-              {articles.map((article) => (
-                <Link
-                  key={article.slug}
-                  to={`/articles/${article.slug}`}
-                  className="article-card"
+            <nav className="article-categories" aria-label="Article categories">
+              <button
+                type="button"
+                className={`faq-category-btn ${activeCategory === 'all' ? 'faq-category-btn--active' : ''}`}
+                onClick={() => setActiveCategory('all')}
+              >
+                All
+              </button>
+              {ARTICLE_CATEGORIES.map((cat) => (
+                <button
+                  key={cat.id}
+                  type="button"
+                  className={`faq-category-btn ${activeCategory === cat.id ? 'faq-category-btn--active' : ''}`}
+                  onClick={() => setActiveCategory(cat.id)}
                 >
-                  <h2 className="article-card-title">{article.title}</h2>
-                  <p className="article-card-excerpt">{article.excerpt}</p>
-                  <span className="article-card-read">Read article →</span>
-                </Link>
+                  {cat.label}
+                </button>
               ))}
+            </nav>
+            <div className="articles-grid">
+              {filtered.map((article) => {
+                const cat = ARTICLE_CATEGORIES.find((c) => c.id === article.category);
+                return (
+                  <Link
+                    key={article.slug}
+                    to={`/articles/${article.slug}`}
+                    className="article-card"
+                  >
+                    <div className="article-card-meta-row">
+                      {cat && <span className="article-card-category">{cat.label}</span>}
+                      <span className="article-card-reading-time">{getReadingTime(article)} min read</span>
+                    </div>
+                    <h2 className="article-card-title">{article.title}</h2>
+                    <p className="article-card-excerpt">{article.excerpt}</p>
+                    <span className="article-card-read">Read guide →</span>
+                  </Link>
+                );
+              })}
+              {filtered.length === 0 && (
+                <p className="articles-empty">No articles in this category yet.</p>
+              )}
             </div>
           </section>
         </main>

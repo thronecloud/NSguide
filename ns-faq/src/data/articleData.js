@@ -1,10 +1,25 @@
 import { SITE_URL } from '../config';
 
+export const ARTICLE_CATEGORIES = [
+  { id: 'travel', label: 'Transport' },
+  { id: 'living', label: 'Accommodation' },
+  { id: 'lifestyle', label: 'Campus Life' },
+  { id: 'legal', label: 'Visas & Legal' },
+  { id: 'health', label: 'Health & Food' },
+];
+
+function estimateReadingTime(sections) {
+  const words = sections.reduce((total, s) => total + s.content.split(/\s+/).length, 0);
+  return Math.max(1, Math.ceil(words / 230));
+}
+
 export const articles = [
   {
     slug: 'how-to-travel-to-network-school',
     title: 'How to Travel to Network School: Complete 2026 Transport Guide',
     excerpt: 'Three airports, cross-border buses, and a monthly NS shuttle — here\'s exactly how to get to Forest City from anywhere in the world.',
+    category: 'travel',
+    summary: 'Fly into Singapore Changi (best), Johor Bahru (no border crossing), or KL (visa-friendly). NS runs a shuttle from Changi on the 1st of every month. Budget 1.5–2 hours for the Singapore→Forest City border crossing. Grab works 24/7 locally.',
     publishedDate: '2026-03-15',
     sections: [
       {
@@ -66,6 +81,8 @@ If you're taking the cross-border bus, keep your passport accessible — not in 
     slug: 'accommodation-at-network-school',
     title: 'Network School Rooms & Accommodation: What to Actually Expect',
     excerpt: 'Ocean-view balconies, daily room cleaning, and a mini-fridge — but also a shared room with a stranger. Here\'s the honest breakdown.',
+    category: 'living',
+    summary: 'Twin rooms ($1,500/mo shared) or King rooms ($3,000/mo private) at the Forest City Marina Hotel. Includes cleaning, 50+ sqm, ocean views, balcony. Coworking, private pods ($200/mo), and offices ($400/mo) available. Laundry service ~RM 28–58/load.',
     publishedDate: '2026-03-15',
     sections: [
       {
@@ -139,6 +156,8 @@ Forest City itself is quiet. If you want the energy of a bustling neighborhood, 
     slug: 'activities-and-events-at-network-school',
     title: 'Activities & Events at Network School: What Actually Happens Every Day',
     excerpt: 'Hackathons, HIIT classes, sound baths, and VC office hours — the daily programming that makes NS more than just a co-living space.',
+    category: 'lifestyle',
+    summary: '60% of sessions are member-led. HIIT classes at 7/11/5. Bryan Johnson Blueprint gym. $1,000 daily crypto bounties. Two learning tracks (Power Users + Programmers). VC office hours. Wellness at NS Haven. Alcohol is minimal — caffeine is king.',
     publishedDate: '2026-03-15',
     sections: [
       {
@@ -198,6 +217,8 @@ One thing to know: alcohol is minimal here. The longevity and fitness culture me
     slug: 'malaysia-visa-guide-for-network-school',
     title: 'Malaysia Visa Guide for Network School: Every Option Explained',
     excerpt: 'Tourist visa, DE Rantau digital nomad pass, or visa runs? Here\'s what actually works for staying at NS legally — and what doesn\'t.',
+    category: 'legal',
+    summary: 'Most nationalities: 30–90 days visa-free. For longer stays: DE Rantau digital nomad pass ($220, up to 24 months, $24K/yr income required). Visa runs are risky and not recommended. Health insurance: $100–210/year via EMGS-approved providers.',
     publishedDate: '2026-03-15',
     sections: [
       {
@@ -261,6 +282,8 @@ Malaysia is a top medical tourism destination — the quality of care is excelle
     slug: 'food-at-network-school',
     title: 'Food at Network School: Blueprint Meals, Café, and Nearby Options',
     excerpt: 'Three included meals a day optimized for longevity — plus what to do when you\'re craving something that isn\'t optimized for longevity.',
+    category: 'health',
+    summary: 'Three Blueprint meals daily (breakfast buffet 7–10, boxed lunch 12–2, dinner buffet 5:30–7:30). Optimized for longevity, not flavor. NS Café for extras. Thai, Indian, Korean, Japanese restaurants walkable. Vegetarian-friendly. Ramadan is challenging.',
     publishedDate: '2026-03-15',
     sections: [
       {
@@ -336,6 +359,14 @@ export function getArticleBySlug(slug) {
 
 export function getAllArticleSlugs() {
   return articles.map((a) => a.slug);
+}
+
+export function getReadingTime(article) {
+  return estimateReadingTime(article.sections);
+}
+
+export function getArticlesByCategory(categoryId) {
+  return articles.filter((a) => a.category === categoryId);
 }
 
 export function getArticleSchema(article) {
