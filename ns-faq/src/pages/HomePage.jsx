@@ -59,7 +59,6 @@ export default function HomePage() {
           </section>
           <NSQuiz />
           <PhotoCarousel />
-          <ArticlesPreview />
           <section className="faq" aria-label="Frequently asked questions">
             <h2 className="faq-section-title">FAQ</h2>
             <nav className="faq-categories" aria-label="FAQ categories">
@@ -138,6 +137,7 @@ export default function HomePage() {
               })}
             </div>
           </section>
+          <ArticlesPreview />
           <CTA />
         </main>
         <Footer />
