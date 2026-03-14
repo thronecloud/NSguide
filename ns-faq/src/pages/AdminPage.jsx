@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { faqItems as initialFaqItems, FAQ_CATEGORIES } from '../data/faqData';
+import { quizQuestions as initialQuizQuestions, getQuizResult } from '../data/quizData';
 import { REFERRAL_URL } from '../config';
 import '../styles/Admin.css';
 
 const STORAGE_KEY = 'ns-faq-admin-draft';
+const QUIZ_STORAGE_KEY = 'ns-quiz-admin-draft';
 const AUTH_KEY = 'ns-faq-admin-auth';
 
 function slugify(text) {
@@ -120,6 +122,57 @@ export function getFaqSchema() {
 `;
 }
 
+function generateQuizDataJs(questions) {
+  const questionsStr = questions
+    .map((q) => {
+      const optionsStr = q.options
+        .map((o) => `            { text: ${JSON.stringify(o.text)}, score: ${o.score} }`)
+        .join(',\n');
+      return `    {
+        id: ${q.id},
+        question: ${JSON.stringify(q.question)},
+        options: [
+${optionsStr}
+        ]
+    }`;
+    })
+    .join(',\n');
+
+  return `export const quizQuestions = [
+${questionsStr}
+];
+
+export function getQuizResult(score) {
+    // Max score is 100
+    if (score >= 85) {
+        return {
+            title: "The Founder (Perfect Fit)",
+            description: "Pack your bags. You are exactly who Network School was built for. You thrive on autonomy, peer-to-peer learning, and high-intensity building. You won't care about the isolation of Forest City because your focus is entirely on your startup, your fitness, and the community.",
+            callToAction: "Apply for the Fellowship",
+            link: "https://ns.com",
+            statusColor: "var(--color-accent)"
+        };
+    } else if (score >= 50) {
+        return {
+            title: "The Explorer (Solid Fit)",
+            description: "You'll likely have a great time here, but you should temper your expectations. The community will be fantastic for you, but you might occasionally struggle with the isolation, the unstructured schedule, or the lack of traditional city infrastructure. Come for 30 days before committing to a year.",
+            callToAction: "Read What to Expect",
+            link: "#faq-where-located",
+            statusColor: "#4caf50"
+        };
+    } else {
+        return {
+            title: "The Urbanite (Probably Not For You)",
+            description: "Honestly... you might hate it here. And that's okay! If you need constant city energy, massive social separation from your workspace, or traditional vacation amenities, the intensity of Network School isn't the right vibe for you right now.",
+            callToAction: "Read the Downsides",
+            link: "#faq-downsides",
+            statusColor: "#f44336"
+        };
+    }
+}
+`;
+}
+
 const emptyItem = () => ({
   slug: '',
   question: '',
@@ -154,10 +207,13 @@ export default function AdminPage() {
   const [authenticated, setAuthenticated] = useState(false);
   const [password, setPassword] = useState('');
   const [authError, setAuthError] = useState('');
+  const [activeTab, setActiveTab] = useState('faq');
   const [items, setItems] = useState([]);
   const [editing, setEditing] = useState(null);
   const [formData, setFormData] = useState(emptyItem());
   const [hasChanges, setHasChanges] = useState(false);
+  const [quizQuestions, setQuizQuestions] = useState([]);
+  const [hasQuizChanges, setHasQuizChanges] = useState(false);
 
   const adminSecret = import.meta.env.VITE_ADMIN_SECRET || '';
 
@@ -178,6 +234,17 @@ export default function AdminPage() {
     } else {
       setItems(initialFaqItems.map(normalizeItem));
     }
+    const quizDraft = localStorage.getItem(QUIZ_STORAGE_KEY);
+    if (quizDraft) {
+      try {
+        setQuizQuestions(JSON.parse(quizDraft));
+        setHasQuizChanges(true);
+      } catch {
+        setQuizQuestions(JSON.parse(JSON.stringify(initialQuizQuestions)));
+      }
+    } else {
+      setQuizQuestions(JSON.parse(JSON.stringify(initialQuizQuestions)));
+    }
   }, []);
 
   useEffect(() => {
@@ -185,6 +252,12 @@ export default function AdminPage() {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
     }
   }, [items, hasChanges]);
+
+  useEffect(() => {
+    if (hasQuizChanges && quizQuestions.length > 0) {
+      localStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(quizQuestions));
+    }
+  }, [quizQuestions, hasQuizChanges]);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -299,6 +372,43 @@ export default function AdminPage() {
     setHasChanges(true);
   };
 
+  const handleQuizScoreChange = (questionIndex, optionIndex, newScore) => {
+    const parsed = parseInt(newScore, 10);
+    if (isNaN(parsed) || parsed < 0) return;
+    setQuizQuestions((prev) => {
+      const next = JSON.parse(JSON.stringify(prev));
+      next[questionIndex].options[optionIndex].score = parsed;
+      return next;
+    });
+    setHasQuizChanges(true);
+  };
+
+  const handleQuizExport = () => {
+    const content = generateQuizDataJs(quizQuestions);
+    const blob = new Blob([content], { type: 'text/javascript' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'quizData.js';
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleQuizDiscard = () => {
+    if (confirm('Discard all quiz changes?')) {
+      localStorage.removeItem(QUIZ_STORAGE_KEY);
+      setQuizQuestions(JSON.parse(JSON.stringify(initialQuizQuestions)));
+      setHasQuizChanges(false);
+    }
+  };
+
+  const getMaxQuizScore = () => {
+    return quizQuestions.reduce((total, q) => {
+      const maxOption = Math.max(...q.options.map((o) => o.score));
+      return total + maxOption;
+    }, 0);
+  };
+
   const updateForm = (field, value) => {
     setFormData((prev) => {
       const next = { ...prev };
@@ -347,28 +457,86 @@ export default function AdminPage() {
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <header className="admin-header">
-        <h1>FAQ Admin</h1>
+        <h1>Admin</h1>
         <div className="admin-actions">
           <Link to="/">View site</Link>
-          <button onClick={openAdd}>Add FAQ</button>
-          {hasChanges && (
-            <>
-              <button onClick={handleDiscard} className="btn-secondary">
-                Discard
-              </button>
-              <button onClick={handleExport} className="btn-primary">
-                Export faqData.js
-              </button>
-            </>
-          )}
           <button onClick={handleLogout} className="btn-ghost">
             Log out
           </button>
         </div>
       </header>
+      <div className="admin-tabs">
+        <button
+          className={`admin-tab ${activeTab === 'faq' ? 'admin-tab--active' : ''}`}
+          onClick={() => setActiveTab('faq')}
+        >
+          FAQ Manager
+        </button>
+        <button
+          className={`admin-tab ${activeTab === 'quiz' ? 'admin-tab--active' : ''}`}
+          onClick={() => setActiveTab('quiz')}
+        >
+          Quiz Manager
+        </button>
+      </div>
 
       <main className="admin-main">
-        {editing && (
+        {activeTab === 'quiz' && (
+          <div className="quiz-manager">
+            <div className="quiz-manager-header">
+              <h2>Quiz Scoring</h2>
+              <div className="quiz-manager-actions">
+                {hasQuizChanges && (
+                  <>
+                    <button onClick={handleQuizDiscard} className="btn-secondary">
+                      Discard
+                    </button>
+                    <button onClick={handleQuizExport} className="btn-primary">
+                      Export quizData.js
+                    </button>
+                  </>
+                )}
+              </div>
+            </div>
+            <p className="quiz-manager-info">
+              Max possible score: <strong>{getMaxQuizScore()}</strong> (sum of highest-scoring option per question)
+            </p>
+            {quizQuestions.map((q, qi) => (
+              <div key={q.id} className="quiz-question-card">
+                <div className="quiz-question-card-header">
+                  <span className="quiz-question-number-badge">Q{q.id}</span>
+                  <span className="quiz-question-card-text">{q.question}</span>
+                </div>
+                <div className="quiz-options-list">
+                  {q.options.map((opt, oi) => (
+                    <div key={oi} className="quiz-option-row">
+                      <span className="quiz-option-text">{opt.text}</span>
+                      <div className="quiz-score-input-group">
+                        <label>Score:</label>
+                        <input
+                          type="number"
+                          min="0"
+                          value={opt.score}
+                          onChange={(e) => handleQuizScoreChange(qi, oi, e.target.value)}
+                          className="quiz-score-input"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+            {hasQuizChanges && (
+              <div className="admin-export-hint">
+                <strong>You have unsaved quiz changes.</strong> Click &quot;Export quizData.js&quot; to
+                download the updated file, then replace <code>src/data/quizData.js</code> and
+                run <code>npm run build</code>.
+              </div>
+            )}
+          </div>
+        )}
+
+        {activeTab === 'faq' && editing && (
           <div className="admin-form-overlay" onClick={closeForm}>
             <form
               className="admin-form"
@@ -494,50 +662,54 @@ export default function AdminPage() {
           </div>
         )}
 
-        <div className="admin-list">
-          <button
-            type="button"
-            className="admin-add-card"
-            onClick={openAdd}
-          >
-            <span className="admin-add-icon">+</span>
-            <span>Add new FAQ</span>
-          </button>
-          <p className="admin-drag-hint">Drag items to reorder. Order is preserved when you export.</p>
-          {items.map((item, index) => (
-            <div
-              key={item.slug}
-              className="admin-item"
-              draggable
-              onDragStart={(e) => handleDragStart(e, index)}
-              onDragEnd={handleDragEnd}
-              onDragOver={handleDragOver}
-              onDrop={(e) => handleDrop(e, index)}
-            >
-              <span className="admin-item-drag" aria-label="Drag to reorder">⋮⋮</span>
-              <div className="admin-item-content">
-                <strong>{item.question}</strong>
-                <span className="admin-item-slug">/faq/{item.slug}</span>
-              </div>
-              <div className="admin-item-actions">
-                <button onClick={() => openEdit(item)}>Edit</button>
-                <button
-                  onClick={() => handleDelete(item.slug)}
-                  className="btn-danger-sm"
+        {activeTab === 'faq' && (
+          <>
+            <div className="admin-list">
+              <button
+                type="button"
+                className="admin-add-card"
+                onClick={openAdd}
+              >
+                <span className="admin-add-icon">+</span>
+                <span>Add new FAQ</span>
+              </button>
+              <p className="admin-drag-hint">Drag items to reorder. Order is preserved when you export.</p>
+              {items.map((item, index) => (
+                <div
+                  key={item.slug}
+                  className="admin-item"
+                  draggable
+                  onDragStart={(e) => handleDragStart(e, index)}
+                  onDragEnd={handleDragEnd}
+                  onDragOver={handleDragOver}
+                  onDrop={(e) => handleDrop(e, index)}
                 >
-                  Delete
-                </button>
-              </div>
+                  <span className="admin-item-drag" aria-label="Drag to reorder">⋮⋮</span>
+                  <div className="admin-item-content">
+                    <strong>{item.question}</strong>
+                    <span className="admin-item-slug">/faq/{item.slug}</span>
+                  </div>
+                  <div className="admin-item-actions">
+                    <button onClick={() => openEdit(item)}>Edit</button>
+                    <button
+                      onClick={() => handleDelete(item.slug)}
+                      className="btn-danger-sm"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
 
-        {hasChanges && (
-          <div className="admin-export-hint">
-            <strong>You have unsaved changes.</strong> Click &quot;Export faqData.js&quot; to
-            download the updated file, then replace <code>src/data/faqData.js</code> and
-            run <code>npm run build</code>.
-          </div>
+            {hasChanges && (
+              <div className="admin-export-hint">
+                <strong>You have unsaved changes.</strong> Click &quot;Export faqData.js&quot; to
+                download the updated file, then replace <code>src/data/faqData.js</code> and
+                run <code>npm run build</code>.
+              </div>
+            )}
+          </>
         )}
       </main>
     </div>
