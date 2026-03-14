@@ -1,6 +1,12 @@
-import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { lazy, Suspense, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 
 const QuestionPage = lazy(() => import('./pages/QuestionPage'));
 const ArticlesListPage = lazy(() => import('./pages/ArticlesListPage'));
@@ -12,6 +18,7 @@ const AdminPage = lazy(() => import('./pages/AdminPage'));
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
