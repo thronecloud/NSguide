@@ -9,6 +9,7 @@ export default function Header() {
           attend<span className="brand-accent">NS</span>
         </Link>
         <nav className="nav">
+          <Link to="/articles" className="nav-link">Articles</Link>
           <a href={REFERRAL_URL} className="btn-apply" rel="noopener noreferrer" target="_blank">
             Apply
           </a>

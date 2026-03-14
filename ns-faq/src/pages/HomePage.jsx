@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import NSQuiz from '../components/NSQuiz';
 import PhotoCarousel from '../components/PhotoCarousel';
+import ArticlesPreview from '../components/ArticlesPreview';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 
@@ -58,6 +59,7 @@ export default function HomePage() {
           </section>
           <NSQuiz />
           <PhotoCarousel />
+          <ArticlesPreview />
           <section className="faq" aria-label="Frequently asked questions">
             <h2 className="faq-section-title">FAQ</h2>
             <nav className="faq-categories" aria-label="FAQ categories">
