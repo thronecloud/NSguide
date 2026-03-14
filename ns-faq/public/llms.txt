@@ -47,7 +47,7 @@ Pretty much everything: accommodation (rooms upwards of 50 sqm with ocean-view b
 ### Category: basics
 
 #### How long can I stay?
-It's flexible. Some people come for a few weeks, others stay months or a full year. The program runs year-round. v1 was a 128-person 90-day popup. v2 expanded to 256 people for a full year. Cohort sizes now regularly hit 270+. There's no fixed commitment; you can extend or leave when it works for you.
+It's flexible. Some people come for a few weeks, others stay months or a full year. The program runs year-round. v1 was a 128-person 90-day popup. v2 expanded to 256 people for a full year. Cohort sizes now regularly hit 270+. There's no lock-in: you can leave on any day during your paid month if something comes up—you won't be penalized. Extending is easy, but extensions are only available in full-month increments (no partial-month add-ons). So if you want to stay longer, you commit to another full month at the current rate.
 
 
 ### Category: application
@@ -104,7 +104,7 @@ Built from scratch for NS, partnered with Bryan Johnson's Blueprint program. Wel
 It's a comprehensive fitness test usually done on the first or second day of your stay at NS. Various metrics are measured to track your health and performance. Common measurements include Weight, Body Fat Percentage, Grip Strength, Push-ups, Vertical Jump, Medicine Ball Toss, Single Leg Balance, Sit-to-Stand reps, Pull-ups, and cardiovascular endurance via The Beep Test. The combine gives you a baseline for improvement during your stay.
 
 #### What sports are available at Network School?
-NS has solid sports options. On campus, there's a very nice table tennis table—great for quick games. Inside the gym, the space is spacious enough that people set up nets and play badminton regularly; it's a popular choice. Within about 100 meters of NS there's a basketball court with infrastructure to put up nets—some members use it for pickleball too. At least two swimming pools are very close and easily accessible. Combined with the gym (weights, cardio, HIIT), you've got table tennis, badminton, basketball, pickleball, and swimming all within reach.
+NS has solid sports options. On campus, there's a very nice table tennis table—great for quick games. Inside the gym, the space is spacious enough that people set up nets and play badminton regularly; it's a popular choice. Within about 100 meters of NS there's a basketball court with infrastructure to put up nets—some members use it for pickleball too. There's a massive swimming pool very close and easily accessible, plus at least one more pool nearby. You can also bring your own road bike or bicycle—members do ride around Forest City, and the flat terrain makes it easy. Combined with the gym (weights, cardio, HIIT), you've got table tennis, badminton, basketball, pickleball, swimming, and cycling all within reach.
 
 #### What is NS Haven?
 Haven is NS's dedicated wellness space—think of it as 'heart infrastructure.' The gym is for the body, the library and coworking are for the head, and Haven is for the heart. It's a soft space for mindfulness, meditation, yoga, and just unwinding. It comes equipped with lush carpets, a massage chair (bookable), a large couch, meditation cushions, aromatherapy, and custom lighting and audio setups. After days of intense building and locking in, Haven is where people go to decompress and rebalance. Members also run sessions there—sound baths, somatic experiences, guided meditation.
@@ -131,7 +131,7 @@ Starlink-powered—100 to 400 Mbps download, with latency as low as 25 to 60 mil
 ### Category: community
 
 #### What kind of people attend?
-A mix: founders, digital nomads, Web3 builders, AI creators, remote workers, former military, academic professors, teenage coders. Very international—70+ nationalities, with strong representation from India, the US, Europe, Southeast Asia, and the Middle East. Demographics skew male (around 80%). Some have moved their offices here; others are figuring out their next move. It's a cultural smorgasbord.
+Roughly 80% of attendees come from AI, crypto, or content-creation backgrounds—those are the dominant communities. The rest includes remote workers, founders in other verticals, former military, academic professors, and teenage coders. Very international—70+ nationalities, with strong representation from India, the US, Europe, Southeast Asia, and the Middle East. Demographics skew male (around 80%). There's a mix of temporary visitors (one month to test it out) and semi-permanent residents (3–12 months); digital nomads show up too but get quickly integrated through the constant events and community programming. It's a cultural smorgasbord with a strong tech-builder bias.
 
 #### What is "Dark Talent"?
 Like dark matter in physics—it's everywhere but invisible to traditional systems. Dark talent is the massive global pool of high-potential individuals disconnected from elite institutions. Indian engineers, African founders, American Midwest makers, Latin American libertarians—people with raw ability who never had a shot at Stanford or YC. NS exists specifically to surface them. Traditional universities sort by credentials; NS sorts by capability and drive.
@@ -158,7 +158,7 @@ You have three main options. Singapore Changi is the most connected and best if 
 NS runs regular shuttle services. The bus stand is about a 5-minute walk from NS; buses run roughly every hour to and from Singapore. One-way cost is around 5 MYR to Singapore and around 5 SGD from Singapore to Forest City. The bus drops you at Singapore's MRT, so onward connectivity is excellent. But be realistic: plan 1.5 to 2 hours each way. You disembark at Malaysian checkpoint, clear exit immigration, cross the bridge, clear Singapore entry immigration, then transit onward. There are also cross-border buses (CW6, FC1) connecting to Singapore's MRT. It works for Token2049, conferences, or weekend trips—but daily commuting is impractical due to double border crossing.
 
 #### How do I get around Forest City?
-Mostly Grab—ride-hailing is the main option. Public transport is limited. The area is developing, so daily convenience isn't like Singapore. That said, the core NS facilities—Coworking, Lobby, Café, and Gym—are all walkable within the Forest City complex (see map below). You're not constantly moving around; the campus is self-contained. Bring some Malaysian ringgit for Grab rides and local errands.
+Forest City is only about 1–2 km end to end, so most people walk everywhere day-to-day. Some members bring bikes or use shared ones for quicker trips. The core NS facilities—Coworking, Lobby, Café, and Gym—are all within a few minutes' walk. For anything outside Forest City, Grab is the go-to: trips to Johor Bahru for shopping, weekend getaways to Singapore, Kuala Lumpur, or nearby islands are all common. A few residents have cars, but most don't need one. Public transport is limited, so Grab is essentially your taxi service. Bring some Malaysian ringgit for Grab rides and local errands.
 
 
 ### Category: living
@@ -219,6 +219,15 @@ There's something happening almost every hour—all organized through the NS Lum
 
 #### Can I bring my family?
 Yes. Families and kids are welcome—people of all ages are at NS. Some members have brought children for hackathons and events. The DE Rantau pass allows dependents (MYR 500 each). Family integration is a work in progress—the more families participate, the easier it gets. If you're considering it, check on current family participation levels before you come.
+
+
+### Category: living
+
+#### Are pets allowed at Network School?
+Yes—at least one resident has brought two dogs to Network School for a year-long stay. It requires paperwork and planning, but it's been done successfully. The pet owner created a guide for the required documentation and logistics. That said, it's not a common setup—most residents don't bring pets. If you're considering it, reach out to NS staff in advance to understand the requirements for importing pets into Malaysia (quarantine rules, vaccination certificates, and import permits). The Forest City campus has green spaces and walking areas that are dog-friendly.
+
+
+### Category: basics
 
 #### Is Network School good for Ramadan?
 It can be tricky. Meal timings, food availability, and gym schedules aren't designed around fasting hours. Some members observing Ramadan have found it challenging. The team could tailor for specific groups, but it hasn't been a default priority. If you're observing Ramadan, ask about accommodations before you come.

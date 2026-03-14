@@ -82,7 +82,7 @@ export const faqItems = [
     image: '/images/faq-illustrations/how-long.png',
     imageAlt: 'Typographic illustration: How long can I stay?',
     question: 'How long can I stay?',
-    answer: "It's flexible. Some people come for a few weeks, others stay months or a full year. The program runs year-round. v1 was a 128-person 90-day popup. v2 expanded to 256 people for a full year. Cohort sizes now regularly hit 270+. There's no fixed commitment; you can extend or leave when it works for you.",
+    answer: "It's flexible. Some people come for a few weeks, others stay months or a full year. The program runs year-round. v1 was a 128-person 90-day popup. v2 expanded to 256 people for a full year. Cohort sizes now regularly hit 270+. There's no lock-in: you can leave on any day during your paid month if something comes up—you won't be penalized. Extending is easy, but extensions are only available in full-month increments (no partial-month add-ons). So if you want to stay longer, you commit to another full month at the current rate.",
     seo: {
       title: 'How Long Can You Stay at Network School? Duration Explained',
       description: 'Network School stays are flexible—weeks to a full year. v1: 128 people, v2: 256 people. No fixed commitment.',
@@ -298,7 +298,7 @@ export const faqItems = [
     image: '/images/faq-illustrations/sports-availability.png',
     imageAlt: 'Typographic illustration: What sports are available at Network School?',
     question: 'What sports are available at Network School?',
-    answer: "NS has solid sports options. On campus, there's a very nice table tennis table—great for quick games. Inside the gym, the space is spacious enough that people set up nets and play badminton regularly; it's a popular choice. Within about 100 meters of NS there's a basketball court with infrastructure to put up nets—some members use it for pickleball too. At least two swimming pools are very close and easily accessible. Combined with the gym (weights, cardio, HIIT), you've got table tennis, badminton, basketball, pickleball, and swimming all within reach.",
+    answer: "NS has solid sports options. On campus, there's a very nice table tennis table—great for quick games. Inside the gym, the space is spacious enough that people set up nets and play badminton regularly; it's a popular choice. Within about 100 meters of NS there's a basketball court with infrastructure to put up nets—some members use it for pickleball too. There's a massive swimming pool very close and easily accessible, plus at least one more pool nearby. You can also bring your own road bike or bicycle—members do ride around Forest City, and the flat terrain makes it easy. Combined with the gym (weights, cardio, HIIT), you've got table tennis, badminton, basketball, pickleball, swimming, and cycling all within reach.",
     seo: {
       title: 'Sports at Network School: TT, Badminton, Basketball, Pickleball, Swimming',
       description: 'NS sports: table tennis, badminton in gym, basketball court and pickleball within 100m, swimming pools nearby. Full sports guide.',
@@ -391,7 +391,7 @@ export const faqItems = [
     image: '/images/faq-illustrations/who-attends.png',
     imageAlt: 'Typographic illustration: What kind of people attend?',
     question: 'What kind of people attend?',
-    answer: "A mix: founders, digital nomads, Web3 builders, AI creators, remote workers, former military, academic professors, teenage coders. Very international—70+ nationalities, with strong representation from India, the US, Europe, Southeast Asia, and the Middle East. Demographics skew male (around 80%). Some have moved their offices here; others are figuring out their next move. It's a cultural smorgasbord.",
+    answer: "Roughly 80% of attendees come from AI, crypto, or content-creation backgrounds—those are the dominant communities. The rest includes remote workers, founders in other verticals, former military, academic professors, and teenage coders. Very international—70+ nationalities, with strong representation from India, the US, Europe, Southeast Asia, and the Middle East. Demographics skew male (around 80%). There's a mix of temporary visitors (one month to test it out) and semi-permanent residents (3–12 months); digital nomads show up too but get quickly integrated through the constant events and community programming. It's a cultural smorgasbord with a strong tech-builder bias.",
     seo: {
       title: 'Who Attends Network School? Demographics & Community',
       description: 'NS attracts founders, nomads, Web3 builders from 70+ countries. Skews male. Former military to teenage coders. Who you will meet.',
@@ -496,7 +496,7 @@ export const faqItems = [
     image: '/images/faq-illustrations/getting-around.png',
     imageAlt: 'Typographic illustration: How do I get around Forest City?',
     question: 'How do I get around Forest City?',
-    answer: "Mostly Grab—ride-hailing is the main option. Public transport is limited. The area is developing, so daily convenience isn't like Singapore. That said, the core NS facilities—Coworking, Lobby, Café, and Gym—are all walkable within the Forest City complex (see map below). You're not constantly moving around; the campus is self-contained. Bring some Malaysian ringgit for Grab rides and local errands.",
+    answer: "Forest City is only about 1–2 km end to end, so most people walk everywhere day-to-day. Some members bring bikes or use shared ones for quicker trips. The core NS facilities—Coworking, Lobby, Café, and Gym—are all within a few minutes' walk. For anything outside Forest City, Grab is the go-to: trips to Johor Bahru for shopping, weekend getaways to Singapore, Kuala Lumpur, or nearby islands are all common. A few residents have cars, but most don't need one. Public transport is limited, so Grab is essentially your taxi service. Bring some Malaysian ringgit for Grab rides and local errands.",
     seo: {
       title: 'Getting Around Forest City at Network School',
       description: 'Forest City: Grab for rides, limited public transit. NS campus is walkable. How to get around. Bring ringgit.',
@@ -686,6 +686,19 @@ export const faqItems = [
       title: 'Can I Bring My Family to Network School? Dependents & Kids',
       description: 'Families and children welcome at NS. DE Rantau allows dependents. Family integration improving. Bring your family.',
       keywords: 'Network School family, NS children, bring family, DE Rantau dependents',
+    },
+  },
+  {
+    category: 'living',
+    slug: 'pets-allowed',
+    image: '',
+    imageAlt: '',
+    question: 'Are pets allowed at Network School?',
+    answer: "Yes—at least one resident has brought two dogs to Network School for a year-long stay. It requires paperwork and planning, but it's been done successfully. The pet owner created a guide for the required documentation and logistics. That said, it's not a common setup—most residents don't bring pets. If you're considering it, reach out to NS staff in advance to understand the requirements for importing pets into Malaysia (quarantine rules, vaccination certificates, and import permits). The Forest City campus has green spaces and walking areas that are dog-friendly.",
+    seo: {
+      title: 'Are Pets Allowed at Network School? Dogs, Cats & Animals',
+      description: 'Yes, pets are allowed at Network School. At least one resident brought two dogs. Requires paperwork and planning. Guide to bringing pets to Forest City.',
+      keywords: 'Network School pets, NS dogs allowed, bring pets to Forest City, Network School animals',
     },
   },
   {
