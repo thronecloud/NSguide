@@ -1,6 +1,7 @@
 {
   "name": "nsguide",
   "private": true,
+  "type": "module",
   "description": "Network School FAQ — NSguide",
   "scripts": {
     "dev": "cd ns-faq && npm run dev",
