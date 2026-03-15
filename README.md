@@ -1,4 +1,4 @@
-# NSguide — Network School FAQ
+# NSguide — Network School  FAQ
 
 Unofficial third-party FAQ for Network School. Deployed at [n-s-guide.vercel.app](https://n-s-guide.vercel.app).
 
