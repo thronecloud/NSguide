@@ -32,9 +32,6 @@ export default function Hero() {
         <a href={REFERRAL_URL} className="pill pill-primary" rel="noopener noreferrer" target="_blank">
           Apply Now
         </a>
-        <a href="https://ns.com/reviews" className="pill" rel="noopener noreferrer" target="_blank">
-          Community
-        </a>
       </div>
 
       <div className="hero-stats">
@@ -49,8 +46,8 @@ export default function Hero() {
         </div>
         <div className="hero-stat-divider" />
         <div className="hero-stat">
-          <span className="hero-stat-number">70+</span>
-          <span className="hero-stat-label">Countries</span>
+          <span className="hero-stat-number">25%</span>
+          <span className="hero-stat-label">Discount</span>
         </div>
         <div className="hero-stat-divider" />
         <div className="hero-stat">
