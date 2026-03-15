@@ -1,12 +1,31 @@
 import { REFERRAL_URL } from '../config';
+import { faqItems } from '../data/faqData';
+import { articles } from '../data/articleData';
+
+const openSearch = () => window.dispatchEvent(new Event('open-search'));
 
 export default function Hero() {
   return (
     <section className="hero">
-      <h1 className="hero-title">Network School: The Honest Review</h1>
+      <div className="hero-eyebrow">An honest guide by a resident</div>
+      <h1 className="hero-title">
+        Network School:<br />
+        <em>The Honest Review</em>
+      </h1>
       <p className="hero-subtitle">
-        This guide is written by someone who has spent multiple months living at NetworkSchool and offers practical guide with complete honesty and transparency about actually living at NS. Moving your life to a new city can be a big decision and we are here to help you make that decision by providing you with all information, tricks, and tips for your journey at NS which has been very rewarding for a lot of people.
+        Written by someone who has spent multiple months living at Network School.
+        Practical tips, real experiences, and complete transparency about life at NS.
       </p>
+
+      <button type="button" className="hero-search-bar" onClick={openSearch}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <span className="hero-search-placeholder">Search FAQs, guides, quiz...</span>
+        <kbd className="hero-search-kbd">&#8984;K</kbd>
+      </button>
+
       <div className="hero-pills">
         <a href="https://thenetworkstate.com/" className="pill" rel="noopener noreferrer" target="_blank">
           Network State
@@ -17,6 +36,28 @@ export default function Hero() {
         <a href="https://ns.com/reviews" className="pill" rel="noopener noreferrer" target="_blank">
           Community
         </a>
+      </div>
+
+      <div className="hero-stats">
+        <div className="hero-stat">
+          <span className="hero-stat-number">{faqItems.length}+</span>
+          <span className="hero-stat-label">FAQs</span>
+        </div>
+        <div className="hero-stat-divider" />
+        <div className="hero-stat">
+          <span className="hero-stat-number">{articles.length}</span>
+          <span className="hero-stat-label">Guides</span>
+        </div>
+        <div className="hero-stat-divider" />
+        <div className="hero-stat">
+          <span className="hero-stat-number">70+</span>
+          <span className="hero-stat-label">Countries</span>
+        </div>
+        <div className="hero-stat-divider" />
+        <div className="hero-stat">
+          <span className="hero-stat-number">$1,500</span>
+          <span className="hero-stat-label">/month</span>
+        </div>
       </div>
     </section>
   );

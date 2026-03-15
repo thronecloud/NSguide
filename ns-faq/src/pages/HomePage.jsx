@@ -6,14 +6,14 @@ import { faqItems, FAQ_CATEGORIES, getFaqByCategory } from '../data/faqData';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import NSQuiz from '../components/NSQuiz';
-import PhotoCarousel from '../components/PhotoCarousel';
+import PhotoGrid from '../components/PhotoGrid';
 import ArticlesPreview from '../components/ArticlesPreview';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 
 export default function HomePage() {
   const { hash } = useLocation();
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [expandedCategories, setExpandedCategories] = useState([]);
   const [openSlug, setOpenSlug] = useState(null);
 
   useEffect(() => {
@@ -21,17 +21,24 @@ export default function HomePage() {
       const slug = hash.slice(5);
       const item = faqItems.find((i) => i.slug === slug);
       if (item) {
-        setActiveCategory(item.category);
+        setExpandedCategories(prev =>
+          prev.includes(item.category) ? prev : [...prev, item.category]
+        );
         setOpenSlug(item.slug);
-        document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
       }
     }
   }, [hash]);
 
-  const itemsToShow =
-    activeCategory === 'all'
-      ? faqItems
-      : getFaqByCategory(activeCategory);
+  const toggleCategory = (catId) => {
+    setExpandedCategories(prev =>
+      prev.includes(catId)
+        ? prev.filter(id => id !== catId)
+        : [...prev, catId]
+    );
+  };
 
   return (
     <>
@@ -43,8 +50,9 @@ export default function HomePage() {
         <Header />
         <main className="main">
           <Hero />
+
           <section className="campus-map" aria-label="Campus map">
-            <h2 className="campus-map-title">The Campus</h2>
+            <h2 className="section-display-title">The Campus</h2>
             <img
               src="/campus-map.jpg"
               alt="Forest City campus map showing NS Coworking, NS Lobby, NS Café, and NS Gym locations"
@@ -54,89 +62,104 @@ export default function HomePage() {
               height="566"
             />
             <p className="campus-map-caption">
-              NS Coworking, Lobby, Café, and Gym — all walkable within the Forest City complex.
+              NS Coworking, Lobby, Cafe, and Gym — all walkable within the Forest City complex.
             </p>
           </section>
-          <NSQuiz />
-          <PhotoCarousel />
-          <section className="faq" aria-label="Frequently asked questions">
-            <h2 className="faq-section-title">FAQ</h2>
-            <nav className="faq-categories" aria-label="FAQ categories">
-              <button
-                type="button"
-                className={`faq-category-btn ${activeCategory === 'all' ? 'faq-category-btn--active' : ''}`}
-                onClick={() => setActiveCategory('all')}
-              >
-                All
-              </button>
-              {FAQ_CATEGORIES.map((cat) => (
-                <button
-                  key={cat.id}
-                  type="button"
-                  className={`faq-category-btn ${activeCategory === cat.id ? 'faq-category-btn--active' : ''}`}
-                  onClick={() => {
-                    setActiveCategory(cat.id);
-                    setOpenSlug(null);
-                  }}
-                >
-                  {cat.label}
-                </button>
-              ))}
-            </nav>
-            <div className="faq-list faq-list--accordion">
-              {itemsToShow.map((item) => {
+
+          <section className="faq" id="faq" aria-label="Frequently asked questions">
+            <div className="section-header">
+              <h2 className="section-display-title">Frequently Asked Questions</h2>
+              <p className="section-subtitle">{faqItems.length} questions answered from firsthand experience</p>
+            </div>
+            <div className="faq-category-list">
+              {FAQ_CATEGORIES.map((cat) => {
+                const catItems = getFaqByCategory(cat.id);
+                const isExpanded = expandedCategories.includes(cat.id);
                 return (
-                  <div
-                    key={item.slug}
-                    id={`faq-${item.slug}`}
-                    className={`faq-item ${openSlug === item.slug ? 'faq-item--open' : ''}`}
-                  >
+                  <div key={cat.id} className={`faq-category-group ${isExpanded ? 'faq-category-group--open' : ''}`}>
                     <button
                       type="button"
-                      className="faq-question"
-                      onClick={() => setOpenSlug(openSlug === item.slug ? null : item.slug)}
-                      aria-expanded={openSlug === item.slug}
-                      aria-controls={`faq-answer-${item.slug}`}
-                      id={`faq-question-${item.slug}`}
+                      className="faq-category-header"
+                      onClick={() => toggleCategory(cat.id)}
+                      aria-expanded={isExpanded}
                     >
-                      <span className="faq-link-question">{item.question}</span>
-                      <span className="faq-chevron" aria-hidden="true">
-                        {openSlug === item.slug ? '−' : '+'}
-                      </span>
-                    </button>
-                    <div
-                      id={`faq-answer-${item.slug}`}
-                      className="faq-answer"
-                      role="region"
-                      aria-labelledby={`faq-question-${item.slug}`}
-                      hidden={openSlug !== item.slug}
-                    >
-                      <p>{item.answer}</p>
-                      {((item.ctaText && item.ctaUrl) || (SHOW_REFERRAL_CTA_ON_ALL_FAQS && REFERRAL_URL)) && (
-                        <p>
-                          <a
-                            href={item.ctaUrl || REFERRAL_URL}
-                            className="faq-cta-link"
-                            rel="noopener noreferrer"
-                            target="_blank"
-                          >
-                            {item.ctaText || 'Apply now'}
-                          </a>
-                        </p>
-                      )}
-                      <Link
-                        to={`/faq/${item.slug}`}
-                        className="faq-permalink"
-                        title="Open this question on its own page"
+                      <div className="faq-category-header-left">
+                        <span className="faq-category-name">{cat.label}</span>
+                        <span className="faq-category-count">{catItems.length}</span>
+                      </div>
+                      <svg
+                        className={`faq-category-chevron ${isExpanded ? 'faq-category-chevron--open' : ''}`}
+                        width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                       >
-                        Open full page →
-                      </Link>
-                    </div>
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </button>
+                    {isExpanded && (
+                      <div className="faq-category-items">
+                        {catItems.map((item) => (
+                          <div
+                            key={item.slug}
+                            id={`faq-${item.slug}`}
+                            className={`faq-item ${openSlug === item.slug ? 'faq-item--open' : ''}`}
+                          >
+                            <button
+                              type="button"
+                              className="faq-question"
+                              onClick={() => setOpenSlug(openSlug === item.slug ? null : item.slug)}
+                              aria-expanded={openSlug === item.slug}
+                              aria-controls={`faq-answer-${item.slug}`}
+                              id={`faq-question-${item.slug}`}
+                            >
+                              <span className="faq-link-question">{item.question}</span>
+                              <span className="faq-chevron" aria-hidden="true">
+                                {openSlug === item.slug ? '−' : '+'}
+                              </span>
+                            </button>
+                            <div
+                              id={`faq-answer-${item.slug}`}
+                              className="faq-answer"
+                              role="region"
+                              aria-labelledby={`faq-question-${item.slug}`}
+                              hidden={openSlug !== item.slug}
+                            >
+                              <p>{item.answer}</p>
+                              {((item.ctaText && item.ctaUrl) || (SHOW_REFERRAL_CTA_ON_ALL_FAQS && REFERRAL_URL)) && (
+                                <p>
+                                  <a
+                                    href={item.ctaUrl || REFERRAL_URL}
+                                    className="faq-cta-link"
+                                    rel="noopener noreferrer"
+                                    target="_blank"
+                                  >
+                                    {item.ctaText || 'Apply now'}
+                                  </a>
+                                </p>
+                              )}
+                              <Link
+                                to={`/faq/${item.slug}`}
+                                className="faq-permalink"
+                                title="Open this question on its own page"
+                              >
+                                Open full page &rarr;
+                              </Link>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 );
               })}
             </div>
           </section>
+
+          <PhotoGrid />
+
+          <div id="quiz">
+            <NSQuiz />
+          </div>
+
           <ArticlesPreview />
           <CTA />
         </main>
