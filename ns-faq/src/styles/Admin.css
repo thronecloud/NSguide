@@ -533,3 +533,193 @@
   font-size: 0.9rem;
   font-weight: 500;
 }
+
+/* ===== ADMIN DARK MODE ===== */
+html.dark .admin {
+  background: #141413;
+  color: #e8e6e1;
+}
+
+html.dark .admin-login,
+html.dark .admin-form,
+html.dark .admin-header,
+html.dark .admin-tabs,
+html.dark .admin-item,
+html.dark .quiz-question-card {
+  background: #1e1e1c;
+  border-color: #2e2d2a;
+}
+
+html.dark .admin-header {
+  border-bottom-color: #2e2d2a;
+}
+
+html.dark .admin-tabs {
+  border-bottom-color: #2e2d2a;
+}
+
+html.dark .admin-login h1,
+html.dark .admin-header h1,
+html.dark .admin-form h2,
+html.dark .quiz-manager-header h2 {
+  color: #e8e6e1;
+}
+
+html.dark .admin-login input,
+html.dark .form-group input,
+html.dark .form-group select,
+html.dark .form-group textarea,
+html.dark .quiz-score-input {
+  background: #242320;
+  border-color: #3d3b37;
+  color: #e8e6e1;
+}
+
+html.dark .form-group select {
+  background: #242320;
+}
+
+html.dark .form-group label {
+  color: #a3a09a;
+}
+
+html.dark .admin-login button,
+html.dark .form-actions button[type='submit'],
+html.dark .admin-actions .btn-primary,
+html.dark .quiz-manager-actions .btn-primary {
+  background: #ffdd00;
+  border-color: #ffdd00;
+  color: #1a1a1a;
+}
+
+html.dark .admin-login button:hover,
+html.dark .form-actions button[type='submit']:hover,
+html.dark .admin-actions .btn-primary:hover,
+html.dark .quiz-manager-actions .btn-primary:hover {
+  background: #ffe433;
+}
+
+html.dark .admin-actions button,
+html.dark .form-actions button,
+html.dark .admin-item-actions button,
+html.dark .quiz-manager-actions button {
+  background: #242320;
+  border-color: #3d3b37;
+  color: #e8e6e1;
+}
+
+html.dark .admin-actions button:hover,
+html.dark .form-actions button:hover,
+html.dark .admin-item-actions button:hover {
+  background: #2e2d2a;
+}
+
+html.dark .admin-actions .btn-ghost {
+  border-color: transparent;
+  color: #706d67;
+}
+
+html.dark .admin-actions a {
+  color: #e8e6e1;
+}
+
+html.dark .admin-tab {
+  color: #706d67;
+}
+
+html.dark .admin-tab:hover {
+  color: #e8e6e1;
+}
+
+html.dark .admin-tab--active {
+  color: #e8e6e1;
+  border-bottom-color: #ffdd00;
+}
+
+html.dark .admin-add-card {
+  background: #262210;
+  border-color: #ffdd00;
+  color: #e8e6e1;
+}
+
+html.dark .admin-add-card:hover {
+  background: #302a14;
+}
+
+html.dark .admin-item-content strong {
+  color: #e8e6e1;
+}
+
+html.dark .admin-item-slug,
+html.dark .admin-drag-hint,
+html.dark .admin-hint,
+html.dark .quiz-manager-info,
+html.dark .quiz-score-input-group label {
+  color: #706d67;
+}
+
+html.dark .admin-item-drag {
+  color: #3d3b37;
+}
+
+html.dark .quiz-option-row {
+  background: #242320;
+}
+
+html.dark .quiz-option-text {
+  color: #a3a09a;
+}
+
+html.dark .admin-export-hint {
+  background: #262210;
+  border-color: #3d3b37;
+  color: #e8e6e1;
+}
+
+html.dark .admin-export-hint code {
+  background: #242320;
+  color: #a3a09a;
+}
+
+html.dark .admin-form-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+html.dark .form-actions {
+  border-top-color: #2e2d2a;
+}
+
+html.dark .admin-error {
+  color: #ff6b6b;
+}
+
+html.dark .admin-item-actions .btn-danger-sm {
+  border-color: #4a2020;
+  color: #ff6b6b;
+}
+
+html.dark .admin-item-actions .btn-danger-sm:hover {
+  background: #2a1515;
+}
+
+html.dark .form-actions .btn-danger {
+  border-color: #4a2020;
+  color: #ff6b6b;
+}
+
+html.dark .form-actions .btn-danger:hover {
+  background: #2a1515;
+}
+
+html.dark .quiz-save-success {
+  color: #66bb6a;
+}
+
+html.dark .quiz-save-error {
+  color: #ff6b6b;
+}
+
+html.dark .quiz-score-input:focus {
+  border-color: #ffdd00;
+  box-shadow: 0 0 0 2px rgba(255, 221, 0, 0.2);
+}

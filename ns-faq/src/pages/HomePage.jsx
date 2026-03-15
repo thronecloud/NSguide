@@ -51,6 +51,10 @@ export default function HomePage() {
         <main className="main">
           <Hero />
 
+          <div id="quiz">
+            <NSQuiz />
+          </div>
+
           <section className="campus-map" aria-label="Campus map">
             <h2 className="section-display-title">The Campus</h2>
             <img
@@ -155,10 +159,6 @@ export default function HomePage() {
           </section>
 
           <PhotoGrid />
-
-          <div id="quiz">
-            <NSQuiz />
-          </div>
 
           <ArticlesPreview />
           <CTA />
