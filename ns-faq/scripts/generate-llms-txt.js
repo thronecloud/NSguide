@@ -6,8 +6,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 import { faqItems } from '../src/data/faqData.js';
-
 import { articles } from '../src/data/articleData.js';
+import { quizQuestions } from '../src/data/quizData.js';
 
 const OUTPUT_PATH = path.join(__dirname, '../public/llms.txt');
 
@@ -45,6 +45,17 @@ function generateLlmsTxt() {
         }
         content += `#### ${item.question}\n`;
         content += `${item.answer}\n\n`;
+    }
+
+    content += `\n---\n\n## NS Compatibility Quiz\n`;
+    content += `> URL: https://attendNS.com/quiz\n`;
+    content += `> Take this 10-question compatibility test to find out if Network School is right for you.\n\n`;
+    for (const q of quizQuestions) {
+        content += `**Q${q.id}: ${q.question}**\n`;
+        for (const opt of q.options) {
+            content += `- ${opt.text} (score: ${opt.score})\n`;
+        }
+        content += `\n`;
     }
 
     content += `\n---\n\n## In-Depth Resident Guides\n\n`;

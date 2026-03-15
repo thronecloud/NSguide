@@ -6,6 +6,7 @@ export default function Footer() {
       <div className="footer-inner">
         <div className="footer-links">
           <Link to="/articles">Articles</Link>
+          <Link to="/quiz">Quiz</Link>
           <Link to="/faq/how-much-cost">Cost</Link>
           <Link to="/faq/how-apply">Apply</Link>
           <Link to="/faq/where-located">Location</Link>

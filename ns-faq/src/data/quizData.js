@@ -113,8 +113,8 @@ export function getQuizResult(score) {
         return {
             title: "The Urbanite (Probably Not For You)",
             description: "Honestly... you might hate it here. And that's okay! If you need constant city energy, massive social separation from your workspace, or traditional vacation amenities, the intensity of Network School isn't the right vibe for you right now.",
-            callToAction: "Read the Downsides",
-            link: "#faq-downsides",
+            callToAction: "",
+            link: "",
             statusColor: "#f44336" // Red warning
         };
     }

@@ -64,6 +64,21 @@ export const faqItems = [
     },
   },
   {
+    category: 'basics',
+    slug: 'network-school-discount',
+    image: '',
+    imageAlt: '',
+    question: 'Are there any discounts available for Network School?',
+    answer: "Yes! Network School offers a 25% discount when you sign up through a resident referral link. You also get your first week completely free — so you can try the campus, meals, gym, and coworking before fully committing. That brings the effective cost down significantly: a shared room drops from $1,500 to around $1,125/month, and a single room from $3,000 to around $2,250/month. This is the best deal available — there's no public coupon code or seasonal sale. We recommend using our referral link below to lock in the 25% off and free first week.",
+    ctaText: 'Get 25% off — Apply now',
+    ctaUrl: REFERRAL_URL,
+    seo: {
+      title: 'Network School Discount: 25% Off + Free First Week (2026)',
+      description: 'Get 25% off Network School with a resident referral link plus a free first week. Best available discount for NS in 2026.',
+      keywords: 'Network School discount, NS coupon, Network School referral, NS discount code, Network School free week, ns.com discount',
+    },
+  },
+  {
     category: 'living',
     slug: 'whats-included',
     image: '/images/faq-illustrations/whats-included.png',

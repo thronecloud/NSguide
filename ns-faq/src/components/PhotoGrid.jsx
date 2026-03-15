@@ -44,7 +44,7 @@ export default function PhotoGrid() {
     let paused = false;
     const interval = setInterval(() => {
       if (!paused) scroll(1);
-    }, 4000);
+    }, 2000);
     const pause = () => { paused = true; };
     const resume = () => { paused = false; };
     el.addEventListener('mouseenter', pause);

@@ -9,6 +9,7 @@ function ScrollToTop() {
   return null;
 }
 
+const QuizPage = lazy(() => import('./pages/QuizPage'));
 const QuestionPage = lazy(() => import('./pages/QuestionPage'));
 const ArticlesListPage = lazy(() => import('./pages/ArticlesListPage'));
 const ArticlePage = lazy(() => import('./pages/ArticlePage'));
@@ -42,6 +43,7 @@ export default function App() {
       <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>Loading...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/quiz" element={<QuizPage />} />
           <Route path="/faq/:slug" element={<QuestionPage />} />
           <Route path="/articles" element={<ArticlesListPage />} />
           <Route path="/articles/:slug" element={<ArticlePage />} />

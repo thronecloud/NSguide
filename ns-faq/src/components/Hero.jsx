@@ -9,8 +9,7 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-eyebrow">An honest guide by a resident</div>
       <h1 className="hero-title">
-        Network School:<br />
-        <em>The Honest Review</em>
+        Network School: <em>The Honest Review</em>
       </h1>
       <p className="hero-subtitle">
         Written by someone who has spent multiple months living at Network School.

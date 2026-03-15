@@ -79,7 +79,16 @@ export default function SearchOverlay({ isOpen, onClose }) {
         url: `/articles/${article.slug}`,
       }));
 
-    return [...faqResults, ...articleResults];
+    // Static pages
+    const pages = [
+      { title: 'Is NS Right For You? — Compatibility Quiz', subtitle: 'Take the 10-question quiz to find out if Network School is right for you', url: '/quiz', keywords: 'quiz compatibility test' },
+      { title: 'Articles & Guides', subtitle: 'In-depth guides about Network School from a real resident', url: '/articles', keywords: 'articles guides resident' },
+    ];
+    const pageResults = pages
+      .filter(p => p.title.toLowerCase().includes(q) || p.keywords.includes(q))
+      .map(p => ({ type: 'page', title: p.title, subtitle: p.subtitle, url: p.url }));
+
+    return [...faqResults, ...articleResults, ...pageResults];
   }, [query]);
 
   const handleSelect = (result) => {
@@ -122,7 +131,7 @@ export default function SearchOverlay({ isOpen, onClose }) {
     );
   };
 
-  const typeLabels = { faq: 'FAQs', guide: 'Guides' };
+  const typeLabels = { faq: 'FAQs', guide: 'Guides', page: 'Pages' };
 
   return (
     <div className="search-overlay" onClick={onClose}>
@@ -158,7 +167,7 @@ export default function SearchOverlay({ isOpen, onClose }) {
 
           {query.trim() && results.length > 0 && (
             <>
-              {['faq', 'guide'].map(type => {
+              {['faq', 'guide', 'page'].map(type => {
                 const typeResults = results.filter(r => r.type === type);
                 if (typeResults.length === 0) return null;
                 return (
