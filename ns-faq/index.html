@@ -42,6 +42,92 @@
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="preload" href="/campus-map.jpg" as="image" fetchpriority="high" />
+  <!-- WebSite schema — drives Google Sitelinks + search box -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "attendNS",
+    "alternateName": ["Network School Guide", "Network School Review", "NS Guide"],
+    "url": "https://attendNS.com",
+    "description": "Honest Network School review and guide from a real resident. FAQs, travel guides, visa info, and cost breakdowns.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://attendNS.com/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <!-- Organization schema — drives Knowledge Panel -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "attendNS",
+    "alternateName": "Network School Guide",
+    "url": "https://attendNS.com",
+    "logo": "https://attendNS.com/images/attendns-logo.svg",
+    "description": "An unofficial, independent guide to Network School — the startup society in Forest City, Malaysia. Written by a real resident with firsthand experience.",
+    "foundingDate": "2026",
+    "knowsAbout": ["Network School", "Network State", "Forest City Malaysia", "Digital Nomad", "Co-living"],
+    "sameAs": []
+  }
+  </script>
+  <!-- SiteNavigationElement — tells Google which pages are your key sections (drives sitelinks) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "SiteNavigationElement",
+        "position": 1,
+        "name": "FAQs",
+        "description": "60+ frequently asked questions about Network School answered by a resident",
+        "url": "https://attendNS.com/#faq"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 2,
+        "name": "Guides",
+        "description": "In-depth resident guides: travel, accommodation, food, visas, and activities",
+        "url": "https://attendNS.com/articles"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 3,
+        "name": "Cost",
+        "description": "Network School costs $1,500–$3,000/month all-inclusive. Full pricing breakdown.",
+        "url": "https://attendNS.com/faq/how-much-cost"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 4,
+        "name": "How to Apply",
+        "description": "Step-by-step application process for Network School with referral discount",
+        "url": "https://attendNS.com/faq/how-to-apply"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 5,
+        "name": "Visa Guide",
+        "description": "Complete Malaysia visa guide for Network School: tourist visa, DE Rantau, and more",
+        "url": "https://attendNS.com/articles/malaysia-visa-guide-for-network-school"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 6,
+        "name": "Quiz",
+        "description": "Take the 10-question compatibility quiz to find out if Network School is right for you",
+        "url": "https://attendNS.com/quiz"
+      }
+    ]
+  }
+  </script>
+  <!-- FAQPage schema (homepage) -->
   <script
     type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Network School?","acceptedAnswer":{"@type":"Answer","text":"Network School (NS) is a startup society—sometimes called 'Society-as-a-Service'—where builders, founders, and remote workers live together on a campus near Singapore. Think of it as a first-mover community: you're surrounded by people building in tech, Web3, and AI. It's not a formal school with grades or credentials—it's more like a luxury hacker house meets co-living meets startup boot camp. The idea is to turn online communities into physical ones, and it's the live pilot for the broader 'Network State' thesis."}},{"@type":"Question","name":"Where is Network School located?","acceptedAnswer":{"@type":"Answer","text":"NS is in Forest City, Malaysia—a $100 billion megaproject by China's Country Garden, built on artificial islands in the Johor Strait, about an hour from Singapore. The development was originally a luxury enclave for foreign investors, but market shifts left it largely empty. NS leases the undervalued luxury infrastructure—towering high-rises, marble lobbies, ocean views—at a fraction of what comparable facilities would cost in any major city. It's peaceful, green, and isolated, which is the point: fewer distractions, more focus. Singapore is close enough for conferences and city trips, and NS runs regular shuttle services."}},{"@type":"Question","name":"How much does Network School cost?","acceptedAnswer":{"@type":"Answer","text":"It's $1,500/month for a double room (shared) or $3,000/month for a single room. That covers housing, three meals a day, gym access, coworking, Starlink internet, room cleaning, laundry, and all courses and events. The café and vending machines are optional extras. For context, that's less than rent alone in SF or Singapore—and you're getting food, gym, and coworking bundled in. Day passes are also available if you're just visiting."}},{"@type":"Question","name":"What's included in the fee?","acceptedAnswer":{"@type":"Answer","text":"Pretty much everything: accommodation (rooms upwards of 50 sqm with ocean-view balconies), three Blueprint meals a day, 24/7 gym, coworking spaces, Starlink high-speed internet, room cleaning, laundry, workshops, and community events. The café and vending machines are separate if you want extra coffee or snacks. You get access to meeting rooms, a library, yoga space, and the whole campus. Zero domestic friction—you don't cook, clean, or deal with logistics."}},{"@type":"Question","name":"How long can I stay?","acceptedAnswer":{"@type":"Answer","text":"It's flexible. Some people come for a few weeks, others stay months or a full year. The program runs year-round. v1 was a 128-person 90-day popup. v2 expanded to 256 people for a full year. Cohort sizes now regularly hit 270+. There's no fixed commitment; you can extend or leave when it works for you."}},{"@type":"Question","name":"Who can join?","acceptedAnswer":{"@type":"Answer","text":"Founders, builders, digital nomads, Web3 folks, AI creators—anyone value-aligned and interested in building. NS specifically seeks three archetypes: (1) founders, engineers, designers, investors—the tech engine; (2) trainers, athletes, coaches—the fitness engine; (3) writers, artists, influencers using generative AI—the cultural engine. Age doesn't matter—there are teenage coders and fifty-something professionals. Members have seen an 80-year-old and a 7-year-old both have great experiences with daily walks and the community. Anyone fascinated by or curious about tech will fit in regardless of age. They look for fit, not credentials."}}]}</script>
 </head>
