@@ -8,7 +8,7 @@ export default function Footer() {
           <Link to="/articles">Articles</Link>
           <Link to="/quiz">Quiz</Link>
           <Link to="/faq/how-much-cost">Cost</Link>
-          <Link to="/faq/how-apply">Apply</Link>
+          <Link to="/faq/how-to-apply">Apply</Link>
           <Link to="/faq/where-located">Location</Link>
           <Link to="/articles/malaysia-visa-guide-for-network-school">Visa Guide</Link>
           <Link to="/terms">Terms</Link>

@@ -74,7 +74,7 @@ If you're taking the cross-border bus, keep your passport accessible — not in 
       description: 'Complete travel guide to Network School in Forest City, Malaysia. Best airports (Changi vs JHB vs KL), cross-border buses, NS monthly shuttle, and getting around Forest City.',
       keywords: 'how to get to Network School, Network School travel guide, Forest City Malaysia transport, Singapore to Forest City bus, Network School airport, NS shuttle'
     },
-    relatedFaqs: ['where-located', 'which-airport', 'how-get-to-singapore', 'how-get-around-forest-city'],
+    relatedFaqs: ['where-located', 'which-airport', 'singapore-transport', 'getting-around'],
     relatedArticles: ['accommodation-at-network-school', 'malaysia-visa-guide-for-network-school']
   },
   {
@@ -149,7 +149,7 @@ Forest City itself is quiet. If you want the energy of a bustling neighborhood, 
       description: 'Honest review of Network School accommodation. Room types ($1,500 shared vs $3,000 private), daily cleaning, laundry, coworking spaces, and what daily life actually looks like at the Forest City campus.',
       keywords: 'Network School rooms, NS accommodation, Forest City Marina Hotel, Network School cost, NS room review, co-living Forest City, network school daily life'
     },
-    relatedFaqs: ['rooms-like', 'room-cleaning-laundry', 'private-pods-offices', 'how-much-cost', 'whats-included'],
+    relatedFaqs: ['rooms', 'cleaning-laundry', 'pods-offices', 'how-much-cost', 'whats-included'],
     relatedArticles: ['food-at-network-school', 'activities-and-events-at-network-school']
   },
   {
@@ -210,7 +210,7 @@ One thing to know: alcohol is minimal here. The longevity and fitness culture me
       description: 'What actually happens at Network School every day. HIIT classes, hackathons, crypto bounties, VC office hours, wellness sessions, and member-led programming. A real resident\'s guide.',
       keywords: 'Network School activities, NS events, Network School hackathon, NS fitness, Bryan Johnson Blueprint NS, Network School crypto bounties, NS daily schedule'
     },
-    relatedFaqs: ['typical-day', 'programs-events', 'daily-events-sessions', 'gym-like', 'earn-money', 'ns-haven'],
+    relatedFaqs: ['typical-day', 'programs-events', 'daily-events-sessions', 'gym', 'earning-bounties', 'haven'],
     relatedArticles: ['accommodation-at-network-school', 'food-at-network-school']
   },
   {
@@ -275,7 +275,7 @@ Malaysia is a top medical tourism destination — the quality of care is excelle
       description: 'Complete visa guide for Network School residents. Tourist visa, DE Rantau digital nomad pass ($220, up to 24 months), visa run risks, Singapore transit, and health insurance options.',
       keywords: 'Network School visa, Malaysia visa for digital nomads, DE Rantau visa, Malaysia digital nomad pass, Forest City visa, Network School legal stay, Malaysia visa run'
     },
-    relatedFaqs: ['need-visa', 'de-rantau', 'visa-runs', 'health-insurance', 'good-for-digital-nomads'],
+    relatedFaqs: ['visa-requirements', 'de-rantau', 'visa-runs', 'health-insurance'],
     relatedArticles: ['how-to-travel-to-network-school', 'accommodation-at-network-school']
   },
   {
@@ -348,7 +348,7 @@ General tip: bring your favorite snacks from home for the first week. Having fam
       description: 'Honest review of food at Network School. Blueprint meals (3x daily included), NS Café extras, nearby restaurants in Forest City, and tips for vegetarian, vegan, and halal diets.',
       keywords: 'Network School food, NS meals, Blueprint meals Network School, Forest City restaurants, Network School vegetarian, NS café, food at NS review'
     },
-    relatedFaqs: ['food-like', 'forest-city-isolated', 'restaurants-shops-near', 'good-for-ramadan'],
+    relatedFaqs: ['food', 'forest-city-isolated', 'restaurants-shops-nearby', 'ramadan'],
     relatedArticles: ['accommodation-at-network-school', 'activities-and-events-at-network-school']
   }
 ];

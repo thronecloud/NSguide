@@ -18,6 +18,7 @@ const urls = [
   { loc: `${SITE_URL}/`, priority: '1.0', changefreq: 'weekly' },
   { loc: `${SITE_URL}/quiz`, priority: '0.9', changefreq: 'monthly' },
   { loc: `${SITE_URL}/articles`, priority: '0.9', changefreq: 'weekly' },
+  { loc: `${SITE_URL}/terms`, priority: '0.3', changefreq: 'yearly' },
   ...articles.map((article) => ({
     loc: `${SITE_URL}/articles/${article.slug}`,
     priority: '0.8',
