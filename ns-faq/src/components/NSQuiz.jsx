@@ -71,12 +71,10 @@ export default function NSQuiz() {
                 <p className="quiz-result-score">Compatibility Score: {score}%</p>
                 <p className="quiz-result-description">{result.description}</p>
                 <div className="quiz-actions">
-                    {result.callToAction && result.link && (
-                        <a href={result.link} className="quiz-btn quiz-btn-primary"
-                            {...(result.link.startsWith('http') ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
-                            {result.callToAction} &rarr;
-                        </a>
-                    )}
+                    <a href="https://ns.com/attendns/invite" className="quiz-btn quiz-btn-primary"
+                        target="_blank" rel="noopener noreferrer">
+                        Apply Now &rarr;
+                    </a>
                     <button className="quiz-btn quiz-btn-secondary" onClick={resetQuiz}>
                         Retake Quiz
                     </button>

@@ -15,7 +15,7 @@ export const SITE_URL =
   env('VITE_SITE_URL') || env('SITE_URL') || 'https://attendNS.com';
 
 export const REFERRAL_URL =
-  env('VITE_REFERRAL_URL') || env('REFERRAL_URL') || 'https://ns.com/networkschooler/invite';
+  env('VITE_REFERRAL_URL') || env('REFERRAL_URL') || 'https://ns.com/attendns/invite';
 
 const ctaFlag = env('VITE_SHOW_REFERRAL_CTA');
 export const SHOW_REFERRAL_CTA_ON_ALL_FAQS = ctaFlag === undefined || ctaFlag === 'true';

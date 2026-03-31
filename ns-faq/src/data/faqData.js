@@ -260,7 +260,7 @@ export const faqItems = [
     question: 'What is the NS Fellowship?',
     answer: "$100K. 100 fellows. 1 year. The Network School Fellowship is for founders and creators from around the world. Anyone from anywhere can apply online in ten minutes. If accepted, you will receive $100k in funding for a new or existing venture. Fellows will relocate to our Network School campus on an island near Singapore for one year to focus on their projects and lock in.",
     ctaText: 'Apply for Fellowship',
-    ctaUrl: 'https://ns.com/fellowship',
+    ctaUrl: 'https://ns.com/attendns/invite',
     seo: {
       title: 'Network School Fellowship: $100K Startup Funding',
       description: 'The Network School Fellowship is for founders and creators. Receive $100k in funding to relocate to NS campus for one year to focus on your project.',

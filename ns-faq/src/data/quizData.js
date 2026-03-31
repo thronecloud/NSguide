@@ -97,25 +97,19 @@ export function getQuizResult(score) {
         return {
             title: "The Founder (Perfect Fit)",
             description: "Pack your bags. You are exactly who Network School was built for. You thrive on autonomy, peer-to-peer learning, and high-intensity building. You won't care about the isolation of Forest City because your focus is entirely on your startup, your fitness, and the community.",
-            callToAction: "Apply for the Fellowship",
-            link: "https://ns.com",
             statusColor: "var(--color-accent)"
         };
     } else if (score >= 50) {
         return {
             title: "The Explorer (Solid Fit)",
             description: "You'll likely have a great time here, but you should temper your expectations. The community will be fantastic for you, but you might occasionally struggle with the isolation, the unstructured schedule, or the lack of traditional city infrastructure. Come for 30 days before committing to a year.",
-            callToAction: "Read What to Expect",
-            link: "#faq-where-located",
-            statusColor: "#4caf50" // A nice supportive green
+            statusColor: "#4caf50"
         };
     } else {
         return {
             title: "The Urbanite (Probably Not For You)",
             description: "Honestly... you might hate it here. And that's okay! If you need constant city energy, massive social separation from your workspace, or traditional vacation amenities, the intensity of Network School isn't the right vibe for you right now.",
-            callToAction: "",
-            link: "",
-            statusColor: "#f44336" // Red warning
+            statusColor: "#f44336"
         };
     }
 }
