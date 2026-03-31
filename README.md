@@ -133,4 +133,4 @@ All configuration lives in `ns-faq/src/config.js` and `.env` files:
 
 ---
 
-Built by [Priyesh](https://github.com/thronecloud). If you're considering Network School, the site has real answers from someone who's been there.
+Built by [Priyeshu](https://github.com/thronecloud). If you're considering Network School, the site has real answers from someone who's been there.
