@@ -43,7 +43,7 @@ export default function Header() {
           </button>
           <Link to="/articles" className="nav-link">Guides</Link>
           <a href={REFERRAL_URL} className="btn-apply" rel="noopener noreferrer" target="_blank">
-            Apply
+            Apply Now
           </a>
         </nav>
       </div>

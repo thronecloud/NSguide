@@ -37,6 +37,9 @@ NS is in Forest City, Malaysia—a $100 billion megaproject by China's Country G
 #### How much does Network School cost?
 It's $1,500/month for a double room (shared) or $3,000/month for a single room. That covers housing, three meals a day, gym access, coworking, Starlink internet, room cleaning, laundry, and all courses and events. The café and vending machines are optional extras. For context, that's less than rent alone in SF or Singapore—and you're getting food, gym, and coworking bundled in. Day passes are also available if you're just visiting.
 
+#### Are there any discounts available for Network School?
+Yes! Network School offers a 25% discount when you sign up through a resident referral link. You also get your first week completely free — so you can try the campus, meals, gym, and coworking before fully committing. That brings the effective cost down significantly: a shared room drops from $1,500 to around $1,125/month, and a single room from $3,000 to around $2,250/month. This is the best deal available — there's no public coupon code or seasonal sale. We recommend using our referral link below to lock in the 25% off and free first week.
+
 
 ### Category: living
 
@@ -74,7 +77,7 @@ No, but it can help. Applications are reviewed on their own; a referral might gi
 The four pillars of NS—and they call the whole thing 'Willpower-as-a-Service.' Learn: pick up frontier skills—AI, crypto, DeFi, or whatever you're into, via two tracks (Power Users and Programmers). Earn: work remotely, build your thing, earn crypto bounties. Burn: gym, HIIT classes, fitness combine—NS partnered with Bryan Johnson's Blueprint protocol. Fun: community dinners, events, spontaneous hangouts. The environment is engineered so peak performance is the path of least resistance.
 
 #### What's a typical day at Network School?
-Morning: wake up, hit the gym or a HIIT class (7 AM, 11 AM, or 5 PM slots), Blueprint breakfast. Then head to the coworking space—everyone's doing their own thing. Afternoon: optional sessions (vibe coding, book club, DeFi 101, bug bounty hunting, whatever members teach), side projects, or deep work. Evening: community dinner, maybe a small event or just hanging out. Alcohol is minimal; caffeine is the drug of choice. It's structured but flexible—you design your day.
+Morning: wake up, hit the gym or a HIIT class (7 AM, 11 AM, or 5 PM slots), Blueprint breakfast. Then head to the coworking space—everyone's doing their own thing. Most members work remotely for their existing employer or startup during the day. The coworking space, private pods, and fast Starlink internet are built for this—you don't need to quit your job to come. Afternoon: optional sessions (vibe coding, book club, DeFi 101, bug bounty hunting, whatever members teach), side projects, or deep work. Evening: community dinner, maybe a small event or just hanging out. Alcohol is minimal; caffeine is the drug of choice. It's structured but flexible—you design your day.
 
 #### Is Network School actually a school?
 Not in the traditional sense. No fixed curriculum, no grades, no paper degrees. Members teach each other—one-hour seminars on whatever they're into. The staff runs a few core sessions, but most learning is peer-to-peer. Instead of diplomas, you earn 'cryptocredentials'—NFTs that prove you completed tasks and populate your profile on GitHub or Replit. 'School' is more of a brand than a description.
@@ -122,7 +125,7 @@ All rooms are at the Forest City Marina Hotel and come with a private bathroom w
 Room cleaning is included in the monthly fee. For laundry, there's a wash-and-dry service that collects from the hotel lobby at 8:45 AM daily (except Sunday) and returns the next day at the same time. Pricing is affordable—around RM 28–58 per load depending on size (14kg or 28kg) and whether you mix or separate darks and lights. Detergent is included. You can also choose water temperature and dryer heat level. It's not free, but it's cheap and convenient—you drop it off, pick it up, done. Zero domestic friction is the whole idea.
 
 #### Are there private pods or offices at Network School?
-Yes. If the open coworking space isn't enough, NS offers private workspaces. There's an hourly pod in the NS Café—first come, first served, book one-hour slots via a QR code on the pod itself. Good for private calls or quick meetings. For something more permanent, you can rent a Private NS Pod ($200/month—table and monitor) or a Private NS Office ($400/month—standing desk, office chair, and monitor). Pods are in the café area; offices are in the library and coworking spaces. These are on top of the base membership fee, but worth it if you need a locked-in, dedicated workspace.
+Yes. If the open coworking space isn't enough, NS offers private workspaces. There's an hourly pod in the NS Café—first come, first served, book one-hour slots via a QR code on the pod itself. It's soundproofed enough for Zoom calls and client meetings—perfect if you have daily standups. For something more permanent, you can rent a Private NS Pod ($200/month—table and monitor) or a Private NS Office ($400/month—standing desk, office chair, and monitor). If you have frequent video calls, the private office is worth it. Pods are in the café area; offices are in the library and coworking spaces. These are on top of the base membership fee, but worth it if you need a locked-in, dedicated workspace.
 
 #### How fast is the internet at Network School?
 Starlink-powered—100 to 400 Mbps download, with latency as low as 25 to 60 milliseconds. That's fast enough for 4K video conferencing, continuous code deployment, cloning large GitHub repos, and even high-frequency trading. Starlink bypasses the local terrestrial infrastructure limitations of Forest City. It's reliable (99.9% uptime) and weather-resilient. You won't miss your home internet.
@@ -131,7 +134,7 @@ Starlink-powered—100 to 400 Mbps download, with latency as low as 25 to 60 mil
 ### Category: community
 
 #### What kind of people attend?
-Roughly 80% of attendees come from AI, crypto, or content-creation backgrounds—those are the dominant communities. The rest includes remote workers, founders in other verticals, former military, academic professors, and teenage coders. Very international—70+ nationalities, with strong representation from India, the US, Europe, Southeast Asia, and the Middle East. Demographics skew male (around 80%). There's a mix of temporary visitors (one month to test it out) and semi-permanent residents (3–12 months); digital nomads show up too but get quickly integrated through the constant events and community programming. It's a cultural smorgasbord with a strong tech-builder bias.
+Roughly 80% of attendees come from AI, crypto, or content-creation backgrounds—those are the dominant communities. The rest includes remote workers, founders in other verticals, former military, academic professors, and teenage coders. Age range spans from 7 to 80+—members have seen both ends thrive. The core demographic is 22–40, but NS explicitly doesn't filter by age. Very international—70+ nationalities, with strong representation from India, the US, Europe, Southeast Asia, and the Middle East. Demographics skew male (around 80%). There's a mix of temporary visitors (one month to test it out) and semi-permanent residents (3–12 months); digital nomads show up too but get quickly integrated through the constant events and community programming. It's a cultural smorgasbord with a strong tech-builder bias.
 
 #### What is "Dark Talent"?
 Like dark matter in physics—it's everywhere but invisible to traditional systems. Dark talent is the massive global pool of high-potential individuals disconnected from elite institutions. Indian engineers, African founders, American Midwest makers, Latin American libertarians—people with raw ability who never had a shot at Stanford or YC. NS exists specifically to surface them. Traditional universities sort by credentials; NS sorts by capability and drive.
@@ -248,7 +251,7 @@ Yes. You're near Singapore, one of the safest places in the world. The campus is
 If you want vibrant nightlife, spontaneous urban energy, or a relaxing vacation—skip it. The isolation of Forest City means maintaining external social relationships takes effort. If you're not comfortable with an intense, fitness-first, ideology-aligned community where your schedule and environment are optimized by design, it'll feel constraining. You need to embrace the 'Proof of Work' culture. If you're not building or seriously exploring, you'll feel out of place.
 
 #### What are the downsides of Network School?
-Quiet, developing area—not a bustling city. Gender ratio skews 80% male. Some ethnic and language cliques form. Crypto infrastructure is lighter than the marketing suggests. Meal and gym schedules don't accommodate Ramadan. Singapore trips take 1.5–2 hours each way with double immigration. A few members are less social. The heat is relentless. But most people find the tradeoffs worth it for the community, focus, and network.
+Quiet, developing area—not a bustling city. Gender ratio skews 80% male. Some ethnic and language cliques form. Crypto infrastructure is lighter than the marketing suggests. Meal and gym schedules don't accommodate Ramadan. Singapore trips take 1.5–2 hours each way with double immigration. A few members are less social. The heat is relentless—Forest City is equatorial Malaysia, so expect 30–35°C (86–95°F) year-round with high humidity. Air conditioning is everywhere indoors, but any time outside is sweaty. Pack light, breathable clothes and sunscreen. But most people find the tradeoffs worth it for the community, focus, and network.
 
 #### What is Society-as-a-Service?
 It's what NS calls itself—an all-in-one package: community, learning, lodging, meals, coworking, fitness, startup opportunities, guest speakers. Instead of piecing together a co-living, a gym, and a coworking space in different cities, it's bundled into one subscription. The idea is that this model can be replicated globally—open-sourced architectural blueprints, clone-stamped like a franchise for startup societies.
@@ -261,6 +264,87 @@ Phase by phase: v1 was a 128-person 90-day popup (Sept–Dec 2024), capped at Du
 
 #### Will Network School expand to other locations?
 That's the v4 vision—open-source the model globally. Malaysia's heat and distance from the West limits appeal. Japan, South America, Europe, UAE, and Australia have all been mentioned. The Society-as-a-Service model has found product-market fit; the question is execution. No official announcements yet, but the demand is clearly there based on the 4,000+ applications from 80+ countries.
+
+
+### Category: travel
+
+#### What should I pack for Network School?
+Pack light—it's tropical year-round. Bring breathable clothes (cotton/linen), shorts, and sandals for daily wear. You'll need gym shoes and workout clothes for HIIT sessions. A light rain jacket is useful for sudden downpours. Power adapter: Malaysia uses UK Type G plugs (three rectangular pins). Your laptop and charger are essential—the coworking space has monitors but not spare machines. Toiletries are provided in hotel rooms but bring your preferred brands for longer stays. Sunscreen is a must. A small backpack is handy for Singapore day trips. Some Malaysian ringgit cash (RM 200–300) for local shops and Grab rides. Don't overpack—there are convenience stores and online delivery for anything you forget.
+
+
+### Category: basics
+
+#### Can I leave and come back during my stay?
+Yes—your stay doesn't need to be continuous. Many members take weekend trips to Singapore, fly to Bali or Bangkok for a few days, or attend conferences elsewhere and come back. Your room stays reserved, and meals resume when you return. Some members even do a week on, week off pattern if they have business elsewhere in Southeast Asia. Just coordinate with NS staff so they know your schedule. The flexibility is one of the underrated perks—you're not locked into the campus 24/7.
+
+
+### Category: application
+
+#### What's the check-in process on Day 1?
+Arrival day is straightforward. If you're coming on the 1st of the month, the NS shuttle picks you up from Singapore Changi and drops you at the hotel. Otherwise, you arrive by Grab or bus. Check in at the hotel front desk—they'll have your room ready and give you your key. NS staff will orient you: a walkthrough of the coworking space, gym, café, library, and Haven. You'll get added to the community WhatsApp/Telegram groups and the Luma events calendar. Your first meal is usually dinner—show up to the buffet and start meeting people. Most members say the first 48 hours are a whirlwind of introductions. Don't stress about planning—the community pulls you in fast.
+
+
+### Category: basics
+
+#### Can I get a refund if I leave early?
+Network School doesn't publicly advertise a standard refund policy. If this is a concern, check directly with NS staff before booking—they're responsive and can clarify the terms for your specific situation. The best way to de-risk your decision is to use a referral link to get your first week free. That gives you a full week to experience the campus, meals, gym, coworking, and community before committing financially. Most people know within the first few days whether NS is right for them.
+
+
+---
+
+## NS Compatibility Quiz
+> URL: https://attendNS.com/quiz
+> Take this 10-question compatibility test to find out if Network School is right for you.
+
+**Q1: Your ideal Saturday night is:**
+- Hacking together a script with friends. (score: 10)
+- Exploring a new city's nightlife. (score: 0)
+- Reading a book by the beach. (score: 5)
+
+**Q2: When it comes to your diet, you prefer:**
+- Perfectly optimized, clean meals (like Blueprint) so I don't have to think. (score: 10)
+- Cooking my own elaborate recipes. (score: 0)
+- Trying a new restaurant every night. (score: 0)
+
+**Q3: Your current career focus is:**
+- Building a startup, crypto protocol, or AI tool. (score: 10)
+- I'm a remote worker just looking for a change of scenery. (score: 5)
+- Climbing the corporate ladder in traditional finance. (score: 0)
+
+**Q4: If you notice the community is missing a specific resource, club, or event, what's your first instinct?**
+- I’m instantly organizing it, hosting it, and inviting everyone. Let's go. (score: 10)
+- I’ll definitely show up and participate if someone else gets it started. (score: 5)
+- It's the administration's job to figure that out and provide the programming. (score: 0)
+
+**Q5: Your stance on fitness is:**
+- Health is wealth; I track my metrics and optimize. (score: 10)
+- I try to work out a few times a week. (score: 5)
+- It's not a priority right now. (score: 0)
+
+**Q6: How important is a bustling, finished city infrastructure to you?**
+- Don't care, as long as the internet is fast. (score: 10)
+- Nice to have, but not a dealbreaker. (score: 5)
+- Essential. Empty buildings freak me out. (score: 0)
+
+**Q7: Your primary goal for the next 3 months is:**
+- Shipping a product or mastering a hard technical skill. (score: 10)
+- Making some new friends and relaxing / avoiding burnout. (score: 5)
+- Traveling entirely for leisure and seeing the world. (score: 0)
+
+**Q8: How do you prefer to learn a hard new skill (like AI engineering)?**
+- Throw me in a hackathon with smart peers. I learn best by building and breaking things. (score: 10)
+- Give me a few good tutorials and some quiet time to practice alone. (score: 5)
+- I need a structured syllabus, a clear timeline, and a seasoned professor grading me. (score: 0)
+
+**Q9: How do you feel about living, eating, and working under the exact same roof as 250+ other founders and builders?**
+- It’s my ultimate dream. I feed off that constant, high-energy collaboration. (score: 10)
+- I like it, but I’ll definitely need to retreat to my room daily for private decompression time. (score: 5)
+- Sounds exhausting. I need a massive separation between my work environment and my personal life. (score: 0)
+
+**Q10: When someone mentions "Network States" or "Techno-capitalism", you think:**
+- Let's fucking go. (score: 10)
+- It sounds interesting, I'd like to learn more. (score: 5)
+- Sounds like a dystopian cult. (score: 0)
 
 
 ---

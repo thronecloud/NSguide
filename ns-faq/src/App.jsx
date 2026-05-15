@@ -14,6 +14,7 @@ const QuestionPage = lazy(() => import('./pages/QuestionPage'));
 const ArticlesListPage = lazy(() => import('./pages/ArticlesListPage'));
 const ArticlePage = lazy(() => import('./pages/ArticlePage'));
 const TermsPage = lazy(() => import('./pages/TermsPage'));
+const ReviewPage = lazy(() => import('./pages/ReviewPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const AdminPage = lazy(() => import('./pages/AdminPage'));
 
@@ -44,6 +45,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/quiz" element={<QuizPage />} />
+          <Route path="/review" element={<ReviewPage />} />
           <Route path="/faq/:slug" element={<QuestionPage />} />
           <Route path="/articles" element={<ArticlesListPage />} />
           <Route path="/articles/:slug" element={<ArticlePage />} />
