@@ -42,7 +42,7 @@ export default function NSQuiz() {
     if (!questions) {
         return (
             <section className="quiz-container quiz-intro">
-                <h2 className="quiz-title">Is NS Right For You?</h2>
+                <h2 className="quiz-title">Check your NS Compatibility</h2>
                 <p className="quiz-description">Loading quiz...</p>
             </section>
         );
@@ -51,7 +51,7 @@ export default function NSQuiz() {
     if (!hasStarted) {
         return (
             <section className="quiz-container quiz-intro">
-                <h2 className="quiz-title">Is NS Right For You?</h2>
+                <h2 className="quiz-title">Check your NS Compatibility</h2>
                 <p className="quiz-description">
                     Network School isn't a traditional vacation—it's an intense, focused environment.
                     Take this brutally honest {questions.length}-question compatibility test to see if you'll thrive in Forest City or if you should look elsewhere.
@@ -100,7 +100,7 @@ export default function NSQuiz() {
 
     return (
         <section className="quiz-container">
-            <h2 className="quiz-title" style={{ marginBottom: '1.5rem' }}>Is NS Right For You?</h2>
+            <h2 className="quiz-title" style={{ marginBottom: '1.5rem' }}>Check your NS Compatibility</h2>
             <div className="quiz-progress-bar">
                 <div className="quiz-progress-fill" style={{ width: `${progressPercentage}%` }}></div>
             </div>

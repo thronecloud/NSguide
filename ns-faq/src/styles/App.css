@@ -681,7 +681,9 @@ html.dark .theme-icon--dark { display: block; }
 
 .quiz-title {
   font-family: var(--font-display);
+  font-weight: 400;
   font-size: 2.5rem;
+  letter-spacing: -0.015em;
   margin: 0 0 1rem;
   color: var(--color-text);
   line-height: 1.1;
@@ -758,6 +760,7 @@ html.dark .theme-icon--dark { display: block; }
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 400;
+  letter-spacing: -0.015em;
   color: var(--color-text);
   margin: 0 0 2rem;
   line-height: 1.35;
@@ -795,7 +798,9 @@ html.dark .theme-icon--dark { display: block; }
 
 .quiz-result-title {
   font-family: var(--font-display);
+  font-weight: 400;
   font-size: 2.5rem;
+  letter-spacing: -0.015em;
   margin: 0 0 0.75rem;
   line-height: 1.1;
 }
@@ -1838,6 +1843,12 @@ html.dark .faq-cta-link {
 .review-page {
   background: var(--color-bg);
   color: var(--color-text);
+}
+.review-page h1,
+.review-page h2,
+.review-page h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
 }
 
 /* Section shells -------------------------------------------------- */
@@ -2963,19 +2974,114 @@ html.dark .faq-cta-link {
   .r-stickybar-strike { display: none; }
 }
 @media (max-width: 600px) {
-  .review-page .r-h1 { font-size: 2.4rem; }
+  .review-page .r-h1 { font-size: 2.3rem; }
+  .review-page .r-hero { padding: 32px 18px 24px; gap: 24px; }
   .review-page .r-hero-sub { font-size: 1rem; }
   .review-page .r-hero-r { height: 240px; }
+  .review-page .r-section { padding: 44px 18px; }
+  .review-page .r-section-alt .r-section-inner { padding: 44px 18px; }
   .review-page .r-h2 { font-size: 1.9rem; }
+  .review-page .r-sec-head { margin-bottom: 32px; gap: 14px; }
+  .review-page .r-sec-sub { font-size: 0.95rem; }
+
+  /* Tighten card/in-section headings */
+  .review-page .r-problem { padding: 24px; gap: 24px; }
+  .review-page .r-problem-l h3 { font-size: 1.85rem; }
+  .review-page .r-problem-r { padding: 22px; }
+  .review-page .r-cg-l h3 { font-size: 2rem; }
+  .review-page .r-campus-copy h3 { font-size: 1.85rem; }
+  .review-page .r-final-cta { padding: 30px 22px; border-radius: var(--radius-lg); }
+  .review-page .r-final-h2 { font-size: 2rem; }
+  .review-page .r-final-eyebrow-text { font-size: 1.15rem; }
+  .review-page .r-final-sub { font-size: 0.98rem; }
+  .review-page .r-quiz-host .quiz-container { padding: 22px; border-radius: var(--radius-lg); }
+
+  /* Make primary/secondary CTAs full-width thumb-friendly */
+  .review-page .r-ctas { width: 100%; }
+  .review-page .r-ctas .r-btn { width: 100%; }
+  .review-page .r-final-ctas .r-btn { width: 100%; }
+  .review-page .r-cost-cta .r-btn { width: 100%; }
+  .review-page .r-btn-lg { padding: 16px 22px; font-size: 1rem; }
+
+  /* Hero trust row — collapse to readable stack */
+  .review-page .r-trust-row { gap: 8px 12px; }
+  .review-page .r-trust-row .r-pipe { display: none; }
+  .review-page .r-bullets { gap: 10px 16px; }
+
+  /* Trust strip tighter */
+  .review-page .r-trust-quote { font-size: 1rem; padding: 0 14px; line-height: 1.35; }
+  .review-page .r-stat .r-stat-n { font-size: 1.6rem; }
+
+  /* Cost table — clean stacked layout (no empty grid cells) */
+  .review-page .r-cost-row {
+    grid-template-columns: 28px 1fr;
+    grid-template-areas:
+      "label label"
+      "check value"
+      "note  note";
+    column-gap: 12px;
+    row-gap: 8px;
+    padding: 16px 18px;
+    align-items: center;
+  }
+  .review-page .r-cost-row > :nth-child(1) { grid-area: label; }
+  .review-page .r-cost-row > :nth-child(2) { grid-area: check; justify-self: start; }
+  .review-page .r-cost-row > :nth-child(3) { grid-area: value; justify-self: start; }
+  .review-page .r-cost-row > :nth-child(4) { grid-area: note; font-size: 0.85rem; }
+  .review-page .r-cost-total {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "label label"
+      "check value"
+      "save  save";
+  }
+  .review-page .r-cost-total > :nth-child(4) { grid-area: save; }
+  .review-page .r-cost-total .r-cost-v { font-size: 1.3rem; }
+  .review-page .r-cost-disclaimer { font-size: 0.82rem; }
+
+  /* Day timeline tighter */
+  .review-page .r-day-row {
+    grid-template-columns: 56px 1fr;
+    padding: 14px 16px 14px 22px;
+    gap: 14px;
+  }
+  .review-page .r-day-t { font-size: 1rem; }
+  .review-page .r-day-w { font-size: 0.95rem; }
+  .review-page .r-day-d { font-size: 0.85rem; }
+
+  /* Campus map padding */
+  .review-page .r-campus-map { padding: 14px; }
+
+  /* Guides — tighter cards */
+  .review-page .r-guide { padding: 20px; min-height: 180px; }
+  .review-page .r-guide h3 { font-size: 1.35rem; }
+  .review-page .r-guide-feature { padding: 22px; min-height: 240px; }
+  .review-page .r-guide-feature h3 { font-size: 1.7rem; }
+  .review-page .r-guide-feature .r-guide-excerpt { font-size: 0.95rem; }
+
+  /* Testimonials */
+  .review-page .r-testi { padding: 20px; }
+  .review-page .r-testi-q { font-size: 1.05rem; }
+
+  /* FAQ tiles single column */
+  .review-page .r-faq-cats { grid-template-columns: 1fr; }
+  .review-page .r-faq-cat { min-height: 130px; padding: 18px 18px 16px; }
+  .review-page .r-faq-name { font-size: 1.35rem; }
+
+  /* Gallery — single column */
   .review-page .r-gallery {
     grid-template-columns: 1fr;
-    grid-auto-rows: 220px;
+    grid-auto-rows: 200px;
   }
   .review-page .r-g-wide,
   .review-page .r-g-tall {
     grid-row: auto;
     grid-column: auto;
   }
-  .review-page .r-faq-cats { grid-template-columns: 1fr; }
-  .r-stickybar { padding: 10px 16px; }
+
+  /* Sticky bar — tighter, the strike-through already hidden at 900px */
+  .r-stickybar { padding: 10px 14px; }
+  .r-stickybar-inner { gap: 12px; }
+  .r-stickybar-l { font-size: 0.78rem; line-height: 1.35; }
+  .r-stickybar .r-btn { padding: 10px 14px; font-size: 0.82rem; }
 }

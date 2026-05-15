@@ -17,7 +17,20 @@ export default function HomePage() {
   const [openSlug, setOpenSlug] = useState(null);
 
   useEffect(() => {
-    if (hash && hash.startsWith('#faq-')) {
+    if (!hash) return;
+
+    if (hash.startsWith('#faq-cat-')) {
+      const catId = hash.slice(9);
+      if (FAQ_CATEGORIES.some((c) => c.id === catId)) {
+        setExpandedCategories(prev => (prev.includes(catId) ? prev : [...prev, catId]));
+        setTimeout(() => {
+          document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+      return;
+    }
+
+    if (hash.startsWith('#faq-')) {
       const slug = hash.slice(5);
       const item = faqItems.find((i) => i.slug === slug);
       if (item) {
@@ -80,7 +93,7 @@ export default function HomePage() {
                 const catItems = getFaqByCategory(cat.id);
                 const isExpanded = expandedCategories.includes(cat.id);
                 return (
-                  <div key={cat.id} className={`faq-category-group ${isExpanded ? 'faq-category-group--open' : ''}`}>
+                  <div key={cat.id} id={`faq-cat-${cat.id}`} className={`faq-category-group ${isExpanded ? 'faq-category-group--open' : ''}`}>
                     <button
                       type="button"
                       className="faq-category-header"

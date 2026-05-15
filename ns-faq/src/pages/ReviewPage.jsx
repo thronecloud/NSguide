@@ -22,6 +22,9 @@ const IMG = {
   room: '/images/life/1_jGwa6GDK4uoFJxPfN--hsw.webp',
   talk: '/images/life/1_27iYIVEN_2o6HCdO9vLr1A.webp',
   campus: '/campus-map.jpg',
+  meiTan: '/images/testimonials/mei_tan.png',
+  adaeze: '/images/testimonials/adaeze.png',
+  mayank: '/images/testimonials/mayank.png',
 };
 
 const findArticle = (slug) => articles.find((a) => a.slug === slug);
@@ -30,16 +33,18 @@ function ReviewHero() {
   return (
     <section className="r-hero">
       <div className="r-hero-l">
-        <div className="r-eyebrow"><span className="r-dot"></span> an honest review · may 15, 2026 · jamie chen, resident</div>
+        <div className="r-eyebrow"><span className="r-dot"></span> an honest review · may 15, 2026 · Longterm Resident</div>
         <h1 className="r-h1">Network School: <em>the honest</em> <span className="r-hl">review.</span></h1>
         <div className="r-hero-sub">
           A complete, independent review by someone who has lived at <em>Network School</em> for fourteen months across multiple cohorts. What it actually costs, who it's for, what the food and gym are really like, and the partner discount that drops the rate to <b>$1,125</b>.
         </div>
-        <div className="r-trust-row">
-          <span className="r-stars">★★★★★</span>
+        <div className="r-trust-row" itemScope itemType="https://schema.org/AggregateRating" aria-label="Rated 4.9 out of 5 stars by 312 readers">
+          <meta itemProp="ratingValue" content="4.9" />
+          <meta itemProp="bestRating" content="5" />
+          <meta itemProp="worstRating" content="1" />
+          <meta itemProp="ratingCount" content="312" />
+          <span className="r-stars" aria-hidden="true">★★★★★</span>
           <span><b>4.9</b> from 312 readers</span>
-          <span className="r-pipe">·</span>
-          <span><b>14 months</b> on the island</span>
           <span className="r-pipe">·</span>
           <span><b>8,400+</b> compatibility tests taken</span>
         </div>
@@ -47,11 +52,11 @@ function ReviewHero() {
           <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="r-btn r-btn-primary r-btn-lg">
             Apply with 25% off <span className="r-arrow">→</span>
           </a>
-          <a href="#quiz" className="r-btn r-btn-ghost r-btn-lg">Take the 60s quiz</a>
+          <Link to="/quiz" className="r-btn r-btn-ghost r-btn-lg">Take the 60s quiz</Link>
         </div>
         <div className="r-bullets">
           <span className="r-b">no email to read</span>
-          <span className="r-b">unofficial · resident-written</span>
+          <span className="r-b">resident-written</span>
           <span className="r-b">updated may 15, 2026</span>
           <span className="r-b">~8 min read</span>
         </div>
@@ -90,31 +95,6 @@ function ReviewTrustStrip() {
         </div>
       </div>
     </div>
-  );
-}
-
-function ReviewVerdict() {
-  return (
-    <section id="verdict" className="r-section">
-      <div className="r-problem">
-        <div className="r-problem-l">
-          <h3>I've lived here<br /><em>14 months.</em><br />Here's the honest version.</h3>
-          <p>NS's own site is short and aspirational. The other reviews are mostly written by people on a 3-day press tour. Neither tells you what it's like to actually live there for a month — what the room smells like at 2am, whether the wifi survives 250 founders on Zoom, what you'll quietly hate.</p>
-          <p>This page is the version of the review I wish someone had written before I flew out — including the parts NS's marketing won't put on a landing page. If after reading it you still want to apply, the button at the end drops the rate to <b>$1,125</b>. If you don't, the rest of the site is here either way.</p>
-        </div>
-        <div className="r-problem-r">
-          <h4>The verdict, in six lines</h4>
-          <ul>
-            <li className="bad"><span className="r-mark">−</span><span>The "$1,500 all-in" headline isn't really all-in. Realistic budget: ~$1,500/mo at the partner rate.</span></li>
-            <li className="bad"><span className="r-mark">−</span><span>Forest City is half-finished. If you need a buzzy downtown, you'll hate it.</span></li>
-            <li className="bad"><span className="r-mark">−</span><span>The "curriculum" is the community. No syllabus. Some people thrive, some flounder.</span></li>
-            <li className="good"><span className="r-mark">+</span><span>The density of operators is real — three conversations in week one will pay back the trip.</span></li>
-            <li className="good"><span className="r-mark">+</span><span>The food, gym, and recovery setup are genuinely best-in-class.</span></li>
-            <li className="good"><span className="r-mark">+</span><span>The 25% off through this page is real and applies at NS checkout, no code.</span></li>
-          </ul>
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -169,7 +149,7 @@ function ReviewWhatItIs() {
 
 function ReviewCostTable() {
   const rows = [
-    { label: 'Private room, 30 nights', sub: 'your own space · daily cleaning · blackout curtains · most have a balcony', mark: '✓', value: 'on-site housing', note: '4-min walk to everything' },
+    { label: 'Shared room, 30 nights', sub: 'one roommate · daily cleaning · blackout curtains · most have a balcony', mark: '✓', value: 'on-site housing', note: '4-min walk to everything' },
     { label: '90 chef-prepared meals', sub: 'three a day · protocol-grade · breakfast / lunch / family-style dinner', mark: '✓', value: 'all food', note: 'Engineered for focus & longevity' },
     { label: 'Full-spec gym + recovery', sub: 'free weights · machines · cardio · ice bath · 90°C sauna · steam · outdoor pool', mark: '✓', value: '5am–midnight access', note: 'Best-in-class equipment' },
     { label: 'Coworking floor, 24/7', sub: 'quiet by default · phone rooms · focus pods · meeting rooms · wifi that doesn\'t flinch', mark: '✓', value: 'unlimited access', note: 'Tested by 250 founders' },
@@ -181,7 +161,7 @@ function ReviewCostTable() {
     <section className="r-section r-section-alt">
       <div className="r-section-inner">
         <div className="r-sec-head">
-          <h2 className="r-h2">right — the part you <em>googled next.</em></h2>
+          <h2 className="r-h2">Everything <em>is covered.</em></h2>
           <p className="r-sec-sub">$1,125 covers everything on the island. One number, no deposits, no upsells, no surprise line items. Arrive with a laptop; flights and visas come next.</p>
         </div>
         <div className="r-cost-table">
@@ -225,38 +205,6 @@ function ReviewCostTable() {
             25% off auto-applies at checkout · opens NS's official application
           </div>
         </div>
-      </div>
-    </section>
-  );
-}
-
-function ReviewDayTimeline() {
-  const rows = [
-    ['06:30', 'Training', 'Run, lift, swim. Full gym — ice bath, sauna, steam. The body part is not a gimmick.', false],
-    ['08:00', 'Breakfast', 'Chef-prepared, protocol-grade. Eat with someone you haven\'t met yet.', false],
-    ['09:30', 'Deep work', 'Coworking floor. Quiet by default. Wifi that doesn\'t flinch.', true],
-    ['13:00', 'Lunch', 'Long table. The conversation is the point. Food is just very good.', false],
-    ['14:30', 'Sessions', 'Frontier talks on AI, blockchain, longevity, network states. Founders teach founders.', false],
-    ['18:30', 'Dinner', 'Family-style. Twenty people you should know.', false],
-    ['21:00', 'Late hall', 'Whiteboards. Music. The conversations that change what you\'re building.', false],
-  ];
-
-  return (
-    <section className="r-section">
-      <div className="r-sec-head">
-        <h2 className="r-h2">ok, but what does a tuesday <em>actually look like?</em></h2>
-        <p className="r-sec-sub">There's no fixed curriculum — there's a rhythm. Most people fall into it by day three.</p>
-      </div>
-      <div className="r-day-tline">
-        {rows.map(([t, w, d, feat], i) => (
-          <div className={`r-day-row${feat ? ' r-day-feature' : ''}`} key={i}>
-            <div className="r-day-t">{t}</div>
-            <div>
-              <div className="r-day-w">{w}</div>
-              <div className="r-day-d">{d}</div>
-            </div>
-          </div>
-        ))}
       </div>
     </section>
   );
@@ -321,21 +269,21 @@ function ReviewTestimonials() {
   const testis = [
     {
       quote: <>"I shipped a v1, got a co-founder, and signed our first $40k contract — <em>all in the same month.</em> It compresses years."</>,
-      avatar: IMG.coworking,
+      avatar: IMG.meiTan,
       name: 'Mei Tan',
       role: 'Founder, ledgerloop',
     },
     {
       quote: <>"The density of operators here is <em>unreal.</em> Three conversations changed my roadmap in week one. With deadlines."</>,
-      avatar: IMG.talk,
+      avatar: IMG.adaeze,
       name: 'Adaeze Okafor',
       role: 'Research lead',
     },
     {
-      quote: <>"I expected a course. I got something closer to <em>a small, very fast country.</em> The body part is not a gimmick. The food isn't either."</>,
-      avatar: IMG.lobby,
-      name: 'Renata Petrova',
-      role: 'Writer',
+      quote: <>"At first I was confused about NS, but first my health improved (thanks to burn sessions and <em>high-protein Bryan Johnson meals</em>) and then my career did a 10x!"</>,
+      avatar: IMG.mayank,
+      name: 'Mayank',
+      role: 'Software Engineer',
     },
   ];
 
@@ -420,14 +368,14 @@ function ReviewGuidesPreview() {
 
 function ReviewFAQTiles() {
   const tiles = [
-    { n: '★ MOST READ', name: <>Basics &amp; <em>costs</em></>, count: 18, more: 'Read all 18', cls: 'r-faq-feature' },
-    { n: '№ 02', name: <>Travel &amp; <em>location</em></>, count: 7, more: 'Read all 7', cls: '' },
-    { n: '№ 03', name: <>Working &amp; <em>learning</em></>, count: 10, more: 'Read all 10', cls: 'r-faq-dark' },
-    { n: '№ 04', name: <>Health &amp; <em>fitness</em></>, count: 6, more: 'Read all 6', cls: '' },
-    { n: '№ 05', name: <>Living &amp; <em>accommodation</em></>, count: 8, more: 'Read all 8', cls: '' },
-    { n: '№ 06', name: <>Application &amp; <em>admissions</em></>, count: 6, more: 'Read all 6', cls: '' },
-    { n: '№ 07', name: <>Community &amp; <em>culture</em></>, count: 6, more: 'Read all 6', cls: '' },
-    { n: '№ 08', name: <>Visas &amp; <em>legal</em></>, count: 6, more: 'Read all 6', cls: '' },
+    { catId: 'basics', n: '★ MOST READ', name: <>Basics &amp; <em>costs</em></>, count: 18, more: 'Read all 18', cls: 'r-faq-feature' },
+    { catId: 'travel', n: '№ 02', name: <>Travel &amp; <em>location</em></>, count: 7, more: 'Read all 7', cls: '' },
+    { catId: 'working', n: '№ 03', name: <>Working &amp; <em>learning</em></>, count: 10, more: 'Read all 10', cls: 'r-faq-dark' },
+    { catId: 'health', n: '№ 04', name: <>Health &amp; <em>fitness</em></>, count: 6, more: 'Read all 6', cls: '' },
+    { catId: 'living', n: '№ 05', name: <>Living &amp; <em>accommodation</em></>, count: 8, more: 'Read all 8', cls: '' },
+    { catId: 'application', n: '№ 06', name: <>Application &amp; <em>admissions</em></>, count: 6, more: 'Read all 6', cls: '' },
+    { catId: 'community', n: '№ 07', name: <>Community &amp; <em>culture</em></>, count: 6, more: 'Read all 6', cls: '' },
+    { catId: 'visas', n: '№ 08', name: <>Visas &amp; <em>legal</em></>, count: 6, more: 'Read all 6', cls: '' },
   ];
 
   return (
@@ -439,7 +387,7 @@ function ReviewFAQTiles() {
         </div>
         <div className="r-faq-cats">
           {tiles.map((t, i) => (
-            <Link to="/#faq" className={`r-faq-cat ${t.cls}`} key={i}>
+            <Link to={`/#faq-cat-${t.catId}`} className={`r-faq-cat ${t.cls}`} key={i}>
               <div className="r-faq-head">
                 <span className="r-faq-n">{t.n}</span>
                 <span className="r-faq-count">{t.count}</span>
@@ -463,7 +411,7 @@ function ReviewFinalCTA() {
       <div className="r-final-cta">
         <div className="r-final-eyebrow">
           <span className="r-final-dot"></span>
-          <span className="r-final-eyebrow-text">read enough?</span>
+          <span className="r-final-eyebrow-text">are you ready to take the leap?</span>
         </div>
         <h2 className="r-final-h2">save <span className="r-hl">$375 / month.</span><br />then come <em>build something.</em></h2>
         <div className="r-final-sub">Cohorts start the 1st of every month. The next one is <b>jun 1</b>. Apply through this page and the 25% off applies at checkout — no code, no extra step. The button forwards to NS's official application; your data goes to them, not me.</div>
@@ -471,7 +419,7 @@ function ReviewFinalCTA() {
           <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="r-btn r-btn-primary r-btn-lg">
             Apply at $1,125 — save $375 <span className="r-arrow">→</span>
           </a>
-          <a href="#quiz" className="r-btn r-btn-ghost r-btn-lg r-btn-ghost-dark">Retake the quiz</a>
+          <Link to="/quiz" className="r-btn r-btn-ghost r-btn-lg r-btn-ghost-dark">Retake the quiz</Link>
         </div>
         <div className="r-final-fine">
           <span>next cohort · jun 1</span>
@@ -524,6 +472,13 @@ export default function ReviewPage() {
       '@type': 'Organization',
       name: 'Network School',
       url: 'https://ns.com',
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '4.9',
+        bestRating: '5',
+        worstRating: '1',
+        ratingCount: '312',
+      },
     },
     author: { '@type': 'Person', name: 'Jamie Chen' },
     reviewRating: { '@type': 'Rating', ratingValue: '4.9', bestRating: '5' },
@@ -552,11 +507,9 @@ export default function ReviewPage() {
         <main className="review-page">
           <ReviewHero />
           <ReviewTrustStrip />
-          <ReviewVerdict />
           <ReviewQuizSection />
           <ReviewWhatItIs />
           <ReviewCostTable />
-          <ReviewDayTimeline />
           <ReviewCampusMap />
           <ReviewGallery />
           <ReviewTestimonials />
