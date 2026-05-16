@@ -1,4 +1,4 @@
-import { REFERRAL_URL } from '../config';
+import { REFERRAL_URL, trackReferralClick } from '../config';
 
 export default function CTA() {
   return (
@@ -13,6 +13,7 @@ export default function CTA() {
           className="cta-button"
           rel="noopener noreferrer"
           target="_blank"
+          onClick={trackReferralClick}
         >
           Join Network School
         </a>

@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { SITE_URL, REFERRAL_URL } from '../config';
+import { SITE_URL, REFERRAL_URL, trackReferralClick } from '../config';
 import { getArticleBySlug, getArticleSchema, articles, ARTICLE_CATEGORIES, getReadingTime } from '../data/articleData';
 import { getFaqBySlug } from '../data/faqData';
 import Header from '../components/Header';
@@ -130,7 +130,7 @@ export default function ArticlePage() {
 
             <div className="article-apply-cta">
               <p className="article-apply-cta-text">Ready to experience Network School for yourself?</p>
-              <a href={REFERRAL_URL} className="quiz-btn quiz-btn-primary" rel="noopener noreferrer" target="_blank">
+              <a href={REFERRAL_URL} className="quiz-btn quiz-btn-primary" rel="noopener noreferrer" target="_blank" onClick={trackReferralClick}>
                 Apply to Network School →
               </a>
             </div>

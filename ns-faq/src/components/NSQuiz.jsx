@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getQuizResult } from '../data/quizData';
+import { REFERRAL_URL, trackReferralClick } from '../config';
 
 export default function NSQuiz() {
     const [questions, setQuestions] = useState(null);
@@ -71,8 +72,8 @@ export default function NSQuiz() {
                 <p className="quiz-result-score">Compatibility Score: {score}%</p>
                 <p className="quiz-result-description">{result.description}</p>
                 <div className="quiz-actions">
-                    <a href="https://ns.com/attendns/invite" className="quiz-btn quiz-btn-primary"
-                        target="_blank" rel="noopener noreferrer">
+                    <a href={REFERRAL_URL} className="quiz-btn quiz-btn-primary"
+                        target="_blank" rel="noopener noreferrer" onClick={trackReferralClick}>
                         Apply Now &rarr;
                     </a>
                     <button className="quiz-btn quiz-btn-secondary" onClick={resetQuiz}>

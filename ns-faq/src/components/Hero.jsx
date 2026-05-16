@@ -1,4 +1,4 @@
-import { REFERRAL_URL } from '../config';
+import { REFERRAL_URL, trackReferralClick } from '../config';
 import { faqItems } from '../data/faqData';
 import { articles } from '../data/articleData';
 
@@ -29,7 +29,7 @@ export default function Hero() {
         <a href="https://thenetworkstate.com/" className="pill" rel="noopener noreferrer" target="_blank">
           Network State
         </a>
-        <a href={REFERRAL_URL} className="pill pill-primary" rel="noopener noreferrer" target="_blank">
+        <a href={REFERRAL_URL} className="pill pill-primary" rel="noopener noreferrer" target="_blank" onClick={trackReferralClick}>
           Apply Now
         </a>
       </div>

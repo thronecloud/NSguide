@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { SITE_URL, REFERRAL_URL } from '../config';
+import { SITE_URL, REFERRAL_URL, trackReferralClick } from '../config';
 import { articles } from '../data/articleData';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -49,7 +49,7 @@ function ReviewHero() {
           <span><b>8,400+</b> compatibility tests taken</span>
         </div>
         <div className="r-ctas">
-          <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="r-btn r-btn-primary r-btn-lg">
+          <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="r-btn r-btn-primary r-btn-lg" onClick={trackReferralClick}>
             Apply with 25% off <span className="r-arrow">→</span>
           </a>
           <Link to="/quiz" className="r-btn r-btn-ghost r-btn-lg">Take the 60s quiz</Link>
@@ -198,7 +198,7 @@ function ReviewCostTable() {
         </div>
 
         <div className="r-cost-cta">
-          <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="r-btn r-btn-primary r-btn-lg">
+          <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="r-btn r-btn-primary r-btn-lg" onClick={trackReferralClick}>
             Apply at $1,125 — save $375 <span className="r-arrow">→</span>
           </a>
           <div className="r-cost-cta-fine">
@@ -416,7 +416,7 @@ function ReviewFinalCTA() {
         <h2 className="r-final-h2">save <span className="r-hl">$375 / month.</span><br />then come <em>build something.</em></h2>
         <div className="r-final-sub">Cohorts start the 1st of every month. The next one is <b>jun 1</b>. Apply through this page and the 25% off applies at checkout — no code, no extra step. The button forwards to NS's official application; your data goes to them, not me.</div>
         <div className="r-final-ctas">
-          <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="r-btn r-btn-primary r-btn-lg">
+          <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="r-btn r-btn-primary r-btn-lg" onClick={trackReferralClick}>
             Apply at $1,125 — save $375 <span className="r-arrow">→</span>
           </a>
           <Link to="/quiz" className="r-btn r-btn-ghost r-btn-lg r-btn-ghost-dark">Retake the quiz</Link>
@@ -455,7 +455,7 @@ function ReviewStickyBar() {
         <div className="r-stickybar-l">
           Finished reading? <b>Apply via attendNS</b> · <span className="r-stickybar-strike">$1,500</span><span className="r-stickybar-accent">$1,125</span> /mo
         </div>
-        <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="r-btn r-btn-primary">
+        <a href={REFERRAL_URL} target="_blank" rel="noopener noreferrer" className="r-btn r-btn-primary" onClick={trackReferralClick}>
           Apply now <span className="r-arrow">→</span>
         </a>
       </div>

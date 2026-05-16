@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { SITE_URL, REFERRAL_URL, SHOW_REFERRAL_CTA_ON_ALL_FAQS } from '../config';
+import { SITE_URL, REFERRAL_URL, SHOW_REFERRAL_CTA_ON_ALL_FAQS, trackReferralClick } from '../config';
 import { getFaqBySlug, getQuestionSchema } from '../data/faqData';
 import Header from '../components/Header';
 import CTA from '../components/CTA';
@@ -92,6 +92,7 @@ export default function QuestionPage() {
                     className="faq-cta-link"
                     rel="noopener noreferrer"
                     target="_blank"
+                    onClick={trackReferralClick}
                   >
                     {ctaText || 'Apply now'}
                   </a>

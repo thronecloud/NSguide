@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { REFERRAL_URL } from '../config';
+import { REFERRAL_URL, trackReferralClick } from '../config';
 
 const openSearch = () => window.dispatchEvent(new Event('open-search'));
 
@@ -42,7 +42,7 @@ export default function Header() {
             </svg>
           </button>
           <Link to="/articles" className="nav-link">Guides</Link>
-          <a href={REFERRAL_URL} className="btn-apply" rel="noopener noreferrer" target="_blank">
+          <a href={REFERRAL_URL} className="btn-apply" rel="noopener noreferrer" target="_blank" onClick={trackReferralClick}>
             Apply Now
           </a>
         </nav>
